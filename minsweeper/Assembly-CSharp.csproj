@@ -55,8 +55,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Stage.cs" />
-    <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Room.cs" />
+    <Compile Include="Assets\Scripts\CanvasManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Sci-Fi Styled Modular Pack\Readme.txt" />

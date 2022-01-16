@@ -25,11 +25,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip jumpclip;
     private Rigidbody rigidbody;
 
+    CanvasManager canvasManager;
+
     void Start()
     {
         playerAnim = GetComponent<Animator>();
         playerAudioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
+
+        canvasManager = FindObjectOfType<CanvasManager>();
     }
 
     void Update()
@@ -109,10 +113,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Room"))
         {
             _wherePlayer = other.GetComponent<Room>().GetRoomNum();
+            canvasManager.SetScannerTo(other.GetComponent<Room>()._aroundBomb);
         }
         else if (other.gameObject.CompareTag("Door"))
         {
             touchDoor = other.gameObject.GetComponent<Door>();
+            canvasManager.DoorInteractPanelOn();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -120,6 +126,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Door"))
         {
             touchDoor = null;
+            canvasManager.DoorInteractPanelOff();
         }
     }
 }
