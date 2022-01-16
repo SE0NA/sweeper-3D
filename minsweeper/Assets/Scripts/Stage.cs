@@ -6,7 +6,7 @@ public class Stage : MonoBehaviour
 {
     [SerializeField] int _countALine;
     [SerializeField] int _startRoomNum;
-    [SerializeField] List<Room> _roomList;
+    public List<Room> _roomList;
     public int _totalBomb;
 
     private void Start()

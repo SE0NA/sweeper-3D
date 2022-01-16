@@ -7,12 +7,11 @@ public class PlayerController : MonoBehaviour
 
     public int _wherePlayer;
     public bool _isEnd = false;
+    public bool _isLock = false;
 
     // player movement
     public bool _isMoving = false;
-    private bool _isJumping = false;
     [SerializeField] float moveSpeed = 3.0f;
-    [SerializeField] float jumpPower = 2.0f;
 
     // player interactions
     private Door touchDoor;
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
     Animator playerAnim;
     AudioSource playerAudioSource;
     [SerializeField] AudioClip walkclip;
-    [SerializeField] AudioClip jumpclip;
     Rigidbody rigid;
 
     CanvasManager canvasManager;
@@ -40,9 +38,11 @@ public class PlayerController : MonoBehaviour
     {
         if (!_isEnd)
         {
-            PlayerMove();
-            PlayerJump();
-            MouseClick();
+            if (!_isLock)
+            {
+                PlayerMove();
+                MouseClick();
+            }
         }
     }
 
@@ -54,28 +54,13 @@ public class PlayerController : MonoBehaviour
         if (h != 0 || v != 0)
         {
             _isMoving = true;
-            if (!_isJumping)
-            {
-                if (!playerAudioSource.isPlaying)
-                    playerAudioSource.PlayOneShot(walkclip);
-                playerAnim.Play("Run");
-            }
+            if (!playerAudioSource.isPlaying)
+                playerAudioSource.PlayOneShot(walkclip);
+            playerAnim.Play("Run");
             transform.Translate((new Vector3(h, 0, v) * moveSpeed) * Time.deltaTime);
         }
         else
             _isMoving = false;
-    }
-    private void PlayerJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
-        {
-            _isJumping = true;
-            playerAudioSource.Stop();
-            playerAudioSource.PlayOneShot(jumpclip);
-
-            playerAnim.Play("Jump");
-            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-        }
     }
 
     private void MouseClick()
@@ -83,7 +68,7 @@ public class PlayerController : MonoBehaviour
         // left click
         if (Input.GetMouseButtonDown(0) && touchDoor)
         {
-            _isEnd = touchDoor.DoorOpen(_wherePlayer);
+            touchDoor.DoorOpen(_wherePlayer);
             canvasManager.DoorInteractPanelOff();
         }
         // right click
@@ -91,22 +76,18 @@ public class PlayerController : MonoBehaviour
         {
             touchDoor.DoorFlag(_wherePlayer);
         }
-
-        if (_isEnd)
-        {
-            PlayerDie();
-        }
     }
 
-    private void PlayerDie()
+    public void PlayerDie()
     {
         Debug.Log("게임 종료");
+        _isEnd = true;
+        // 마우스 잠금 해제/ 애니메이션
     }
-
-    private void OnCollisionEnter(Collision collision)
+    public void PlayerGameClear()
     {
-        if (collision.gameObject.CompareTag("Floor"))
-            _isJumping = false;
+        _isEnd = true;
+        // 마우스 잠금 해제
     }
 
     private void OnTriggerEnter(Collider other)

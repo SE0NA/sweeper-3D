@@ -14,6 +14,7 @@ public class CanvasManager : MonoBehaviour
 
     int restBomb;
 
+    public bool _isEnd = false;
     public int min = 0;
     public float sec = 0;
 
@@ -27,7 +28,10 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-        SetTimer();
+        if (!_isEnd)
+        {
+            SetTimer();
+        }
     }
 
     public void SetScannerTo(int scannerValue)
@@ -62,5 +66,14 @@ public class CanvasManager : MonoBehaviour
     public void DoorInteractPanelOff()
     {
         panel_doorInteraction.SetActive(false);
+    }
+
+    public void GameClearUI()
+    {
+        _isEnd = true;
+    }
+    public void GameOverUI()
+    {
+        _isEnd = true;
     }
 }

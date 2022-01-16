@@ -18,7 +18,15 @@ public class Room : MonoBehaviour
     public bool _isFlag = false;
     public int _aroundBomb = 0;
 
+    [SerializeField] Light ceilLight;
     [SerializeField] List<Light> _stateLights;
+
+    GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     public int GetRoomNum()
     {
@@ -32,11 +40,13 @@ public class Room : MonoBehaviour
 
         if (_isBomb)
         {
-
+            ceilLight.enabled = true;
+            gameManager.GameOver();
         }
         else
         {
             _isOpened = true;
+            gameManager.CheckGameClear();
         }
     }
     public void RoomFlag()

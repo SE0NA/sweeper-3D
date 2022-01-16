@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     [SerializeField] GameObject rightdoor; 
 
 
-    public bool DoorOpen(int wherePlayer)
+    public void DoorOpen(int wherePlayer)
     {
         leftdoor.GetComponent<BoxCollider>().enabled = false;
         rightdoor.GetComponent<BoxCollider>().enabled = false;
@@ -19,18 +19,11 @@ public class Door : MonoBehaviour
         GetComponent<AudioSource>().Play(); // 문 열림 사운드
         GetComponent<BoxCollider>().enabled = false;    // 더이상 상호작용 불가
 
-        Room openedRoom;
         // 방 열기
         if (wherePlayer == _room1.GetRoomNum())
-            openedRoom=_room2;
+            _room2.RoomOpen();
         else
-            openedRoom=_room1;
-
-        openedRoom.RoomOpen();
-        if (openedRoom._isBomb)
-            return true;
-        else
-            return false;
+            _room1.RoomOpen();
     }
 
     public void DoorFlag(int wherePlayer)
