@@ -2515,7 +2515,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4555062712112460}
   - component: {fileID: 95565753606369354}
+  - component: {fileID: 2283293969671610185}
   - component: {fileID: 7220462687236498587}
+  - component: {fileID: 6138445801613789088}
   m_Layer: 0
   m_Name: Robot_Soldier_Black
   m_TagString: Player
@@ -2563,6 +2565,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2283293969671610185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981860918171908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ea45c9dc132ce48bc29364b79568f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wherePlayer: 0
+  _isEnd: 0
+  moveSpeed: 5
+  jumpPower: 2
+  myCamera: {fileID: 1317203853711113400}
+  walkclip: {fileID: 0}
+  jumpclip: {fileID: 0}
 --- !u!65 &7220462687236498587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2576,6 +2597,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8, z: 0.5}
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!54 &6138445801613789088
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981860918171908}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1995085305086754
 GameObject:
   m_ObjectHideFlags: 0
