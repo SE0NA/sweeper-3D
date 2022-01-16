@@ -7,17 +7,22 @@ public class Stage : MonoBehaviour
     [SerializeField] int _countALine;
     [SerializeField] int _startRoomNum;
     [SerializeField] List<Room> _roomList;
-    [SerializeField] int _totalBomb;
+    public int _totalBomb;
 
-    void SetBomb()
+    private void Start()
+    {
+        SetBomb();
+    }
+
+    private void SetBomb()
     {
         int count = 0;
         while (count < _totalBomb)
         {
             int i = Random.Range(0, 24);
-            if(!_roomList[i]._isBomb &&
-               i < _startRoomNum-1 && i > _startRoomNum+1 &&
-               i != _startRoomNum+_countALine && i != _startRoomNum - _countALine)
+            if (!_roomList[i]._isBomb &&
+               (i < _startRoomNum - 1 || i > _startRoomNum + 1) &&
+               i != _startRoomNum + _countALine && i != _startRoomNum - _countALine)
             {
                 _roomList[i]._isBomb = true;
                 count++;

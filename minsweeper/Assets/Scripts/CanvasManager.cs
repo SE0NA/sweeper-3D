@@ -12,25 +12,30 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject panel_doorInteraction;
     [SerializeField] List<Color> scannerTextColor;
 
+    int restBomb;
+
     public int min = 0;
     public float sec = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        restBomb = FindObjectOfType<Stage>()._totalBomb;
         SetScannerTo(0);
+        txt_restBomb.text = restBomb.ToString();
     }
 
     void Update()
     {
         SetTimer();
-
     }
 
     public void SetScannerTo(int scannerValue)
     {
         txt_scanner.text = scannerValue.ToString();
-        txt_scanner.color = scannerTextColor[scannerValue];
+        txt_scanner.color = new Color(scannerTextColor[scannerValue].r
+                                    , scannerTextColor[scannerValue].g
+                                    , scannerTextColor[scannerValue].b);
     }
 
     void SetTimer()
@@ -41,6 +46,13 @@ public class CanvasManager : MonoBehaviour
             sec -= 60f;  min++;
         }
         txt_timer.text = min.ToString() + ":" + ((int)sec).ToString();
+    }
+
+    public void SetRestBomb(bool Add)
+    {
+        if (Add)    restBomb++;
+        else        restBomb--;
+        txt_restBomb.text = restBomb.ToString();
     }
 
     public void DoorInteractPanelOn()

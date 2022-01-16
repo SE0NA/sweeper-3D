@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     // player movement
     public bool _isMoving = false;
     private bool _isJumping = false;
-    [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] float moveSpeed = 3.0f;
     [SerializeField] float jumpPower = 2.0f;
 
     // player interactions
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     AudioSource playerAudioSource;
     [SerializeField] AudioClip walkclip;
     [SerializeField] AudioClip jumpclip;
-    private Rigidbody rigidbody;
+    Rigidbody rigid;
 
     CanvasManager canvasManager;
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         playerAnim = GetComponent<Animator>();
         playerAudioSource = GetComponent<AudioSource>();
-        rigidbody = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();
 
         canvasManager = FindObjectOfType<CanvasManager>();
     }
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
             playerAudioSource.PlayOneShot(jumpclip);
 
             playerAnim.Play("Jump");
-            rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
     }
 
@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && touchDoor)
         {
             _isEnd = touchDoor.DoorOpen(_wherePlayer);
+            canvasManager.DoorInteractPanelOff();
         }
         // right click
         else if (Input.GetMouseButtonDown(1) && touchDoor)
@@ -114,6 +115,7 @@ public class PlayerController : MonoBehaviour
         {
             _wherePlayer = other.GetComponent<Room>().GetRoomNum();
             canvasManager.SetScannerTo(other.GetComponent<Room>()._aroundBomb);
+            Debug.Log("방에 들어감: " + other.GetComponent<Room>()._aroundBomb);
         }
         else if (other.gameObject.CompareTag("Door"))
         {
