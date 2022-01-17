@@ -10,6 +10,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] Text txt_scanner;
 
     [SerializeField] GameObject panel_doorInteraction;
+    [SerializeField] GameObject panel_gameEnd;
+    [SerializeField] Text txt_gameEnd;
     [SerializeField] List<Color> scannerTextColor;
 
     int restBomb;
@@ -58,6 +60,11 @@ public class CanvasManager : MonoBehaviour
         else        restBomb--;
         txt_restBomb.text = restBomb.ToString();
     }
+    public void SetRestBomb(int start)
+    {
+        restBomb = start;
+        txt_restBomb.text = restBomb.ToString();
+    }
 
     public void DoorInteractPanelOn()
     {
@@ -68,12 +75,17 @@ public class CanvasManager : MonoBehaviour
         panel_doorInteraction.SetActive(false);
     }
 
-    public void GameClearUI()
+    public void GameEndUI(bool isClear)
     {
         _isEnd = true;
-    }
-    public void GameOverUI()
-    {
-        _isEnd = true;
+        if (isClear)
+        {
+            txt_gameEnd.text = "축하드립니다!";
+        }
+        else
+        {
+            txt_gameEnd.text = "게임 오버";
+        }
+        panel_gameEnd.SetActive(true);
     }
 }

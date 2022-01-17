@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stage : MonoBehaviour
 {
     [SerializeField] int _countALine;
-    [SerializeField] int _startRoomNum;
+    public int _startRoomNum;
     public List<Room> _roomList;
     public int _totalBomb;
 

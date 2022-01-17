@@ -20,12 +20,17 @@ public class Room : MonoBehaviour
 
     [SerializeField] Light ceilLight;
     [SerializeField] List<Light> _stateLights;
+    [SerializeField] GameObject _mapPanel;
+
+    public Transform roomPos;
 
     GameManager gameManager;
+    CanvasManager canvasManager;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        canvasManager = FindObjectOfType<CanvasManager>();
     }
 
     public int GetRoomNum()
@@ -52,12 +57,13 @@ public class Room : MonoBehaviour
     public void RoomFlag()
     {
         _isFlag = true;
-
+        canvasManager.SetRestBomb(false);
         StateLightOn();
     }
     public void RoomUnFlag()
     {
         _isFlag = false;
+        canvasManager.SetRestBomb(true);
         StateLightOff();
     }
 
