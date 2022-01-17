@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     public int _wherePlayer;
     public bool _isEnd = false;
     public bool _isLock = false;
+    public bool _isMap = false;
 
     // player movement
     public bool _isMoving = false;
     [SerializeField] float moveSpeed = 3.0f;
+    [SerializeField] float sensitivity = 2.0f;
 
     // player interactions
     private Door touchDoor;
@@ -32,17 +34,29 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
 
         canvasManager = FindObjectOfType<CanvasManager>();
+
+        // Lock Cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
         if (!_isEnd)
         {
-            if (!_isLock)
+            if (!_isLock)   // unlock
             {
+                // 이동, 문 상호작용
                 PlayerMove();
                 MouseClick();
+                PlayerRotate();
+                CursorUnLock();
             }
+            else
+            {
+                CursorLock();
+            }
+           
         }
     }
 
@@ -63,6 +77,12 @@ public class PlayerController : MonoBehaviour
             _isMoving = false;
     }
 
+    private void PlayerRotate()
+    {
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(Vector3.up * sensitivity * mouseX);
+    }
+
     private void MouseClick()
     {
         // left click
@@ -75,6 +95,25 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetMouseButtonDown(1) && touchDoor)
         {
             touchDoor.DoorFlag(_wherePlayer);
+        }
+    }
+
+    private void CursorUnLock()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            _isLock = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+    private void CursorLock()
+    {
+        if (Input.GetKeyDown(KeyCode.Z) && !_isMap)
+        {
+            _isLock = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
