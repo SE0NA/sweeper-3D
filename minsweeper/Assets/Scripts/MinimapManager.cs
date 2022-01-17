@@ -7,16 +7,23 @@ public class MinimapManager : MonoBehaviour
     [SerializeField] Camera mapCam;
     [SerializeField] GameObject mapPointer;
 
-    PlayerController _player;
+    PlayerController _player = null;
+    Vector3 thisPos;
 
     public void Start()
     {
         _player = FindObjectOfType<PlayerController>();
+        thisPos = new Vector3(_player.transform.position.x
+                            , gameObject.transform.position.y
+                            , _player.transform.position.z);
+        gameObject.transform.position = thisPos;
     }
 
     void Update()
     {
-        gameObject.transform.position.Set(_player.transform.position.x
-                            , transform.position.y, _player.transform.position.z);
+        thisPos = new Vector3(_player.transform.position.x
+                            , gameObject.transform.position.y
+                            , _player.transform.position.z);
+        gameObject.transform.position = thisPos;
     }
 }
