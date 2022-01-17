@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6010482606346555775}
   - component: {fileID: 7226767672164731576}
   - component: {fileID: 4242858381001650109}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
-  m_TagString: RoomPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,9 +432,9 @@ GameObject:
   - component: {fileID: 1639318726718116489}
   - component: {fileID: 5214337127198132239}
   - component: {fileID: 1994518019437581300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roomPanel
-  m_TagString: RoomPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -31,6 +31,7 @@ public class Room : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         canvasManager = FindObjectOfType<CanvasManager>();
+        _mapPanel.GetComponent<MeshRenderer>().material.color = Color.black;
     }
 
     public int GetRoomNum()
@@ -51,6 +52,7 @@ public class Room : MonoBehaviour
         else
         {
             _isOpened = true;
+            _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
             gameManager.CheckGameClear();
         }
     }
@@ -58,12 +60,14 @@ public class Room : MonoBehaviour
     {
         _isFlag = true;
         canvasManager.SetRestBomb(false);
+        _mapPanel.GetComponent<MeshRenderer>().material.color = Color.yellow;
         StateLightOn();
     }
     public void RoomUnFlag()
     {
         _isFlag = false;
         canvasManager.SetRestBomb(true);
+        _mapPanel.GetComponent<MeshRenderer>().material.color = Color.black;
         StateLightOff();
     }
 

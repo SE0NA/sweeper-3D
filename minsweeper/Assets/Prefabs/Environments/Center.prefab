@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5939420612091710827}
   - component: {fileID: 7014400760737456237}
   - component: {fileID: 5573134898770455357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roomPanel
-  m_TagString: RoomPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,6 @@ MonoBehaviour:
   ceilLight: {fileID: 2446386801066794326}
   _stateLights: []
   _mapPanel: {fileID: 994241629561479234}
-  _maptxtNum: {fileID: 0}
   roomPos: {fileID: 7445858304445842362}
 --- !u!1 &2446386801391282552
 GameObject:
@@ -361,9 +360,9 @@ GameObject:
   - component: {fileID: 599931321613999831}
   - component: {fileID: 3688069738175684709}
   - component: {fileID: 7603911111450715999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
-  m_TagString: RoomPanel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

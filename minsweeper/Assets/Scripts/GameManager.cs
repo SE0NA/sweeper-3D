@@ -10,16 +10,19 @@ public class GameManager : MonoBehaviour
     Stage stage;
     CanvasManager canvasManager;
 
-    private void Start()
+    private void Awake()
     {
         stage = FindObjectOfType<Stage>();
         canvasManager = FindObjectOfType<CanvasManager>();
 
         canvasManager.SetRestBomb(stage._totalBomb);
 
+        stage._roomList[stage._startRoomNum].RoomOpen();
+
         // create player object
         _player = Instantiate(playerObject);
         _player.transform.position = stage._roomList[stage._startRoomNum].roomPos.position;
+
     }
 
     public void CheckGameClear()    // 지뢰를 제외한 모든 방이 열리면 게임 클리어
