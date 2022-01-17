@@ -53,7 +53,6 @@ public class Room : MonoBehaviour
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
-            gameManager.CheckGameClear();
         }
     }
     public void RoomFlag()

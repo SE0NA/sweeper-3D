@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject playerObject;
-
-    GameObject _player;
+    PlayerController player;
     Stage stage;
     CanvasManager canvasManager;
 
     private void Awake()
     {
+        player = FindObjectOfType<PlayerController>();
         stage = FindObjectOfType<Stage>();
         canvasManager = FindObjectOfType<CanvasManager>();
 
         canvasManager.SetRestBomb(stage._totalBomb);
+    }
 
+    private void Start()
+    {
         stage._roomList[stage._startRoomNum].RoomOpen();
+        TeleportPlayer(stage._startRoomNum);
+    }
 
-        // create player object
-        _player = Instantiate(playerObject);
-        _player.transform.position = stage._roomList[stage._startRoomNum].roomPos.position;
-
+    public void TeleportPlayer(int roomNum)
+    {
+        player.transform.position = stage._roomList[roomNum].roomPos.position;
     }
 
     public void CheckGameClear()    // 지뢰를 제외한 모든 방이 열리면 게임 클리어

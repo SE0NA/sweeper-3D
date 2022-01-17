@@ -16,7 +16,7 @@ public class MinimapManager : MonoBehaviour
 
     void Update()
     {
-      //  transform.position.Set(_player.transform.position.x
-       //                      , transform.position.y, _player.transform.position.z);
+        gameObject.transform.position.Set(_player.transform.position.x
+                            , transform.position.y, _player.transform.position.z);
     }
 }

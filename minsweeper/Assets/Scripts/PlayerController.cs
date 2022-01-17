@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         {
             _wherePlayer = other.GetComponent<Room>().GetRoomNum();
             canvasManager.SetScannerTo(other.GetComponent<Room>()._aroundBomb);
-            Debug.Log("방에 들어감: " + other.GetComponent<Room>()._aroundBomb);
+            Debug.Log("방에 들어감: " + other.GetComponent<Room>().GetRoomNum());
         }
         else if (other.gameObject.CompareTag("Door"))
         {
