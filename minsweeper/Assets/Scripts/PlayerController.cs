@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rigid;
 
     CanvasManager canvasManager;
+    GameManager gameManager;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
 
         canvasManager = FindObjectOfType<CanvasManager>();
+        gameManager = FindObjectOfType<GameManager>();
 
         // Lock Cursor
         Cursor.visible = false;
@@ -50,13 +52,31 @@ public class PlayerController : MonoBehaviour
                 PlayerMove();
                 MouseClick();
                 PlayerRotate();
-                CursorUnLock();
+                if (Input.GetKeyDown(KeyCode.Z))
+                    CursorUnLock();
             }
-            else
+            else if(!_isMap)
             {
-                CursorLock();
+                if (Input.GetKeyDown(KeyCode.Z))
+                    CursorLock();
             }
-           
+            if (Input.GetKeyDown(KeyCode.M)) 
+            {
+                if (!_isMap)    // open teleport map ui
+                {
+                    CursorUnLock();
+                    gameManager.TeleportUI(true);
+                    _isMap = true;
+                    _isLock = true;
+                }
+                else            // close teleport map ui
+                {
+                    CursorLock();
+                    gameManager.TeleportUI(false);
+                    _isMap = false;
+                    _isLock = false;
+                }
+            }
         }
     }
 
@@ -98,23 +118,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void CursorUnLock()
+    public void CursorUnLock()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            _isLock = true;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        _isLock = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
-    private void CursorLock()
+    public void CursorLock()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !_isMap)
-        {
-            _isLock = false;
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        _isLock = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void PlayerDie()

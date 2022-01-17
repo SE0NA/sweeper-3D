@@ -26,11 +26,13 @@ public class Room : MonoBehaviour
 
     GameManager gameManager;
     CanvasManager canvasManager;
+    Teleport teleport;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         canvasManager = FindObjectOfType<CanvasManager>();
+        teleport = FindObjectOfType<Teleport>();
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.black;
     }
 
@@ -47,12 +49,14 @@ public class Room : MonoBehaviour
         if (_isBomb)
         {
             ceilLight.enabled = true;
+            _mapPanel.GetComponent<MeshRenderer>().material.color = Color.red;
             gameManager.GameOver();
         }
         else
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
+            teleport.ChangeBtnColor(1, _roomNum);
         }
     }
     public void RoomFlag()
@@ -60,6 +64,7 @@ public class Room : MonoBehaviour
         _isFlag = true;
         canvasManager.SetRestBomb(false);
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.yellow;
+        teleport.ChangeBtnColor(2, _roomNum);
         StateLightOn();
     }
     public void RoomUnFlag()
@@ -67,6 +72,7 @@ public class Room : MonoBehaviour
         _isFlag = false;
         canvasManager.SetRestBomb(true);
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.black;
+        teleport.ChangeBtnColor(3, _roomNum);
         StateLightOff();
     }
 

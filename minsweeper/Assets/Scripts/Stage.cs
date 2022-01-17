@@ -9,7 +9,7 @@ public class Stage : MonoBehaviour
     public List<Room> _roomList;
     public int _totalBomb;
 
-    private void Start()
+    private void Awake()
     {
         SetBomb();
     }
