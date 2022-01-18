@@ -133,14 +133,13 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerDie()
     {
-        Debug.Log("게임 종료");
         _isEnd = true;
-        // 마우스 잠금 해제/ 애니메이션
+        CursorUnLock();
     }
     public void PlayerGameClear()
     {
         _isEnd = true;
-        // 마우스 잠금 해제
+        CursorUnLock();
     }
 
     private void OnTriggerEnter(Collider other)

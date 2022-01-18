@@ -47,12 +47,12 @@ public class GameManager : MonoBehaviour
 
     private void GameClear()
     {
-        FindObjectOfType<CanvasManager>().GameEndUI(true);
-        FindObjectOfType<PlayerController>().PlayerGameClear();
+        canvasManager.GameEndUI(true);
+        player.PlayerGameClear();
     }
     public void GameOver()
     {
-        FindObjectOfType<PlayerController>().PlayerDie();
-        FindObjectOfType<CanvasManager>().GameEndUI(false);
+        canvasManager.GameEndUI(false);
+        player.PlayerDie();
     }
 }
