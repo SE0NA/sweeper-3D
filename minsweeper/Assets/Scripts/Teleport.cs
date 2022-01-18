@@ -45,5 +45,6 @@ public class Teleport : MonoBehaviour
                 transform.GetChild(roomNum).GetComponent<Image>().color = Color.cyan;
                 break;
         }
+        Debug.Log("»ö ¹Ù²ñ");
     }
 }
