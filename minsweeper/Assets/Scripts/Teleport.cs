@@ -18,6 +18,7 @@ public class Teleport : MonoBehaviour
         {
             transform.GetChild(i).GetComponent<Image>().color = Color.gray;
         }
+        transform.GetChild(stage._startRoomNum).GetComponent<Image>().color = Color.white;
     }
 
     public void TeleportBtnClick(int teleportTo)
@@ -28,7 +29,7 @@ public class Teleport : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ChangeBtnColor(int state, int roomNum) // 1: white(open) 2: yellow(flag) 3: gray(none) 4: red(bomb)
+    public void ChangeBtnColor(int state, int roomNum) // 1: white(open) 2: yellow(flag) 3: gray(none) 4: cyan(nowplayer) 5: red(bomb)
     {
         switch (state) {
             case 1:
@@ -39,6 +40,9 @@ public class Teleport : MonoBehaviour
                 break;
             case 3:
                 transform.GetChild(roomNum).GetComponent<Image>().color = Color.gray;
+                break;
+            case 4:
+                transform.GetChild(roomNum).GetComponent<Image>().color = Color.cyan;
                 break;
         }
     }
