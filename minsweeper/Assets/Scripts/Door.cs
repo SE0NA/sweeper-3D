@@ -13,8 +13,6 @@ public class Door : MonoBehaviour
 
     public void DoorOpen(int wherePlayer)
     {
-        leftdoor.GetComponent<BoxCollider>().enabled = false;
-        rightdoor.GetComponent<BoxCollider>().enabled = false;
         GetComponent<Animation>().Play();   // 문 열림 애니메이션
         GetComponent<AudioSource>().Play(); // 문 열림 사운드
         GetComponent<BoxCollider>().enabled = false;    // 더이상 상호작용 불가
