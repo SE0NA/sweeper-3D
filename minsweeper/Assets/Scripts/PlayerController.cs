@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     CanvasManager canvasManager;
     GameManager gameManager;
+    InGameMenuBtn ingameMenuBtn;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
         canvasManager = FindObjectOfType<CanvasManager>();
         gameManager = FindObjectOfType<GameManager>();
+        ingameMenuBtn = FindObjectOfType<InGameMenuBtn>();
 
         // Lock Cursor
         Cursor.visible = false;
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            ingameMenuBtn.PlayBtnClip(1);
             if (!_isStopAll)
             {
                 _isStopAll = true;
@@ -95,12 +98,14 @@ public class PlayerController : MonoBehaviour
                 canvasManager.ESCMenu(true);
             }
             else
-            {
-                _isStopAll = false;
-                CursorLock();
-                canvasManager.ESCMenu(false);
-            }
+                gameContinue();
         }
+    }
+    public void gameContinue()
+    {
+        _isStopAll = false;
+        CursorLock();
+        canvasManager.ESCMenu(false);
     }
 
     private void PlayerMove()
