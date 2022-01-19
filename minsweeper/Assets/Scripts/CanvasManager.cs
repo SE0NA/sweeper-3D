@@ -13,10 +13,11 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject panel_gameEnd;
     [SerializeField] Text txt_gameEnd;
     [SerializeField] List<Color> scannerTextColor;
+    [SerializeField] GameObject panel_escMenu;
 
     int restBomb;
 
-    public bool _isEnd = false;
+    public bool _isStopAll = false;
     public int min = 0;
     public float sec = 0;
 
@@ -30,7 +31,7 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-        if (!_isEnd)
+        if (!_isStopAll)
         {
             SetTimer();
         }
@@ -75,9 +76,23 @@ public class CanvasManager : MonoBehaviour
         panel_doorInteraction.SetActive(false);
     }
 
+    public void ESCMenu(bool open)
+    {
+        if (open)
+        {
+            _isStopAll = true;
+            panel_escMenu.SetActive(true);
+        }
+        else
+        {
+            _isStopAll = false;
+            panel_escMenu.SetActive(false);
+        }
+    }
+
     public void GameEndUI(bool isClear)
     {
-        _isEnd = true;
+        _isStopAll = true;
         if (isClear)
         {
             txt_gameEnd.text = "축하드립니다!";

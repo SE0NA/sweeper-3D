@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public int _wherePlayer;
-    public bool _isEnd = false;
+    public bool _isStopAll = false;
     public bool _isLock = false;
     public bool _isMap = false;
 
@@ -47,7 +46,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!_isEnd)
+        ESCMenu();
+        if (!_isStopAll)
         {
             if (!_isLock)   // unlock
             {
@@ -80,6 +80,25 @@ public class PlayerController : MonoBehaviour
                     _isMap = false;
                     _isLock = false;
                 }
+            }
+        }
+    }
+
+    private void ESCMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!_isStopAll)
+            {
+                _isStopAll = true;
+                CursorUnLock();
+                canvasManager.ESCMenu(true);
+            }
+            else
+            {
+                _isStopAll = false;
+                CursorLock();
+                canvasManager.ESCMenu(false);
             }
         }
     }
@@ -147,12 +166,12 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerDie()
     {
-        _isEnd = true;
+        _isStopAll = true;
         CursorUnLock();
     }
     public void PlayerGameClear()
     {
-        _isEnd = true;
+        _isStopAll = true;
         CursorUnLock();
     }
 
