@@ -56,7 +56,6 @@ public class Room : MonoBehaviour
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
-            teleport.ChangeBtnColor(1, _roomNum);
         }
     }
     public void RoomFlag()
@@ -64,7 +63,6 @@ public class Room : MonoBehaviour
         _isFlag = true;
         canvasManager.SetRestBomb(false);
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.yellow;
-        teleport.ChangeBtnColor(2, _roomNum);
         StateLightOn();
     }
     public void RoomUnFlag()
@@ -72,7 +70,6 @@ public class Room : MonoBehaviour
         _isFlag = false;
         canvasManager.SetRestBomb(true);
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.black;
-        teleport.ChangeBtnColor(3, _roomNum);
         StateLightOff();
     }
 

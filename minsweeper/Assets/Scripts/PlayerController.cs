@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
 
     // player movement
     public bool _isMoving = false;
-    [SerializeField] float moveSpeed = 3.0f;
+    private bool _isJumping = false;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float jumpPower;
     [SerializeField] float sensitivity = 2.0f;
 
     // player interactions
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     Animator playerAnim;
     AudioSource playerAudioSource;
     [SerializeField] AudioClip walkclip;
+    [SerializeField] AudioClip jumpclip;
     Rigidbody rigid;
 
     CanvasManager canvasManager;
@@ -50,6 +53,7 @@ public class PlayerController : MonoBehaviour
             {
                 // 이동, 문 상호작용
                 PlayerMove();
+                PlayerJump();
                 MouseClick();
                 PlayerRotate();
                 if (Input.GetKeyDown(KeyCode.Z))
@@ -96,6 +100,16 @@ public class PlayerController : MonoBehaviour
         else
             _isMoving = false;
     }
+    private void PlayerJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)&&!_isJumping) {
+            _isJumping = true;
+            playerAudioSource.PlayOneShot(jumpclip);
+            playerAnim.Play("Jump");
+            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
+    }
+
 
     private void PlayerRotate()
     {
@@ -140,6 +154,14 @@ public class PlayerController : MonoBehaviour
     {
         _isEnd = true;
         CursorUnLock();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            _isJumping = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

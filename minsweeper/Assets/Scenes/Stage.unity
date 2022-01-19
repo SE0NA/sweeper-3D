@@ -1685,7 +1685,7 @@ Transform:
   m_GameObject: {fileID: 340478142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 31, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 2141401602}
   m_RootOrder: 1
@@ -2061,6 +2061,14 @@ PrefabInstance:
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283293969671610185, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: jumpclip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+    - target: {fileID: 2283293969671610185, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: jumpPower
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2283293969671610185, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: moveSpeed
@@ -4748,7 +4756,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 15
+  m_Text: 14
 --- !u!222 &1374293474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7550,7 +7558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 15
 --- !u!222 &2145953517
 CanvasRenderer:
   m_ObjectHideFlags: 0

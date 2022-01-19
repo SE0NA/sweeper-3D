@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Teleport : MonoBehaviour
 {
-    Stage stage;
-    PlayerController player;
+    Stage stage = null;
+    PlayerController player = null;
 
     private void Start()
     {
@@ -19,6 +19,8 @@ public class Teleport : MonoBehaviour
             transform.GetChild(i).GetComponent<Image>().color = Color.gray;
         }
         transform.GetChild(stage._startRoomNum).GetComponent<Image>().color = Color.white;
+        
+        gameObject.SetActive(false);
     }
 
     public void TeleportBtnClick(int teleportTo)
@@ -29,22 +31,17 @@ public class Teleport : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ChangeBtnColor(int state, int roomNum) // 1: white(open) 2: yellow(flag) 3: gray(none) 4: cyan(nowplayer) 5: red(bomb)
+    public void TeleportUISetting() // Set button color
     {
-        switch (state) {
-            case 1:
-                transform.GetChild(roomNum).GetComponent<Image>().color = Color.white;
-                break;
-            case 2:
-                transform.GetChild(roomNum).GetComponent<Image>().color = Color.yellow;
-                break;
-            case 3:
-                transform.GetChild(roomNum).GetComponent<Image>().color = Color.gray;
-                break;
-            case 4:
-                transform.GetChild(roomNum).GetComponent<Image>().color = Color.cyan;
-                break;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (stage._roomList[i]._isOpened)
+                transform.GetChild(i).GetComponent<Image>().color = Color.white;
+            else if (stage._roomList[i]._isFlag)
+                transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
+            else
+                transform.GetChild(i).GetComponent<Image>().color = Color.gray;
         }
-        Debug.Log("»ö ¹Ù²ñ");
+        transform.GetChild(player._wherePlayer).GetComponent<Image>().color = Color.green;
     }
 }

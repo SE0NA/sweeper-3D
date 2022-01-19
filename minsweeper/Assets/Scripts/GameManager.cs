@@ -17,19 +17,22 @@ public class GameManager : MonoBehaviour
         teleport = FindObjectOfType<Teleport>();
 
         canvasManager.SetRestBomb(stage._totalBomb);
+        player.transform.position = stage._roomList[stage._startRoomNum].roomPos.position;
+        player._wherePlayer = stage._startRoomNum;
     }
 
     private void Start()
     {
-        teleport.gameObject.SetActive(false);
         stage._roomList[stage._startRoomNum].RoomOpen();
-        player.transform.position = stage._roomList[stage._startRoomNum].roomPos.position;
     }
 
     public void TeleportUI(bool open)
     {
         if (open)
+        {
             teleport.gameObject.SetActive(true);
+            teleport.TeleportUISetting();
+        }
         else
             teleport.gameObject.SetActive(false);
     }
