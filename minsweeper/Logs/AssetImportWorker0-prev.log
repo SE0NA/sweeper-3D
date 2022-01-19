@@ -15,11 +15,11 @@ D:/Capstone/minsweeper
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62585
+64093
 Successfully changed project path to: D:/Capstone/minsweeper
 D:/Capstone/minsweeper
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 68.64 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 97.00 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.26f1 (7298b473bc1a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -35,1673 +35,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56992
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004509 seconds.
+Registered in 0.008235 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 57.54 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 157.53 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.832 seconds
+- Completed reload, in  1.896 seconds
 Domain Reload Profiling:
-	ReloadAssembly (832ms)
-		BeginReloadAssembly (74ms)
+	ReloadAssembly (1896ms)
+		BeginReloadAssembly (98ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (642ms)
-			LoadAssemblies (70ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1615ms)
+			LoadAssemblies (91ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (214ms)
+			SetupTypeCache (588ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (246ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (450ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (58ms)
-				BeforeProcessingInitializeOnLoad (24ms)
-				ProcessInitializeOnLoadAttributes (117ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
+				RefreshPlugins (158ms)
+				BeforeProcessingInitializeOnLoad (48ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (62ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.012896 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.97 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.892 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1894ms)
-		BeginReloadAssembly (308ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (41ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (1469ms)
-			LoadAssemblies (157ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (485ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (85ms)
-			SetupLoadedEditorAssemblies (569ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
-				SetLoadedEditorAssemblies (3ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (135ms)
-				ProcessInitializeOnLoadAttributes (384ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (16ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1525 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 72.5 MB.
-System memory in use after: 72.6 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1966.
-Total: 2.987400 ms (FindLiveObjects: 0.157800 ms CreateObjectMapping: 0.066900 ms MarkObjects: 2.720200 ms  DeleteObjects: 0.041500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/Ash Valley Cybernetics Lite/Ambiences/MP3/Nautural/Rain 3.mp3
-  artifactKey: Guid(4c894fc40d959453cb3aef940e90dc07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/Ambiences/MP3/Nautural/Rain 3.mp3 using Guid(4c894fc40d959453cb3aef940e90dc07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2455fe8fe9b952d10c0bfd316941de11') in 0.152322 seconds 
-  Import took 0.157580 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000307 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/Ambiences/MP3/Nautural
-  artifactKey: Guid(9452bd38b047f47aebd67327b8a2e168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/Ambiences/MP3/Nautural using Guid(9452bd38b047f47aebd67327b8a2e168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c19574794e07bf9e85a147c60e228f81') in 0.036718 seconds 
-  Import took 0.054277 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001050 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/Ambiences/MP3/The Drone Of A Dying Star.mp3
-  artifactKey: Guid(55d7be49db78745378717caed62462bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/Ambiences/MP3/The Drone Of A Dying Star.mp3 using Guid(55d7be49db78745378717caed62462bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82097487916ffe79dd9dc22d36f80c57') in 0.062361 seconds 
-  Import took 0.077112 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000334 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/Ambiences/MP3
-  artifactKey: Guid(20e86f4165c7a4f41881555a7f1adf39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/Ambiences/MP3 using Guid(20e86f4165c7a4f41881555a7f1adf39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32e3a06cd85f3081f9bb1f124e082e16') in 0.016490 seconds 
-  Import took 0.025798 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 45.915000 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead
-  artifactKey: Guid(09f55b7e1ac7545b8a5370e0c4bf4a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead using Guid(09f55b7e1ac7545b8a5370e0c4bf4a39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27284404fa3bf3b8e2d340723fd0a023') in 0.060144 seconds 
-  Import took 0.067495 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.563904 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Access
-  artifactKey: Guid(b40288ef1c0c24f12860b2a57cbe1efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Access using Guid(b40288ef1c0c24f12860b2a57cbe1efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f7edb4798cf512bbcaefcc895a69cb0') in 0.026954 seconds 
-  Import took 0.032686 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.202146 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Access/please stand clearOVERHEAD.mp3
-  artifactKey: Guid(6c25d0e0fd3984a15a9a28dc581321fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Access/please stand clearOVERHEAD.mp3 using Guid(6c25d0e0fd3984a15a9a28dc581321fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '387949008fabead9bffee940a29e4dab') in 0.059864 seconds 
-  Import took 0.063909 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.745844 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Announcements/we thank you for your serviceOVERHEAD.mp3
-  artifactKey: Guid(4ea2386567c974d88a8f142a9b407ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Announcements/we thank you for your serviceOVERHEAD.mp3 using Guid(4ea2386567c974d88a8f142a9b407ca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56fc1bd1ac5732ae3e98cb38b2de712b') in 0.047520 seconds 
-  Import took 0.052488 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Announcements/welcomeOVERHEAD.mp3
-  artifactKey: Guid(26c212c7d989d42acbe802823a033bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Announcements/welcomeOVERHEAD.mp3 using Guid(26c212c7d989d42acbe802823a033bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '566228bcecca17a5b932c1cc6f4dbdd4') in 0.053483 seconds 
-  Import took 0.057068 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.946176 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/roomOVERHEAD.mp3
-  artifactKey: Guid(042b94b79ab944f4ab90ca96f53c3178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/roomOVERHEAD.mp3 using Guid(042b94b79ab944f4ab90ca96f53c3178) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53cf9eb7f16e4db59bf8b9434601f0d5') in 0.039679 seconds 
-  Import took 0.045258 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000304 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/science stationOVERHEAD.mp3
-  artifactKey: Guid(11c6eac09db0249598f0ad09cb9c2a6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/science stationOVERHEAD.mp3 using Guid(11c6eac09db0249598f0ad09cb9c2a6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8de35aad251583d1487e851dd62dc787') in 0.070965 seconds 
-  Import took 0.075410 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003823 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/warningOVERHEAD.mp3
-  artifactKey: Guid(3e09d60b115f74acba0ced6eded1162a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/warningOVERHEAD.mp3 using Guid(3e09d60b115f74acba0ced6eded1162a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbc7bf7d917c7e4d72e13e0c9cf9d629') in 0.108069 seconds 
-  Import took 0.112737 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.145556 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/Percentage
-  artifactKey: Guid(4cd86229d4a35457d91c3fabae8fb195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/C System Mother/Overhead/Combinations/Percentage using Guid(4cd86229d4a35457d91c3fabae8fb195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02f79b762417816b95a0cf7fdafeb11e') in 0.022689 seconds 
-  Import took 0.032714 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 49.202147 seconds.
-  path: Assets/Ash Valley Cybernetics Lite/Digital Dreams/MP3/The Floating Mirror.mp3
-  artifactKey: Guid(cab53ffdb709b451ab71b602a2b8c67b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ash Valley Cybernetics Lite/Digital Dreams/MP3/The Floating Mirror.mp3 using Guid(cab53ffdb709b451ab71b602a2b8c67b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a57a0722a6b9a510d8832b9fefff81f') in 0.049540 seconds 
-  Import took 0.053944 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 707.622706 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface
-  artifactKey: Guid(dc3c3af25608b364db357238b899d54b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface using Guid(dc3c3af25608b364db357238b899d54b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '749cd5b1ab556bc2abb71c29e6583952') in 0.054094 seconds 
-  Import took 0.067635 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.068328 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Alertgeneral_Mono_01.wav
-  artifactKey: Guid(27a27eb1bb7f6984384903ed5f67ac65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Alertgeneral_Mono_01.wav using Guid(27a27eb1bb7f6984384903ed5f67ac65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90f1e478a60f37a03ee6748e894988f8') in 0.113989 seconds 
-  Import took 0.128440 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000790 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Launchmission_Stereo_01.wav
-  artifactKey: Guid(68e7141781dc5ab48833862cc9124218) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Launchmission_Stereo_01.wav using Guid(68e7141781dc5ab48833862cc9124218) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '992ee7f80dc1afdcd9f5d1c476cca0fd') in 0.089236 seconds 
-  Import took 0.097481 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000293 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearch_Stereo_01.wav
-  artifactKey: Guid(755c0b21ddb030f4696fca9261598584) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearch_Stereo_01.wav using Guid(755c0b21ddb030f4696fca9261598584) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1ca0eda21587cf759f7b430941eedf') in 0.076792 seconds 
-  Import took 0.083828 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Alertmessage_Mono_01.wav
-  artifactKey: Guid(d643c515dcbbbd44d8e0882cd9fa519a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Alertmessage_Mono_01.wav using Guid(d643c515dcbbbd44d8e0882cd9fa519a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cb82137d6b31d69fd9c8f035e599913') in 0.086093 seconds 
-  Import took 0.089480 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Mono_01.wav
-  artifactKey: Guid(6937c3770e85c5c43bf69529ddf99eae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Mono_01.wav using Guid(6937c3770e85c5c43bf69529ddf99eae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2593aa7b5d9c045e61bb33ecd7ab98e1') in 0.080664 seconds 
-  Import took 0.083649 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Mono_02.wav
-  artifactKey: Guid(a7124be7819e3b9479532a601301b18e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Mono_02.wav using Guid(a7124be7819e3b9479532a601301b18e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc517d696024a41ef539ed5a66c37ab7') in 0.124236 seconds 
-  Import took 0.127678 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Alertgeneral_Stereo_01.wav
-  artifactKey: Guid(9f29eb11c76617d4d929ba8262684a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Alertgeneral_Stereo_01.wav using Guid(9f29eb11c76617d4d929ba8262684a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d22069a9c685177e56c3d1cdb081461') in 0.221857 seconds 
-  Import took 0.318274 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000343 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuEscape_Stereo_01.wav
-  artifactKey: Guid(e3adecf604c3ebb46a4c91d83f31cad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuEscape_Stereo_01.wav using Guid(e3adecf604c3ebb46a4c91d83f31cad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '798c2c398d22bdad7b4f0b1a0d02f630') in 0.453054 seconds 
-  Import took 0.534821 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Stereo_01.wav
-  artifactKey: Guid(760d54fd5b73c1043b1fc42f0da0eac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Stereo_01.wav using Guid(760d54fd5b73c1043b1fc42f0da0eac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd512e6fa98c1e09d5d143934e65b6f73') in 0.112500 seconds 
-  Import took 0.123313 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Clean_Stereo_01.wav
-  artifactKey: Guid(f9355028ee38a564f9da9a444ce063df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Clean_Stereo_01.wav using Guid(f9355028ee38a564f9da9a444ce063df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd49fe91f2478d3e72411cb15f16f47') in 0.119129 seconds 
-  Import took 0.122705 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000311 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Mono_02.wav
-  artifactKey: Guid(14e3010741c1671449ade7901f3184f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Mono_02.wav using Guid(14e3010741c1671449ade7901f3184f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df9f8655fa0a90ebc4f90012769d78ef') in 0.432308 seconds 
-  Import took 0.443725 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemClick_Stereo_01.wav
-  artifactKey: Guid(b9a870e6633b7434d976c296a02ed853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemClick_Stereo_01.wav using Guid(b9a870e6633b7434d976c296a02ed853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce513320561f84482c853f93a670b7b1') in 0.681072 seconds 
-  Import took 0.688663 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000522 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Mono_02.wav
-  artifactKey: Guid(8f9aef109e59017488ec6a917d3ecae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Mono_02.wav using Guid(8f9aef109e59017488ec6a917d3ecae5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffc97a70d213f75744282c7a89fe449d') in 0.304840 seconds 
-  Import took 0.319695 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000313 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Stereo_02.wav
-  artifactKey: Guid(e88b6c0b608354044b792b860f523d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Stereo_02.wav using Guid(e88b6c0b608354044b792b860f523d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dd3c591f0deb1c67c504ee30478d51b') in 0.254767 seconds 
-  Import took 0.267569 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemClick_Mono_01.wav
-  artifactKey: Guid(d8a96520684ea524b9214ea4188418d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemClick_Mono_01.wav using Guid(d8a96520684ea524b9214ea4188418d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8680e3d36d8d866b8363b0678206eb0e') in 0.097853 seconds 
-  Import took 0.101304 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Mono_02.wav
-  artifactKey: Guid(aa17943a75f223142a3f25d47e248c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Mono_02.wav using Guid(aa17943a75f223142a3f25d47e248c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39b89e2fa69bda66189738647b95c8ad') in 0.072977 seconds 
-  Import took 0.081399 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000257 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Mono_01.wav
-  artifactKey: Guid(d352c28956d5a3a4f9788431cddc57b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Mono_01.wav using Guid(d352c28956d5a3a4f9788431cddc57b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c61756c461537c64cec9b331fa9dafb') in 0.121626 seconds 
-  Import took 0.163946 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000535 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Clean_Mono_01.wav
-  artifactKey: Guid(954018d0e43e5a142889fa1893027ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Clean_Mono_01.wav using Guid(954018d0e43e5a142889fa1893027ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b319b26d626dc75579ccf76ccd2e506') in 0.064743 seconds 
-  Import took 0.068889 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000222 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Stereo_02.wav
-  artifactKey: Guid(f6a4d3a241875ce449c9a5141de732c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_CreateRoute_Stereo_02.wav using Guid(f6a4d3a241875ce449c9a5141de732c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceb3d8f10014583f2808ec34b8e3866b') in 0.149180 seconds 
-  Import took 0.151917 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Stereo_02.wav
-  artifactKey: Guid(f0b0ab6a5513bb54a8d5a63809a9672c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Stereo_02.wav using Guid(f0b0ab6a5513bb54a8d5a63809a9672c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f532012c1fa2df626670b8a7de2a8e4f') in 0.145601 seconds 
-  Import took 0.150535 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000252 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_GamespeedDown_Mono_01.wav
-  artifactKey: Guid(271dc8681dc00bb4caeb9aab24146d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_GamespeedDown_Mono_01.wav using Guid(271dc8681dc00bb4caeb9aab24146d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecdfa93d112efbcabb292d1f5c1082b1') in 0.115889 seconds 
-  Import took 0.130311 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000275 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Stereo_01.wav
-  artifactKey: Guid(94f28668842a5fc43833479289b4a25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Stereo_01.wav using Guid(94f28668842a5fc43833479289b4a25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17c8aecaf65ff8c3fc93baeb7b61399b') in 0.117306 seconds 
-  Import took 0.120961 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Stereo_01.wav
-  artifactKey: Guid(b5225828c7f16284cbfb30c03535f1ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Stereo_01.wav using Guid(b5225828c7f16284cbfb30c03535f1ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ceded025aee5e567bfa8d67bcc88061') in 0.223841 seconds 
-  Import took 0.232289 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000259 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemRemove_Stereo_01.wav
-  artifactKey: Guid(e32ecf6eb4fec76468e1f84295019f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemRemove_Stereo_01.wav using Guid(e32ecf6eb4fec76468e1f84295019f4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dbd7a3064bc9ef41f5f49640715db5c') in 0.225616 seconds 
-  Import took 0.240554 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonhover_Stereo_01.wav
-  artifactKey: Guid(7e62d3e166cdd524194883aed374995c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonhover_Stereo_01.wav using Guid(7e62d3e166cdd524194883aed374995c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76d7e5fab0e3f9de6ea0b2e51b74bc57') in 0.041314 seconds 
-  Import took 0.056859 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000337 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Stereo_01.wav
-  artifactKey: Guid(4774d43c810649f469f06c66dc1429ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Stereo_01.wav using Guid(4774d43c810649f469f06c66dc1429ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcdfa226c14d183e91dd877079e578c3') in 0.124231 seconds 
-  Import took 0.129327 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Mono_01.wav
-  artifactKey: Guid(08add64404d036e4490cda07c38e2a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Mono_01.wav using Guid(08add64404d036e4490cda07c38e2a06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a5a945922e5c1149b50fc0b7b0e5e12') in 0.065443 seconds 
-  Import took 0.073063 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.130758 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Mono_02.wav
-  artifactKey: Guid(b93e491ff676f124c8aa13a890589d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Mono_02.wav using Guid(b93e491ff676f124c8aa13a890589d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac3f5507317e6a594891d941222f91b7') in 0.245230 seconds 
-  Import took 0.297853 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Stereo_01.wav
-  artifactKey: Guid(259791867ba2a904ab79577f6ea321d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Stereo_01.wav using Guid(259791867ba2a904ab79577f6ea321d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af05cdf61c087d8cfb26ff001c649565') in 0.190794 seconds 
-  Import took 0.196554 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000213 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Stereo_02.wav
-  artifactKey: Guid(6acc22aa133a30040b0d0fd4cb9a7ec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildfail_Stereo_02.wav using Guid(6acc22aa133a30040b0d0fd4cb9a7ec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdd5c6f49b114796b070545a0d25b9b0') in 0.048904 seconds 
-  Import took 0.067042 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000509 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Launchmission_Mono_01.wav
-  artifactKey: Guid(1ce197cf4f7e4a444a0069ef74139d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Launchmission_Mono_01.wav using Guid(1ce197cf4f7e4a444a0069ef74139d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce6b152c897c4a6bc1abb1cd2ce07345') in 0.184397 seconds 
-  Import took 0.200889 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000891 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Stereo_02.wav
-  artifactKey: Guid(f861505a8d0bfc8448cf30fbb1e38bbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Stereo_02.wav using Guid(f861505a8d0bfc8448cf30fbb1e38bbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74df1f7b7139e2d91594532ed3f374e5') in 0.240473 seconds 
-  Import took 0.261344 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonconfirm_Mono_01.wav
-  artifactKey: Guid(ad52b74ba5a390d4a90ec796d0ab547f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonconfirm_Mono_01.wav using Guid(ad52b74ba5a390d4a90ec796d0ab547f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3cda5ee3b0b6d7dab07e3fb42fead3d') in 0.208852 seconds 
-  Import took 0.217053 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000314 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Gamespeedup_Stereo_01.wav
-  artifactKey: Guid(117cf232f83746a478b6d9fd314f5c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Gamespeedup_Stereo_01.wav using Guid(117cf232f83746a478b6d9fd314f5c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bbe98739cda896f30aba1324322a9e') in 0.295547 seconds 
-  Import took 0.304588 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000261 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Stereo_01.wav
-  artifactKey: Guid(77512215bcab4d34fabc9a59d05ac970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Stereo_01.wav using Guid(77512215bcab4d34fabc9a59d05ac970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c367581e06fcddd5000b37efe1e5a50') in 0.337982 seconds 
-  Import took 0.362067 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000862 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcommence_Mono_01.wav
-  artifactKey: Guid(ea7da15a6f36ace41a8a3d69711f5341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcommence_Mono_01.wav using Guid(ea7da15a6f36ace41a8a3d69711f5341) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbb7337dd96186abab1dfe12e6a59455') in 0.130925 seconds 
-  Import took 0.137175 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000202 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemHover_Stereo_01.wav
-  artifactKey: Guid(88e507cafe258ed4f8b2830128c444f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemHover_Stereo_01.wav using Guid(88e507cafe258ed4f8b2830128c444f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83c17dc210161528bd1e82e06bff9098') in 0.270013 seconds 
-  Import took 0.276172 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemHover_Mono_01.wav
-  artifactKey: Guid(51dac47c8193e384eab331336fc6d24e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemHover_Mono_01.wav using Guid(51dac47c8193e384eab331336fc6d24e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8f89b948a462c20e024833b4f6fc079') in 0.160572 seconds 
-  Import took 0.171294 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000470 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeOut_Mono_01.wav
-  artifactKey: Guid(f2f1ec5b251c7ca42b2670b976796f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeOut_Mono_01.wav using Guid(f2f1ec5b251c7ca42b2670b976796f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac99a9aee03b196424f680814c46db9d') in 0.044712 seconds 
-  Import took 0.059976 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000429 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Mono_01.wav
-  artifactKey: Guid(77bbd8a93f99e6f48a91d810c6cf5f56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Mono_01.wav using Guid(77bbd8a93f99e6f48a91d810c6cf5f56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bcb0b3a8fa79ca7655927814252a430') in 0.079478 seconds 
-  Import took 0.086606 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000334 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Mono_01.wav
-  artifactKey: Guid(382c54660d3b77044a5009f9cd72487a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcancel_Mono_01.wav using Guid(382c54660d3b77044a5009f9cd72487a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac49ecc58dc794050517e3f9e8576c07') in 0.077089 seconds 
-  Import took 0.094966 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000258 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonconfirm_Stereo_01.wav
-  artifactKey: Guid(1a504153e74cd6a469888466f1920156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonconfirm_Stereo_01.wav using Guid(1a504153e74cd6a469888466f1920156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b467f1e6d14b4cfe0ecdd6ff87425861') in 0.095357 seconds 
-  Import took 0.100934 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000643 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcommence_Stereo_01.wav
-  artifactKey: Guid(2a60d65ffaf42ec4cb971045c1d43f45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcommence_Stereo_01.wav using Guid(2a60d65ffaf42ec4cb971045c1d43f45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84e222bb0b11e4b4d91069457bd61927') in 0.050235 seconds 
-  Import took 0.055087 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000275 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuEscape_Mono_01.wav
-  artifactKey: Guid(b5b586f4c2c523c428cd7e8db8fdb78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuEscape_Mono_01.wav using Guid(b5b586f4c2c523c428cd7e8db8fdb78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '968ed1ee75d552968d32c369169264f5') in 0.164594 seconds 
-  Import took 0.173729 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearch_Mono_01.wav
-  artifactKey: Guid(f9790a97a6bc0fa4a82273d43095f372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearch_Mono_01.wav using Guid(f9790a97a6bc0fa4a82273d43095f372) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39ffdec5d1cc54246da3a017166ca738') in 0.036331 seconds 
-  Import took 0.039971 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeIn_Mono_01.wav
-  artifactKey: Guid(274434876762f814398c8fe95087315b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeIn_Mono_01.wav using Guid(274434876762f814398c8fe95087315b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc0c4efe7313729326e8915f6190643a') in 0.193456 seconds 
-  Import took 0.199580 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000557 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeIn_Stereo_01.wav
-  artifactKey: Guid(d2318f5f2515b8b49bec895a2769eb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeIn_Stereo_01.wav using Guid(d2318f5f2515b8b49bec895a2769eb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e077e96bfeff407f0a5024ec65b6957d') in 0.133547 seconds 
-  Import took 0.143462 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000440 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Forbidden_Stereo_01.wav
-  artifactKey: Guid(19591679a01325c48890406536bba01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Forbidden_Stereo_01.wav using Guid(19591679a01325c48890406536bba01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '532cf645cd6f38c39892eea26136ad10') in 0.170864 seconds 
-  Import took 0.174611 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemRemove_Mono_01.wav
-  artifactKey: Guid(1dc15f0556bd26e408c6b5dfcee9d4f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchItemRemove_Mono_01.wav using Guid(1dc15f0556bd26e408c6b5dfcee9d4f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15aaf810f7077f541480bc010b358ea') in 0.089434 seconds 
-  Import took 0.098041 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000344 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Alertmessage_Stereo_01.wav
-  artifactKey: Guid(0817670eb430cf441977373313962b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Alertmessage_Stereo_01.wav using Guid(0817670eb430cf441977373313962b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ead56c29e5f2c2231455a54f58c4023') in 0.073655 seconds 
-  Import took 0.092139 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000318 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Gamespeedup_Mono_01.wav
-  artifactKey: Guid(bfa4b572058fccc4bb4e0b039a659be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Gamespeedup_Mono_01.wav using Guid(bfa4b572058fccc4bb4e0b039a659be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c8427b800d875a68be8e0eb9510b940') in 0.068188 seconds 
-  Import took 0.072578 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000261 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeOut_Stereo_01.wav
-  artifactKey: Guid(8c640f72c4a7edf4d80cf8531b6d80f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenufadeOut_Stereo_01.wav using Guid(8c640f72c4a7edf4d80cf8531b6d80f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b4058ec80595fd58b378c53941bc673') in 0.087594 seconds 
-  Import took 0.090960 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_GamespeedDown_Stereo_01.wav
-  artifactKey: Guid(ab037f2663ac21945923d2ece892b887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_GamespeedDown_Stereo_01.wav using Guid(ab037f2663ac21945923d2ece892b887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a0c4cdec4650d86c5ec4000fb54e6d5') in 0.034404 seconds 
-  Import took 0.037086 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000182 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Mono_01.wav
-  artifactKey: Guid(5ed086b7ef6be8a4ab20891f500b7d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttongeneral_Mono_01.wav using Guid(5ed086b7ef6be8a4ab20891f500b7d36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b756875225b5c05b250aded2af03909b') in 0.035615 seconds 
-  Import took 0.038201 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Mono_02.wav
-  artifactKey: Guid(7ee8048a2e396ce43bc3c352dfbe06e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buildcomplete_Mono_02.wav using Guid(7ee8048a2e396ce43bc3c352dfbe06e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6d55d643d2e20bcca03813bb114f270') in 0.132277 seconds 
-  Import took 0.151818 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.006036 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Forbidden_Mono_01.wav
-  artifactKey: Guid(a96c5c80d281e474ea3691f6a265072c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Forbidden_Mono_01.wav using Guid(a96c5c80d281e474ea3691f6a265072c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4f6ef53b04ea1bbac549570731bbcfb') in 0.104171 seconds 
-  Import took 0.108826 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000285 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonhover_Mono_01.wav
-  artifactKey: Guid(608e0c5f8d9f60d4a8b1b4c671069a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Buttonhover_Mono_01.wav using Guid(608e0c5f8d9f60d4a8b1b4c671069a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0f46a74d6e094a1f2a9690a432fdedd') in 0.062358 seconds 
-  Import took 0.067541 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 36.273393 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Stereo_02.wav
-  artifactKey: Guid(43caaee2411c86541a036701915e9bc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_MenuResearchRowHover_Stereo_02.wav using Guid(43caaee2411c86541a036701915e9bc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d0f0657648f9bab10f370bba6a8aefc') in 0.223617 seconds 
-  Import took 0.230699 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000876 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Stereo_01.wav
-  artifactKey: Guid(8a1b5e8db998b0f46924babce75ebc8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Stereo_01.wav using Guid(8a1b5e8db998b0f46924babce75ebc8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd03c4c4087b14259e8ecab9ebe00d82') in 0.225281 seconds 
-  Import took 0.239374 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000842 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Mono_02.wav
-  artifactKey: Guid(9463c1b0fe2ecb94d838814d20e3a5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Mono_02.wav using Guid(9463c1b0fe2ecb94d838814d20e3a5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a52487667c90a1dec51eb5f3f292c31') in 0.161713 seconds 
-  Import took 0.183769 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000734 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Mono_01.wav
-  artifactKey: Guid(3aca155c0afba174a8960c3c9f20cd56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Mono_01.wav using Guid(3aca155c0afba174a8960c3c9f20cd56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec6d3184b325bd1ac85c38a2f7529f2a') in 0.174867 seconds 
-  Import took 0.202023 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.224836 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Stereo_02.wav
-  artifactKey: Guid(93e243a396146084b85b3a3b0e063384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationBuildingFail_Stereo_02.wav using Guid(93e243a396146084b85b3a3b0e063384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce5af6d290b60f3730ca4b3af5e0b2f0') in 0.102219 seconds 
-  Import took 0.106135 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000281 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDisaster_Stereo_01.wav
-  artifactKey: Guid(433f53cfdac30614d975247878ff14be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDisaster_Stereo_01.wav using Guid(433f53cfdac30614d975247878ff14be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c166d25aa9db20e70ba491a2edefd23') in 0.088692 seconds 
-  Import took 0.097568 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000260 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsArrived_Mono_01.wav
-  artifactKey: Guid(caa715b07679edd448eab192189ae161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsArrived_Mono_01.wav using Guid(caa715b07679edd448eab192189ae161) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77445ee9668c0af251ee1228e52573be') in 0.107229 seconds 
-  Import took 0.111588 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000210 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDisaster_Mono_01.wav
-  artifactKey: Guid(73d39739e97de6e4a8f4a6d3ea9e1df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDisaster_Mono_01.wav using Guid(73d39739e97de6e4a8f4a6d3ea9e1df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aa04e50b78574427197f9c2dfd8cf72') in 0.093074 seconds 
-  Import took 0.098765 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Mono_01.wav
-  artifactKey: Guid(bd2d1f2d954b6914bb892c3a812def2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Mono_01.wav using Guid(bd2d1f2d954b6914bb892c3a812def2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '362fa46180731f8048131b71f61a6199') in 0.085389 seconds 
-  Import took 0.088167 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000244 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsArrived_Stereo_01.wav
-  artifactKey: Guid(b2a1e26127e334f4e81ee84f7d44f0c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsArrived_Stereo_01.wav using Guid(b2a1e26127e334f4e81ee84f7d44f0c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d0d2cc8276a475721d9eda976c7de3c') in 0.083310 seconds 
-  Import took 0.086492 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000259 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsDie_Stereo_01.wav
-  artifactKey: Guid(6623f1496901afc47ae359c12672694a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsDie_Stereo_01.wav using Guid(6623f1496901afc47ae359c12672694a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ef0ebf26caaf0efb21c2701923f0543') in 0.091033 seconds 
-  Import took 0.102135 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003628 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDismiss_Mono_01.wav
-  artifactKey: Guid(aa0e24acbeff1034babaf8a17c161f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDismiss_Mono_01.wav using Guid(aa0e24acbeff1034babaf8a17c161f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ad604f91d89a7a93ff32aefb8a964a9') in 0.095629 seconds 
-  Import took 0.107670 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000344 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsDie_Mono_01.wav
-  artifactKey: Guid(03980bbaf92480148979d83b232549b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationColonistsDie_Mono_01.wav using Guid(03980bbaf92480148979d83b232549b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eee3f7fd8a1fe7a580c8a9d45bb6a263') in 0.108881 seconds 
-  Import took 0.116972 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000205 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDismiss_Stereo_01.wav
-  artifactKey: Guid(d927122af4490044b95391343be5338e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDismiss_Stereo_01.wav using Guid(d927122af4490044b95391343be5338e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b75cb9a09f3231227be7b3deb3fb88b') in 0.095596 seconds 
-  Import took 0.113446 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.879947 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Mono_02.wav
-  artifactKey: Guid(18e9f744bc56d4444b4b40ea1ef6f234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Mono_02.wav using Guid(18e9f744bc56d4444b4b40ea1ef6f234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8985f5abacb97d545d60895a18bf8d53') in 0.292108 seconds 
-  Import took 0.301703 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000482 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygenWaterPower_Mono_01.wav
-  artifactKey: Guid(8f55288711a651b42ba40ebea9f5e021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygenWaterPower_Mono_01.wav using Guid(8f55288711a651b42ba40ebea9f5e021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc181aa1092e98fa5646eaeea8405c5d') in 0.120923 seconds 
-  Import took 0.127289 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGoalComplete_Stereo_01.wav
-  artifactKey: Guid(01d5cf5f121a0ee46b8ec01121c56cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGoalComplete_Stereo_01.wav using Guid(01d5cf5f121a0ee46b8ec01121c56cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b24af8724be6e618d05db67660c38974') in 0.042956 seconds 
-  Import took 0.055151 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000365 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGeneral_Stereo_01.wav
-  artifactKey: Guid(9bad2b99de1dcb14d867a638436b3294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGeneral_Stereo_01.wav using Guid(9bad2b99de1dcb14d867a638436b3294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fb1cc862a1715114d314e86ba64ff7b') in 0.112032 seconds 
-  Import took 0.116465 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationMalfunction_Stereo_01.wav
-  artifactKey: Guid(e0a613bb5ce4b9b49acb9072a4bb9df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationMalfunction_Stereo_01.wav using Guid(e0a613bb5ce4b9b49acb9072a4bb9df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91a48eb6a2ea32ade9567de3e99715a9') in 0.107854 seconds 
-  Import took 0.110455 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000321 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Stereo_01.wav
-  artifactKey: Guid(f0ab8821d919c8642a50e2cbd4574c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Stereo_01.wav using Guid(f0ab8821d919c8642a50e2cbd4574c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da8b7bda9287cbbd6f55fdef82493eb1') in 0.046906 seconds 
-  Import took 0.052808 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000274 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGeneral_Mono_01.wav
-  artifactKey: Guid(c5d054b5796ba7641944ad2263ef1234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGeneral_Mono_01.wav using Guid(c5d054b5796ba7641944ad2263ef1234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f91a6c5962f352424b77ece6c1e48edb') in 0.069843 seconds 
-  Import took 0.073564 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygenWaterPower_Stereo_01.wav
-  artifactKey: Guid(534df4942b4f3444eb87960f1f163748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygenWaterPower_Stereo_01.wav using Guid(534df4942b4f3444eb87960f1f163748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6c8337f99a5011d3733fcf13db2a5d4') in 0.073763 seconds 
-  Import took 0.078026 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000180 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationMalfunction_Mono_01.wav
-  artifactKey: Guid(8aac45dca1a79054e9744f996312316d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationMalfunction_Mono_01.wav using Guid(8aac45dca1a79054e9744f996312316d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a76e595c9277cb671aff5336f292db0') in 0.071882 seconds 
-  Import took 0.076438 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGoalComplete_Mono_01.wav
-  artifactKey: Guid(99d86a79b7c06e949bd30c5976891ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationGoalComplete_Mono_01.wav using Guid(99d86a79b7c06e949bd30c5976891ba7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '499b0546c3f4c6da543a5c052efb1748') in 0.043327 seconds 
-  Import took 0.054033 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationPower_Mono_01.wav
-  artifactKey: Guid(652208d9f54f42a4784169204be31549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationPower_Mono_01.wav using Guid(652208d9f54f42a4784169204be31549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0898ebe6a94c8033fe98d540f03f64c') in 0.085369 seconds 
-  Import took 0.088979 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygen_Mono_01.wav
-  artifactKey: Guid(fbec30832364c6b43a93e5e726e4d293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygen_Mono_01.wav using Guid(fbec30832364c6b43a93e5e726e4d293) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb4b6eb103b598e427e7503b0762a66b') in 0.066401 seconds 
-  Import took 0.074195 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygen_Stereo_01.wav
-  artifactKey: Guid(b4611f649c6ebf744b05d2434b226400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationOxygen_Stereo_01.wav using Guid(b4611f649c6ebf744b05d2434b226400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1245060e33ec20820bbfd58ef68f68') in 0.042493 seconds 
-  Import took 0.049194 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000380 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Stereo_02.wav
-  artifactKey: Guid(7fdb60614bafe6d42b1a6d6067297c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationDomeFracture_Stereo_02.wav using Guid(7fdb60614bafe6d42b1a6d6067297c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bbda97583e4d9ad7220cb51bdba313d') in 0.071055 seconds 
-  Import took 0.075729 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 83.268994 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationPower_Stereo_01.wav
-  artifactKey: Guid(a2ce74eed1e418b47a4e560c7a178aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationPower_Stereo_01.wav using Guid(a2ce74eed1e418b47a4e560c7a178aec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bea27e24c0da9aeba3b8ed82d939c1e') in 0.062688 seconds 
-  Import took 0.074744 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Stereo_01.wav
-  artifactKey: Guid(faad2a9d8cea52145ab1bc88eb3ad252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Stereo_01.wav using Guid(faad2a9d8cea52145ab1bc88eb3ad252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a340b6ec32331a4975e9ca8bc8afb70a') in 0.033789 seconds 
-  Import took 0.037278 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000272 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Mono_02.wav
-  artifactKey: Guid(59191843d13ef9f49b7add839ee57967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Mono_02.wav using Guid(59191843d13ef9f49b7add839ee57967) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b38c691046ef3502f4241f84a2c960') in 0.078777 seconds 
-  Import took 0.085092 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000441 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationWater_Stereo_01.wav
-  artifactKey: Guid(d3112531dab65dd4daf944b25aad398b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationWater_Stereo_01.wav using Guid(d3112531dab65dd4daf944b25aad398b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0566885b2f2cee4521602086d84d8579') in 0.056361 seconds 
-  Import took 0.096972 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002459 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Stereo_02.wav
-  artifactKey: Guid(66d911dcde7962647a2b97923c7e7e85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Stereo_02.wav using Guid(66d911dcde7962647a2b97923c7e7e85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22cadb28cc08df26939260d055415249') in 0.130586 seconds 
-  Import took 0.147202 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResource_Stereo_01.wav
-  artifactKey: Guid(f0b0b8863d74ba947a2b224639d1cda2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResource_Stereo_01.wav using Guid(f0b0b8863d74ba947a2b224639d1cda2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60e65cd72d25a994c2cef9c8d5dc8f67') in 0.100992 seconds 
-  Import took 0.118261 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000496 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Mono_01.wav
-  artifactKey: Guid(c48489a2c113ee047bd15e90ef1d8493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ObjectDemolition_Mono_01.wav using Guid(c48489a2c113ee047bd15e90ef1d8493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ec12585fb2e928f66fea074536eaa8c') in 0.103513 seconds 
-  Import took 0.118560 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.010545 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResearchComplete_Stereo_01.wav
-  artifactKey: Guid(75b6cc8299f0e204e8d411d130c6d3ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResearchComplete_Stereo_01.wav using Guid(75b6cc8299f0e204e8d411d130c6d3ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '561e56d44e9739455512e8f7a8f225da') in 0.111997 seconds 
-  Import took 0.118899 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000284 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationWater_Mono_01.wav
-  artifactKey: Guid(a1b77be99326d604393a6f1c0e0f6b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationWater_Mono_01.wav using Guid(a1b77be99326d604393a6f1c0e0f6b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '986a01831b245cc95acda08d732bd102') in 0.082531 seconds 
-  Import took 0.092592 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000327 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResearchComplete_Mono_01.wav
-  artifactKey: Guid(e5996798e45ff1a4ca057026ef9203cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResearchComplete_Mono_01.wav using Guid(e5996798e45ff1a4ca057026ef9203cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7811a0c6f99884d9b212d93ef3911234') in 0.110782 seconds 
-  Import took 0.124452 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000336 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResource_Mono_01.wav
-  artifactKey: Guid(b56eaec4b4c64aa42a47e7f9cc7fadf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_NotificationResource_Mono_01.wav using Guid(b56eaec4b4c64aa42a47e7f9cc7fadf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd086bfbd02de189515d24920b0dec695') in 0.066050 seconds 
-  Import took 0.080936 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000459 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PauseOFF_Mono_01.wav
-  artifactKey: Guid(27e8c682a2bbd274a9e271b4b88c6d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PauseOFF_Mono_01.wav using Guid(27e8c682a2bbd274a9e271b4b88c6d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f547601a5888fbb77a86ea51a3f9b51') in 0.066280 seconds 
-  Import took 0.082604 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.100713 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PauseOFF_Stereo_01.wav
-  artifactKey: Guid(e5f05004c8e6712468bb52c5dbb27052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PauseOFF_Stereo_01.wav using Guid(e5f05004c8e6712468bb52c5dbb27052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '932e49eed01f2688d0eccd5ce4d6fe9a') in 0.281442 seconds 
-  Import took 0.292094 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000575 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PauseON_Stereo_01.wav
-  artifactKey: Guid(9de60bdcc76f7944690038d768e09123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PauseON_Stereo_01.wav using Guid(9de60bdcc76f7944690038d768e09123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a1dd4d1eaae0ee2341a0987f273c24') in 0.158599 seconds 
-  Import took 0.165442 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceBuildingGround_Stereo_01.wav
-  artifactKey: Guid(ec0d19e2e872b6d4ca294e6186824199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceBuildingGround_Stereo_01.wav using Guid(ec0d19e2e872b6d4ca294e6186824199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f95252e2a38336292fd55a6f5ea1a703') in 0.103550 seconds 
-  Import took 0.106822 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Mono_01.wav
-  artifactKey: Guid(2abc58132aaac6a4394788468a27bdb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Mono_01.wav using Guid(2abc58132aaac6a4394788468a27bdb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef344b660fd13fb414e78e128de0bd6b') in 0.099609 seconds 
-  Import took 0.102767 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceBuildingGround_Mono_01.wav
-  artifactKey: Guid(92b98103fec227d48a6e1aad0268933b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceBuildingGround_Mono_01.wav using Guid(92b98103fec227d48a6e1aad0268933b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fee9d6fde20a24094804ffd96572a528') in 0.090767 seconds 
-  Import took 0.093875 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000179 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Mono_02.wav
-  artifactKey: Guid(2608f8a01cf802e4d8c1e143c6ddee23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Mono_02.wav using Guid(2608f8a01cf802e4d8c1e143c6ddee23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eba0171ec08bf8e40f0e20c2e7e26d4') in 0.102621 seconds 
-  Import took 0.115136 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000420 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceObjectGround_Mono_01.wav
-  artifactKey: Guid(4bf962ad76811a74a85ee71e7042ae35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceObjectGround_Mono_01.wav using Guid(4bf962ad76811a74a85ee71e7042ae35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0312401a5365594a095e50e97988eae2') in 0.238728 seconds 
-  Import took 0.245183 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000289 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PauseON_Mono_01.wav
-  artifactKey: Guid(db5ae92ab5f64a4418d7771e0b4cec87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PauseON_Mono_01.wav using Guid(db5ae92ab5f64a4418d7771e0b4cec87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88b3a22798e2d69998832db2b6640378') in 0.100825 seconds 
-  Import took 0.105686 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceObjectGround_Stereo_01.wav
-  artifactKey: Guid(1f2bb4566e0c03e48a7f6af48521d516) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceObjectGround_Stereo_01.wav using Guid(1f2bb4566e0c03e48a7f6af48521d516) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6373cd7574fe11de8d8c5aaf26c6097f') in 0.156455 seconds 
-  Import took 0.161010 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000265 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceOrbitalDrop_Mono_01.wav
-  artifactKey: Guid(a54428a70acc1e8448ae9a311796bbb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceOrbitalDrop_Mono_01.wav using Guid(a54428a70acc1e8448ae9a311796bbb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10248a88f06bf332e282c7bac58b43e0') in 0.093973 seconds 
-  Import took 0.099168 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Stereo_01.wav
-  artifactKey: Guid(6026f3dae22878c45bcf571d05cec2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Stereo_01.wav using Guid(6026f3dae22878c45bcf571d05cec2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3433c642fcb7f45c837bbdb588b3a71d') in 0.090019 seconds 
-  Import took 0.093445 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Stereo_02.wav
-  artifactKey: Guid(170d8e0e6c82a1342b763b05a53b2dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceCables_Stereo_02.wav using Guid(170d8e0e6c82a1342b763b05a53b2dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37255782395155ea8d9bad2530613bcf') in 0.085817 seconds 
-  Import took 0.093537 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.971726 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceOrbitalDrop_Stereo_01.wav
-  artifactKey: Guid(1b036b92a808aa44da1f060803f5f4f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceOrbitalDrop_Stereo_01.wav using Guid(1b036b92a808aa44da1f060803f5f4f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85c98cc51a4bb42abcad23410cc19771') in 0.026912 seconds 
-  Import took 0.058025 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Stereo_02.wav
-  artifactKey: Guid(45db223402e6f6b49b5d58662ac6d4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Stereo_02.wav using Guid(45db223402e6f6b49b5d58662ac6d4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50cd7593e03948d6ae7bd37d82f171ca') in 0.053214 seconds 
-  Import took 0.058853 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonClick_Mono_01.wav
-  artifactKey: Guid(1856957c0fbc3d748be9907e5629b1af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonClick_Mono_01.wav using Guid(1856957c0fbc3d748be9907e5629b1af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74db2bf593503a86dc973ea6431695fe') in 0.047007 seconds 
-  Import took 0.057778 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000349 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceStorage_Mono_01.wav
-  artifactKey: Guid(c2fa32564fadf374cbb464d335d9e38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceStorage_Mono_01.wav using Guid(c2fa32564fadf374cbb464d335d9e38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b661ea15cfc3172eb68484d1a8733679') in 0.046730 seconds 
-  Import took 0.052381 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000559 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupNotification_Mono_01.wav
-  artifactKey: Guid(ac2cd3ceb6c02f54ea9de6b355ff0a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupNotification_Mono_01.wav using Guid(ac2cd3ceb6c02f54ea9de6b355ff0a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '191fcb235e348e0b9eff40fa37a58aaa') in 0.053263 seconds 
-  Import took 0.067058 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000289 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlacePipes_Mono_01.wav
-  artifactKey: Guid(90ca6e1dd2bda32428f625200aac713e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlacePipes_Mono_01.wav using Guid(90ca6e1dd2bda32428f625200aac713e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f96fdb0b73971a1fad42d881e97acee6') in 0.049347 seconds 
-  Import took 0.054352 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000412 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Mono_01.wav
-  artifactKey: Guid(700889da149ee324981a130c71bfb304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Mono_01.wav using Guid(700889da149ee324981a130c71bfb304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bd4c8517b53e85be0de914bf76c5c7e') in 0.040310 seconds 
-  Import took 0.058466 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000348 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Stereo_01.wav
-  artifactKey: Guid(ce97a2d4cdfe1114982c5ec127ef32e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Stereo_01.wav using Guid(ce97a2d4cdfe1114982c5ec127ef32e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b983784b6fde2ae0c0d7a52920b52a14') in 0.062644 seconds 
-  Import took 0.068825 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlacePipes_Stereo_01.wav
-  artifactKey: Guid(2fb4eb8d414c3384c98885265a3fa29b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlacePipes_Stereo_01.wav using Guid(2fb4eb8d414c3384c98885265a3fa29b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b6f5c19c2fc091892f2d0dab65db72b') in 0.046212 seconds 
-  Import took 0.050794 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000556 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceStorage_Stereo_01.wav
-  artifactKey: Guid(1e60f588d6957a349b563ff5ec4f892b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PlaceStorage_Stereo_01.wav using Guid(1e60f588d6957a349b563ff5ec4f892b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '511a99713f15c6bc6841d4f32c41781d') in 0.088113 seconds 
-  Import took 0.096334 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000616 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchOFF_Mono_01.wav
-  artifactKey: Guid(125716ce8f97f6e498298cab64ddcd32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchOFF_Mono_01.wav using Guid(125716ce8f97f6e498298cab64ddcd32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cf9f0a76e4135f75784a63b19390e94') in 0.079655 seconds 
-  Import took 0.085126 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonClick_Stereo_01.wav
-  artifactKey: Guid(a4e04e29867f24244b3d27bf5c8b8333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonClick_Stereo_01.wav using Guid(a4e04e29867f24244b3d27bf5c8b8333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cce43096d9483086ad1eae91ef40312f') in 0.115375 seconds 
-  Import took 0.129831 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000806 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupNotification_Stereo_01.wav
-  artifactKey: Guid(f0a088da28f7adc4a8979bb533c36abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupNotification_Stereo_01.wav using Guid(f0a088da28f7adc4a8979bb533c36abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40c4ecdf96d5b09c513eecaba17a86c1') in 0.105172 seconds 
-  Import took 0.113302 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000268 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Mono_02.wav
-  artifactKey: Guid(76924baaeb5b4f949bb391f712e397c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PopupbuttonHover_Mono_02.wav using Guid(76924baaeb5b4f949bb391f712e397c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b4a4dabc8e8667de32d167416c97401') in 0.123964 seconds 
-  Import took 0.131251 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.203574 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchOFF_Stereo_01.wav
-  artifactKey: Guid(38731967972b45d4499502c55cccc468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchOFF_Stereo_01.wav using Guid(38731967972b45d4499502c55cccc468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cf9c7d8ca41689377a08238fba0fb45') in 0.046717 seconds 
-  Import took 0.052708 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RemoveRemains_Mono_01.wav
-  artifactKey: Guid(1213c404123608343a7fa33d19119d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RemoveRemains_Mono_01.wav using Guid(1213c404123608343a7fa33d19119d7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ab7641098515e3601e6b37244e3aa59') in 0.050304 seconds 
-  Import took 0.061846 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000424 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchON_Stereo_01.wav
-  artifactKey: Guid(7791a44925ac1fb4fa92f632b96404ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchON_Stereo_01.wav using Guid(7791a44925ac1fb4fa92f632b96404ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56054c12f69bc181166dc547c7030384') in 0.072132 seconds 
-  Import took 0.083286 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001263 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchON_Mono_01.wav
-  artifactKey: Guid(d5f10a7d2eb5eae40a71f0a840a65f85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_PowerSwitchON_Mono_01.wav using Guid(d5f10a7d2eb5eae40a71f0a840a65f85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '167a67f38fa8373e29393fe683324460') in 0.080542 seconds 
-  Import took 0.085371 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000356 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Recharge_Stereo_01.wav
-  artifactKey: Guid(88ab474ec43498f4b93ebae724400f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Recharge_Stereo_01.wav using Guid(88ab474ec43498f4b93ebae724400f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28b89631e45f86bd87662661e09c2d03') in 0.073647 seconds 
-  Import took 0.094682 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000860 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Recharge_Mono_01.wav
-  artifactKey: Guid(0b606c041b77a7141b8bcd28509702b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Recharge_Mono_01.wav using Guid(0b606c041b77a7141b8bcd28509702b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d620ea32e7840c77e3e7d296b675c1d') in 0.051678 seconds 
-  Import took 0.057740 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.351808 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RemoveRemains_Stereo_01.wav
-  artifactKey: Guid(640795751ec58684c89550adae60d4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RemoveRemains_Stereo_01.wav using Guid(640795751ec58684c89550adae60d4b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '190c9ebb668ad72810cac6ed54c9a19c') in 0.032856 seconds 
-  Import took 0.040611 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001022 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketBuy_Mono_01.wav
-  artifactKey: Guid(d3e5c77775c25d941809597a5900317b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketBuy_Mono_01.wav using Guid(d3e5c77775c25d941809597a5900317b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a59c578b7212a1ae026edb5977cbe9d') in 0.048192 seconds 
-  Import took 0.054550 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000473 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Repair_Mono_01.wav
-  artifactKey: Guid(0a1d810faffb5ed4ea268be2f0695a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Repair_Mono_01.wav using Guid(0a1d810faffb5ed4ea268be2f0695a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f2c45d2955c990efa5b3e50e4064273') in 0.065815 seconds 
-  Import took 0.082837 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000330 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Repair_Stereo_01.wav
-  artifactKey: Guid(ee8642efda4f2c44a9db004867ef32c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Repair_Stereo_01.wav using Guid(ee8642efda4f2c44a9db004867ef32c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb49f9aafe5ffc0cd2e8690d47495d3f') in 0.065863 seconds 
-  Import took 0.079795 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.481566 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketBuy_Stereo_01.wav
-  artifactKey: Guid(bbbd487b74dfd674bbe38a16b42f63cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketBuy_Stereo_01.wav using Guid(bbbd487b74dfd674bbe38a16b42f63cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d21d03633bfafcfe3fdd86795e85de7') in 0.028115 seconds 
-  Import took 0.037488 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000632 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerON_Mono_01.wav
-  artifactKey: Guid(a5eae4dcb67e77c478f806d9d7f66a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerON_Mono_01.wav using Guid(a5eae4dcb67e77c478f806d9d7f66a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c142255c8b4ed5985735659808d982c4') in 0.077836 seconds 
-  Import took 0.096709 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketLaunch_Mono_01.wav
-  artifactKey: Guid(5ea9b7792acfa9b419a9e421bb2e6d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketLaunch_Mono_01.wav using Guid(5ea9b7792acfa9b419a9e421bb2e6d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9304ff6ca5cb7909f4002f0ed2854ffc') in 0.048559 seconds 
-  Import took 0.058825 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000476 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerOFF_Mono_01.wav
-  artifactKey: Guid(c1e9e34a65dd8c14c9acb453db950b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerOFF_Mono_01.wav using Guid(c1e9e34a65dd8c14c9acb453db950b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93c9a4adaf9085fe4d675ef304648ef9') in 0.040390 seconds 
-  Import took 0.050860 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000312 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Stereo_01.wav
-  artifactKey: Guid(1fb6faf81aece9a46a05b3f4fdc00913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Stereo_01.wav using Guid(1fb6faf81aece9a46a05b3f4fdc00913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da289d9a97aeac0b8519dd9829755e1b') in 0.065865 seconds 
-  Import took 0.072816 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000336 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoLoad_Mono_01.wav
-  artifactKey: Guid(9dcbf4e691780d649b6446787482301e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoLoad_Mono_01.wav using Guid(9dcbf4e691780d649b6446787482301e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33eeb996fbefe73e5d6b5714ef80f261') in 0.041812 seconds 
-  Import took 0.058070 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000477 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Mono_02.wav
-  artifactKey: Guid(91594ce4c5192b04f9b00ed5cdf12f63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Mono_02.wav using Guid(91594ce4c5192b04f9b00ed5cdf12f63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c585effa235381824319cd4dba7e3403') in 0.055576 seconds 
-  Import took 0.064791 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000483 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketLaunch_Stereo_01.wav
-  artifactKey: Guid(1ca03e72417a8cf4eb972043edb2d9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketLaunch_Stereo_01.wav using Guid(1ca03e72417a8cf4eb972043edb2d9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19e0837f16603f84774c9f0240fb1dbe') in 0.050989 seconds 
-  Import took 0.055602 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoLoad_Stereo_01.wav
-  artifactKey: Guid(bf6b8a675cecf41499cbccdedcb3db0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoLoad_Stereo_01.wav using Guid(bf6b8a675cecf41499cbccdedcb3db0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '616bf6b0f9e212f2ab513217861d7b66') in 0.062257 seconds 
-  Import took 0.065938 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000285 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerOFF_Stereo_01.wav
-  artifactKey: Guid(c1b87b3d61ae43a45800bb3cd33e0e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerOFF_Stereo_01.wav using Guid(c1b87b3d61ae43a45800bb3cd33e0e03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a72af574bd2f421c59681cd94cb28e73') in 0.065175 seconds 
-  Import took 0.087132 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.007951 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoUnLoad_Stereo_01.wav
-  artifactKey: Guid(36e3a708cd62a1f4ba23ffcb426ea4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoUnLoad_Stereo_01.wav using Guid(36e3a708cd62a1f4ba23ffcb426ea4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '521be2a62c22704b2075330b1419ae7c') in 0.080948 seconds 
-  Import took 0.100034 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000356 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerON_Stereo_01.wav
-  artifactKey: Guid(051e5ad2c77349040a802c0d8d0de4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketMarkerON_Stereo_01.wav using Guid(051e5ad2c77349040a802c0d8d0de4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e251cea49c2cc6831e8bd661d761bbb') in 0.070640 seconds 
-  Import took 0.083244 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000356 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Mono_01.wav
-  artifactKey: Guid(be75097a49ed97545ad8f3f197fa915c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Mono_01.wav using Guid(be75097a49ed97545ad8f3f197fa915c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9413936d683e108fd07fa60cf8d82eb4') in 0.110837 seconds 
-  Import took 0.118972 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000350 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoUnLoad_Mono_01.wav
-  artifactKey: Guid(e5ba4765f246a4044bd601098e212da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_RocketCargoUnLoad_Mono_01.wav using Guid(e5ba4765f246a4044bd601098e212da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e45d1e5c5aa22b63e448258f838adc8') in 0.062990 seconds 
-  Import took 0.101792 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.831973 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Stereo_02.wav
-  artifactKey: Guid(25be692371ef6fb42bf6a03534263e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSector_Stereo_02.wav using Guid(25be692371ef6fb42bf6a03534263e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '251caa4e3abbf13d426d185defe6cff6') in 0.044424 seconds 
-  Import took 0.048855 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000266 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectColonySite_Mono_01.wav
-  artifactKey: Guid(aef9e1e7e0945ee40a7f3e60d34a454a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectColonySite_Mono_01.wav using Guid(aef9e1e7e0945ee40a7f3e60d34a454a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab6b18dfc061560d6bcbb434c53a6509') in 0.044969 seconds 
-  Import took 0.049197 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000221 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSectorFail_Stereo_01.wav
-  artifactKey: Guid(d065fb8a5eadd45419158122e6fa9818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSectorFail_Stereo_01.wav using Guid(d065fb8a5eadd45419158122e6fa9818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8aaa534894480843321897b5d40d70c7') in 0.051612 seconds 
-  Import took 0.055730 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001470 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SectorHover_Mono_01.wav
-  artifactKey: Guid(fe9d3c27818e31942ac8ec1a8c107adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SectorHover_Mono_01.wav using Guid(fe9d3c27818e31942ac8ec1a8c107adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2628a974fb7c98ca4a57f785fb9e9beb') in 0.053191 seconds 
-  Import took 0.057857 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000273 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectBuilding_Stereo_01.wav
-  artifactKey: Guid(5daa70af0bbb0d741ab5911f62af948e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectBuilding_Stereo_01.wav using Guid(5daa70af0bbb0d741ab5911f62af948e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c398ed1c74d4dec7ccbdd5a18d13ca80') in 0.046800 seconds 
-  Import took 0.051576 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000280 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectBuilding_Mono_01.wav
-  artifactKey: Guid(fd45061c7f3603e4f8fbc78643e96993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectBuilding_Mono_01.wav using Guid(fd45061c7f3603e4f8fbc78643e96993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d8e14b9d4d94f9ab74b362b3e6a8ff') in 0.052384 seconds 
-  Import took 0.066560 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000627 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SectorCancel_Mono_01.wav
-  artifactKey: Guid(ecca6f7f54f69fc4e941e52edea77846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SectorCancel_Mono_01.wav using Guid(ecca6f7f54f69fc4e941e52edea77846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd1eb1c8280ab67f47c0c06e1d720b61') in 0.036024 seconds 
-  Import took 0.046141 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SectorCancel_Stereo_01.wav
-  artifactKey: Guid(e59d83a114c4b624b922f19e08bdce72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SectorCancel_Stereo_01.wav using Guid(e59d83a114c4b624b922f19e08bdce72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd851e3281acf9a6c675365eaa5f7cd5c') in 0.047268 seconds 
-  Import took 0.052736 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SectorHover_Stereo_01.wav
-  artifactKey: Guid(31161b10f4a4e3a49b46f2c7f517690a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SectorHover_Stereo_01.wav using Guid(31161b10f4a4e3a49b46f2c7f517690a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e975a1e0ff00cc82e0caa481768cd914') in 0.052818 seconds 
-  Import took 0.065621 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000364 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Mono_01.wav
-  artifactKey: Guid(7102b93aeebfbc24fa6611157a912346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Mono_01.wav using Guid(7102b93aeebfbc24fa6611157a912346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9a8acf07065045ede05fcebf21e36e8') in 0.109256 seconds 
-  Import took 0.124058 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSectorFail_Mono_01.wav
-  artifactKey: Guid(3dc5f4446dea8c04ab181cf33cf459e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_ScanSectorFail_Mono_01.wav using Guid(3dc5f4446dea8c04ab181cf33cf459e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99efbde665ce09e484797842f17ae38d') in 0.038445 seconds 
-  Import took 0.043150 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005818 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Stereo_02.wav
-  artifactKey: Guid(c99e9d9058ff649458d7c02290bc4568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Stereo_02.wav using Guid(c99e9d9058ff649458d7c02290bc4568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13533f955e048e17600421d9f1deed64') in 0.081731 seconds 
-  Import took 0.088799 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002334 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Mono_02.wav
-  artifactKey: Guid(c074856109a32844a856d8266a177aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Mono_02.wav using Guid(c074856109a32844a856d8266a177aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9c3a8267c151a1c85e5732c1a01cbd4') in 0.093946 seconds 
-  Import took 0.098860 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000517 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Stereo_01.wav
-  artifactKey: Guid(10e91ec9a6230a345b10122e5b02d54a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_Select_Stereo_01.wav using Guid(10e91ec9a6230a345b10122e5b02d54a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8f1a381c7e1f0da571d63d16a00eac') in 0.062600 seconds 
-  Import took 0.083238 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 34.349217 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectColonySite_Stereo_01.wav
-  artifactKey: Guid(22a30bd62a5c3bd4791e372e1d34f869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectColonySite_Stereo_01.wav using Guid(22a30bd62a5c3bd4791e372e1d34f869) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ae304cb5ba2163cad71d45e754ed4f') in 0.049013 seconds 
-  Import took 0.052637 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000202 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectConstructionSite_Stereo_01.wav
-  artifactKey: Guid(3361aea62ff2e6b47bc3bacedd8acab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectConstructionSite_Stereo_01.wav using Guid(3361aea62ff2e6b47bc3bacedd8acab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af86c7e6eeb0c31856a6cbb9ae986964') in 0.042919 seconds 
-  Import took 0.061159 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000343 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Mono_01.wav
-  artifactKey: Guid(96aee06c13287384b8492c0874a7fbe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Mono_01.wav using Guid(96aee06c13287384b8492c0874a7fbe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55575fe6ef6b270a34fdee531095d2eb') in 0.059848 seconds 
-  Import took 0.064474 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000860 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectDome_Mono_01.wav
-  artifactKey: Guid(11f3c43fa117de146a7d3e07b8295419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectDome_Mono_01.wav using Guid(11f3c43fa117de146a7d3e07b8295419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab6105c58a8ff76f3c9ec8fc0c01c22d') in 0.047756 seconds 
-  Import took 0.052284 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001028 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectObject_Mono_01.wav
-  artifactKey: Guid(b6d9c1d92f1b7e847976246e6a93d7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectObject_Mono_01.wav using Guid(b6d9c1d92f1b7e847976246e6a93d7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd735db4d2c337cc65c39cb947021df33') in 0.062223 seconds 
-  Import took 0.067567 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectDome_Stereo_01.wav
-  artifactKey: Guid(8e096e81d679a6747b23cac90256c7fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectDome_Stereo_01.wav using Guid(8e096e81d679a6747b23cac90256c7fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a68ecba8fd48bf9d2803ce1e916222d') in 0.047336 seconds 
-  Import took 0.059422 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectObject_Stereo_01.wav
-  artifactKey: Guid(29cdc3a935f1b5745b7dae223ab1a3ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectObject_Stereo_01.wav using Guid(29cdc3a935f1b5745b7dae223ab1a3ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0301376c347a1bb8248a5b13ebc2ec7') in 0.065057 seconds 
-  Import took 0.068443 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000290 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectConstructionSite_Mono_01.wav
-  artifactKey: Guid(3b5f80c802b56a34ca9311463b0ad19a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectConstructionSite_Mono_01.wav using Guid(3b5f80c802b56a34ca9311463b0ad19a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a41110fbede1c1d57a20ddc797057304') in 0.058867 seconds 
-  Import took 0.066820 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.649084 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Mono_02.wav
-  artifactKey: Guid(44453deb57a7c5249b07476d6950d3a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Mono_02.wav using Guid(44453deb57a7c5249b07476d6950d3a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22e82c545208adfb07fe0b07ef2a486b') in 0.052289 seconds 
-  Import took 0.061322 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000478 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Stereo_01.wav
-  artifactKey: Guid(ad851bfdb88ee984287be491824c2ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Stereo_01.wav using Guid(ad851bfdb88ee984287be491824c2ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6532333b3368179aa457e9d70b877a90') in 0.037006 seconds 
-  Import took 0.042390 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001209 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Stereo_02.wav
-  artifactKey: Guid(86aada7a7c4e7974a9b790468008e5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_SelectResource_Stereo_02.wav using Guid(86aada7a7c4e7974a9b790468008e5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8b22e94bfa63dcca5c3bfa73717ff10') in 0.041711 seconds 
-  Import took 0.051213 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000755 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_TurnOFF_Stereo_01.wav
-  artifactKey: Guid(11a34c21541521c4ca5ba7a76bd85062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_TurnOFF_Stereo_01.wav using Guid(11a34c21541521c4ca5ba7a76bd85062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3a69572a4c443d891c0e0401d549d60') in 0.028382 seconds 
-  Import took 0.041208 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000244 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_TurnOFF_Mono_01.wav
-  artifactKey: Guid(113da374dbd5bae46aada63b3a03f502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_TurnOFF_Mono_01.wav using Guid(113da374dbd5bae46aada63b3a03f502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2b2d3451d424f056643c2f211cbda52') in 0.066225 seconds 
-  Import took 0.071478 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001758 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_TurnON_Mono_01.wav
-  artifactKey: Guid(640b166505c50a74a8f4010015a4d4f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_TurnON_Mono_01.wav using Guid(640b166505c50a74a8f4010015a4d4f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ee4965e9995070c04f740afeb3c4f13') in 0.057022 seconds 
-  Import took 0.075161 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000381 seconds.
-  path: Assets/SCI-FI User Interface SFX/User Interface/UI_TurnON_Stereo_01.wav
-  artifactKey: Guid(1ccb4c74452b30c43ab088a7e9d7b5aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SCI-FI User Interface SFX/User Interface/UI_TurnON_Stereo_01.wav using Guid(1ccb4c74452b30c43ab088a7e9d7b5aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9efcc1d5a4f640fb59317f8fb06a497') in 0.084183 seconds 
-  Import took 0.088879 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.042625 seconds.
+Registered in 0.024493 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.490 seconds
+- Completed reload, in 17.702 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2490ms)
-		BeginReloadAssembly (266ms)
+	ReloadAssembly (17707ms)
+		BeginReloadAssembly (6600ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (115ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (91ms)
-		EndReloadAssembly (2040ms)
-			LoadAssemblies (229ms)
+			CreateAndSetChildDomain (219ms)
+		EndReloadAssembly (2208ms)
+			LoadAssemblies (3943ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1021ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (76ms)
-			SetupLoadedEditorAssemblies (532ms)
+			SetupTypeCache (1225ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (495ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (117ms)
-				ProcessInitializeOnLoadAttributes (370ms)
-				ProcessInitializeOnLoadMethodAttributes (23ms)
-				AfterProcessingInitializeOnLoad (17ms)
+				BeforeProcessingInitializeOnLoad (130ms)
+				ProcessInitializeOnLoadAttributes (332ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (13ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.3 MB.
-System memory in use after: 74.5 MB.
+Unloading 1525 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.4 MB.
+System memory in use after: 72.5 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1977.
-Total: 6.045600 ms (FindLiveObjects: 0.291200 ms CreateObjectMapping: 0.157600 ms MarkObjects: 5.574400 ms  DeleteObjects: 0.021200 ms)
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1966.
+Total: 4.389500 ms (FindLiveObjects: 0.194100 ms CreateObjectMapping: 0.078400 ms MarkObjects: 4.079400 ms  DeleteObjects: 0.036300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -1715,278 +131,73 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.020106 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.23 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.669 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2670ms)
-		BeginReloadAssembly (170ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (54ms)
-		EndReloadAssembly (2366ms)
-			LoadAssemblies (179ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (750ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (132ms)
-			SetupLoadedEditorAssemblies (937ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (237ms)
-				ProcessInitializeOnLoadAttributes (611ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
-				AfterProcessingInitializeOnLoad (34ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.4 MB.
-System memory in use after: 74.5 MB.
+Received Import Request.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(66ea45c9dc132ce48bc29364b79568f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(66ea45c9dc132ce48bc29364b79568f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbcd31e3119f2c8b25b074f07a3af703') in 0.059091 seconds 
+  Import took 0.062394 seconds .
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1979.
-Total: 4.138500 ms (FindLiveObjects: 0.200400 ms CreateObjectMapping: 0.079200 ms MarkObjects: 3.834600 ms  DeleteObjects: 0.022700 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 13.704165 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(66ea45c9dc132ce48bc29364b79568f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(66ea45c9dc132ce48bc29364b79568f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4755c775f26e14cbe5c51f17bd70a6e') in 0.100178 seconds 
+  Import took 0.104100 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 19.276596 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(66ea45c9dc132ce48bc29364b79568f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(66ea45c9dc132ce48bc29364b79568f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4605b2cf8b6e6591e25359d831209056') in 0.043989 seconds 
+  Import took 0.053002 seconds .
+
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.125540 seconds.
+Registered in 0.024966 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.80 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.418 seconds
+- Completed reload, in  1.817 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2419ms)
+	ReloadAssembly (1818ms)
 		BeginReloadAssembly (164ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (50ms)
-		EndReloadAssembly (1998ms)
-			LoadAssemblies (173ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (836ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (179ms)
-			SetupLoadedEditorAssemblies (497ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (322ms)
-				ProcessInitializeOnLoadMethodAttributes (17ms)
-				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.4 MB.
-System memory in use after: 74.5 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1981.
-Total: 4.865500 ms (FindLiveObjects: 0.313700 ms CreateObjectMapping: 0.108500 ms MarkObjects: 4.419900 ms  DeleteObjects: 0.022100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.018798 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.318 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2319ms)
-		BeginReloadAssembly (170ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (2040ms)
-			LoadAssemblies (151ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (537ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (81ms)
-			SetupLoadedEditorAssemblies (854ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (243ms)
-				ProcessInitializeOnLoadAttributes (548ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (28ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.4 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1983.
-Total: 2.755200 ms (FindLiveObjects: 0.147800 ms CreateObjectMapping: 0.050400 ms MarkObjects: 2.526200 ms  DeleteObjects: 0.029400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.077955 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.468 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4470ms)
-		BeginReloadAssembly (517ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (76ms)
-		EndReloadAssembly (3436ms)
-			LoadAssemblies (684ms)
+			CreateAndSetChildDomain (49ms)
+		EndReloadAssembly (1550ms)
+			LoadAssemblies (150ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1912ms)
-			ReleaseScriptCaches (7ms)
-			RebuildScriptCaches (109ms)
-			SetupLoadedEditorAssemblies (766ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (224ms)
-				ProcessInitializeOnLoadAttributes (475ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
-				AfterProcessingInitializeOnLoad (27ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1985.
-Total: 7.678200 ms (FindLiveObjects: 0.287700 ms CreateObjectMapping: 0.117300 ms MarkObjects: 7.246800 ms  DeleteObjects: 0.024200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014717 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.439 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2439ms)
-		BeginReloadAssembly (257ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (63ms)
-		EndReloadAssembly (2067ms)
-			LoadAssemblies (201ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (899ms)
+			SetupTypeCache (665ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (715ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (455ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (4ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (5ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (125ms)
-				ProcessInitializeOnLoadAttributes (528ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
-				AfterProcessingInitializeOnLoad (19ms)
+				ProcessInitializeOnLoadAttributes (284ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (26ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 2.04 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
+System memory in use before: 71.0 MB.
+System memory in use after: 71.1 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1987.
-Total: 4.359000 ms (FindLiveObjects: 0.238000 ms CreateObjectMapping: 0.101000 ms MarkObjects: 3.992000 ms  DeleteObjects: 0.026500 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1968.
+Total: 26.562700 ms (FindLiveObjects: 0.372400 ms CreateObjectMapping: 0.101300 ms MarkObjects: 26.047800 ms  DeleteObjects: 0.039500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -2000,221 +211,58 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 65.135937 seconds.
+  path: Assets/Audio/SCI-FI User Interface SFX
+  artifactKey: Guid(5f5e35bb1b99eea40a2656609fabfa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/SCI-FI User Interface SFX using Guid(5f5e35bb1b99eea40a2656609fabfa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b92d606fe19d4e2c5a91f6c96abe599') in 0.048120 seconds 
+  Import took 0.059979 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.015929 seconds.
+Registered in 0.015998 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.210 seconds
+- Completed reload, in  3.298 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2212ms)
-		BeginReloadAssembly (208ms)
+	ReloadAssembly (3298ms)
+		BeginReloadAssembly (648ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (51ms)
-		EndReloadAssembly (1831ms)
-			LoadAssemblies (175ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (563ms)
+			CreateAndSetChildDomain (114ms)
+		EndReloadAssembly (2440ms)
+			LoadAssemblies (894ms)
+			RebuildTransferFunctionScriptingTraits (1ms)
+			SetupTypeCache (1224ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (108ms)
-			SetupLoadedEditorAssemblies (612ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (500ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (160ms)
-				ProcessInitializeOnLoadAttributes (400ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
-				AfterProcessingInitializeOnLoad (19ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1989.
-Total: 8.566700 ms (FindLiveObjects: 0.238800 ms CreateObjectMapping: 0.109000 ms MarkObjects: 8.192500 ms  DeleteObjects: 0.024200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.033886 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.305 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4306ms)
-		BeginReloadAssembly (288ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (19ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (78ms)
-		EndReloadAssembly (3845ms)
-			LoadAssemblies (265ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1618ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (265ms)
-			SetupLoadedEditorAssemblies (784ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (187ms)
-				ProcessInitializeOnLoadAttributes (518ms)
-				ProcessInitializeOnLoadMethodAttributes (35ms)
-				AfterProcessingInitializeOnLoad (30ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (213ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1991.
-Total: 5.581800 ms (FindLiveObjects: 0.191500 ms CreateObjectMapping: 0.070600 ms MarkObjects: 5.286900 ms  DeleteObjects: 0.030700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.018336 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.745 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1746ms)
-		BeginReloadAssembly (314ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (170ms)
-		EndReloadAssembly (1318ms)
-			LoadAssemblies (159ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (467ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (77ms)
-			SetupLoadedEditorAssemblies (474ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (128ms)
-				ProcessInitializeOnLoadAttributes (309ms)
-				ProcessInitializeOnLoadMethodAttributes (16ms)
-				AfterProcessingInitializeOnLoad (14ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1993.
-Total: 6.949000 ms (FindLiveObjects: 0.213400 ms CreateObjectMapping: 0.087400 ms MarkObjects: 6.621500 ms  DeleteObjects: 0.025200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.099102 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.002 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4004ms)
-		BeginReloadAssembly (200ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (50ms)
-		EndReloadAssembly (3622ms)
-			LoadAssemblies (208ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1619ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (199ms)
-			SetupLoadedEditorAssemblies (717ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (147ms)
-				ProcessInitializeOnLoadAttributes (521ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
+				BeforeProcessingInitializeOnLoad (121ms)
+				ProcessInitializeOnLoadAttributes (337ms)
+				ProcessInitializeOnLoadMethodAttributes (17ms)
 				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
+System memory in use before: 71.0 MB.
+System memory in use after: 71.1 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1995.
-Total: 7.335300 ms (FindLiveObjects: 0.207200 ms CreateObjectMapping: 0.117700 ms MarkObjects: 6.985000 ms  DeleteObjects: 0.023500 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1970.
+Total: 6.834100 ms (FindLiveObjects: 0.254500 ms CreateObjectMapping: 0.116200 ms MarkObjects: 6.424400 ms  DeleteObjects: 0.037400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -2230,105 +278,48 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.058693 seconds.
+Registered in 0.022799 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.559 seconds
+- Completed reload, in  1.977 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2559ms)
-		BeginReloadAssembly (208ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (83ms)
-		EndReloadAssembly (2207ms)
-			LoadAssemblies (236ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (781ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (112ms)
-			SetupLoadedEditorAssemblies (796ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (201ms)
-				ProcessInitializeOnLoadAttributes (529ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (19ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1997.
-Total: 8.532700 ms (FindLiveObjects: 0.212800 ms CreateObjectMapping: 4.123400 ms MarkObjects: 4.167500 ms  DeleteObjects: 0.027800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.022516 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.993 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1993ms)
-		BeginReloadAssembly (215ms)
+	ReloadAssembly (1978ms)
+		BeginReloadAssembly (214ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		EndReloadAssembly (1642ms)
-			LoadAssemblies (187ms)
+			CreateAndSetChildDomain (55ms)
+		EndReloadAssembly (1648ms)
+			LoadAssemblies (199ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (598ms)
+			SetupTypeCache (514ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (101ms)
-			SetupLoadedEditorAssemblies (571ms)
+			RebuildScriptCaches (98ms)
+			SetupLoadedEditorAssemblies (541ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (147ms)
-				ProcessInitializeOnLoadAttributes (373ms)
-				ProcessInitializeOnLoadMethodAttributes (18ms)
-				AfterProcessingInitializeOnLoad (19ms)
-				EditorAssembliesLoaded (0ms)
+				BeforeProcessingInitializeOnLoad (190ms)
+				ProcessInitializeOnLoadAttributes (308ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1506 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 74.5 MB.
-System memory in use after: 74.6 MB.
+System memory in use before: 71.1 MB.
+System memory in use after: 71.2 MB.
 
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1999.
-Total: 4.290100 ms (FindLiveObjects: 0.246300 ms CreateObjectMapping: 0.124300 ms MarkObjects: 3.893100 ms  DeleteObjects: 0.024300 ms)
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1972.
+Total: 4.103900 ms (FindLiveObjects: 0.152000 ms CreateObjectMapping: 0.059200 ms MarkObjects: 3.868400 ms  DeleteObjects: 0.023000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
