@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
                 if (!_isMap)    // open teleport map ui
                 {
                     CursorUnLock();
+                    ingameMenuBtn.PlayBtnClip(1);
                     gameManager.TeleportUI(true);
                     _isMap = true;
                     _isLock = true;
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
                 else            // close teleport map ui
                 {
                     CursorLock();
+                    ingameMenuBtn.PlayBtnClip(2);
                     gameManager.TeleportUI(false);
                     _isMap = false;
                     _isLock = false;
@@ -90,15 +92,18 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ingameMenuBtn.PlayBtnClip(1);
             if (!_isStopAll)
             {
+                ingameMenuBtn.PlayBtnClip(1);
                 _isStopAll = true;
                 CursorUnLock();
                 canvasManager.ESCMenu(true);
             }
             else
+            {
+                ingameMenuBtn.PlayBtnClip(2);
                 gameContinue();
+            }
         }
     }
     public void gameContinue()

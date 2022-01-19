@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class InGameMenuBtn : MonoBehaviour
 {
     [SerializeField] List<AudioClip> clipList;
+    /*
+     *   0. button click
+     *   1. panel open
+     *   2. panel close
+     */
 
     public void PlayBtnClip(int num)
     {

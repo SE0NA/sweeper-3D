@@ -5705,8 +5705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipList:
+  - {fileID: 8300000, guid: 608e0c5f8d9f60d4a8b1b4c671069a0a, type: 3}
+  - {fileID: 8300000, guid: 5ed086b7ef6be8a4ab20891f500b7d36, type: 3}
   - {fileID: 8300000, guid: 14e3010741c1671449ade7901f3184f5, type: 3}
-  - {fileID: 8300000, guid: b5b586f4c2c523c428cd7e8db8fdb78a, type: 3}
 --- !u!4 &1649894519
 Transform:
   m_ObjectHideFlags: 0
