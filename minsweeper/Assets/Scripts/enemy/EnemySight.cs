@@ -34,10 +34,9 @@ public class EnemySight : MonoBehaviour
             {
                 // 장애물 검사
                 if (Physics.Raycast(transform.forward, target_direction, out RaycastHit target_hit, _sightDistance))
-                    if (target_hit.transform.CompareTag("Player"))
-                    {
-                        transform.position = Vector3.Lerp(transform.position, target_hit.transform.position, 0.02f);
-                    }
+                {
+                    Debug.Log("발견");
+                }
             }
         }
     }
