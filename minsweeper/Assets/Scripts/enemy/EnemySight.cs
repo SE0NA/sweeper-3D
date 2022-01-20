@@ -11,7 +11,7 @@ public class EnemySight : MonoBehaviour
 {
     [SerializeField] float _sightAngle = 0f;
     [SerializeField] float _sightDistance = 0f;
-    [SerializeField] LayerMask _sightLayerMask = 0;
+    [SerializeField] LayerMask _targetLayer = 0;
 
     // Update is called once per frame
     void Update()
@@ -22,7 +22,7 @@ public class EnemySight : MonoBehaviour
     private void Sight()
     {
         // 시야 내의 오브젝트
-        Collider[] objectsInSight = Physics.OverlapSphere(transform.position, _sightDistance, _sightLayerMask);
+        Collider[] objectsInSight = Physics.OverlapSphere(transform.position, _sightDistance, _targetLayer);
 
         if (objectsInSight.Length > 0)
         {
