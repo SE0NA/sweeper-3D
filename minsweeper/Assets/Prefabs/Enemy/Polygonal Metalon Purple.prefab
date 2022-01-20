@@ -748,12 +748,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4673369876368086}
   - component: {fileID: 95980759410839360}
-  - component: {fileID: 8028604278308828025}
   - component: {fileID: 4044971960022751156}
   - component: {fileID: 5422226533066033222}
   - component: {fileID: 7473573085501362219}
   - component: {fileID: 4000670017341541838}
   - component: {fileID: 7022819411748354117}
+  - component: {fileID: 2504136938732791470}
   m_Layer: 0
   m_Name: Polygonal Metalon Purple
   m_TagString: Enemy
@@ -812,23 +812,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8028604278308828025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462720695320296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3932c86eb1a8d64eb42cffe910f305a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sightAngle: 0
-  _sightDistance: 0
-  _targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!54 &4044971960022751156
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -990,6 +973,24 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 2
+--- !u!114 &2504136938732791470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eadf734a0d7ad9c43adbfb060b546fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints: []
+  _sightAngle: 170
+  _sightDistance: 10
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0
