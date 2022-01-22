@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public bool _isStopAll = false;
     public bool _isLock = false;
     public bool _isMap = false;
+    public bool _nearEnemy = false;
 
     // player movement
     public bool _isMoving = false;
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.M)) 
             {
-                if (!_isMap)    // open teleport map ui
+                if (!_isMap && !_nearEnemy)    // open teleport map ui
                 {
                     CursorUnLock();
                     ingameMenuBtn.PlayBtnClip(1);
@@ -138,7 +139,6 @@ public class PlayerController : MonoBehaviour
             rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
     }
-
 
     private void PlayerRotate()
     {

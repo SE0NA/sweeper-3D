@@ -13,10 +13,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform[] patrolPoints = null;
     int destinationPoint = 0;
 
+    Animator enemyAnim;
+
+    public bool _isEnd = false;
+
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _defaultSpeed;
+        enemyAnim = GetComponent<Animator>();
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
     }
 
@@ -60,5 +65,10 @@ public class Enemy : MonoBehaviour
         _target = null;
         _navMeshAgent.speed = _defaultSpeed;
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
+    }
+
+    public void KillPlayer()
+    {
+        enemyAnim.Play("Attack");
     }
 }
