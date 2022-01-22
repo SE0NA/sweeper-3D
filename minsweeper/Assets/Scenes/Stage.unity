@@ -8787,6 +8787,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: db710d16b38a57444b964927fccab611, type: 2}
+    - target: {fileID: 651355246434382091, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: _sightAngle
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419602141264281456, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504136938732791470, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: _MaxSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504136938732791470, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: _defaultSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2504136938732791470, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 4
@@ -8807,6 +8823,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 282915692}
+    - target: {fileID: 4271976984449290046, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: m_Radius
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5422226533066033222, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -8831,7 +8851,8 @@ PrefabInstance:
       propertyPath: _targetLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5422226533066033222, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
 --- !u!1 &2141370971
 GameObject:
