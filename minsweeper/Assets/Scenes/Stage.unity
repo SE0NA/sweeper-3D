@@ -2143,6 +2143,14 @@ PrefabInstance:
       propertyPath: sensitivity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6499745372748625094, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499745372748625094, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
 --- !u!1 &420559023
@@ -5882,7 +5890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipList:
-  - {fileID: 8300000, guid: 608e0c5f8d9f60d4a8b1b4c671069a0a, type: 3}
+  - {fileID: 8300000, guid: b5b586f4c2c523c428cd7e8db8fdb78a, type: 3}
   - {fileID: 8300000, guid: 5ed086b7ef6be8a4ab20891f500b7d36, type: 3}
   - {fileID: 8300000, guid: 14e3010741c1671449ade7901f3184f5, type: 3}
 --- !u!4 &1649894519
@@ -8823,6 +8831,30 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[3]
       value: 
       objectReference: {fileID: 282915692}
+    - target: {fileID: 4000670017341541838, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000670017341541838, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000670017341541838, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000670017341541838, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000670017341541838, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000670017341541838, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4271976984449290046, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
       propertyPath: m_Radius
       value: 8
