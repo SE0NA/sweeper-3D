@@ -9,6 +9,8 @@ public class Stage : MonoBehaviour
     public List<Room> _roomList;
     public int _totalBomb;
 
+    public int _howManyRoomsForEnemy;
+
     private void Awake()
     {
         SetBomb();

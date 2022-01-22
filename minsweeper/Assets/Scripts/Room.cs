@@ -56,6 +56,8 @@ public class Room : MonoBehaviour
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
+            gameManager._openedRoom++;
+            gameManager.CheckOpenedRoomForCreateEnemy();
         }
     }
     public void RoomFlag()

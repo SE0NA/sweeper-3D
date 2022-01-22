@@ -12,6 +12,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] GameObject panel_doorInteraction;
     [SerializeField] GameObject panel_nearEnemy;
     Animation panel_nearEnenmy_Animation;
+    [SerializeField] GameObject panel_createEnemy;
     [SerializeField] GameObject panel_gameEnd;
     [SerializeField] Text txt_gameEnd;
     [SerializeField] List<Color> scannerTextColor;
@@ -83,6 +84,17 @@ public class CanvasManager : MonoBehaviour
     public void NearEnemyPanelOn()
     {
         panel_nearEnenmy_Animation.Play();
+    }
+
+    public void CreateEnemyPanelOn()
+    {
+        panel_createEnemy.SetActive(true);
+        panel_createEnemy.GetComponent<Animation>().Play();
+        Invoke("CreateEnemyPanelOff", 5f);
+    }
+    private void CreateEnemyPanelOff()
+    {
+        panel_createEnemy.SetActive(false);
     }
 
     public void ESCMenu(bool open)

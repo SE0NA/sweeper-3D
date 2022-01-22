@@ -16,18 +16,28 @@ public class Enemy : MonoBehaviour
     Animator enemyAnim;
 
     public bool _isEnd = false;
+    public bool _isStart = false;
 
     void Start()
     {
+        Debug.Log("enemy- start");
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _defaultSpeed;
         enemyAnim = GetComponent<Animator>();
+
+        enemyAnim.Play("Idle");
+        Invoke("EnemyStart", 5f);
+    }
+    private void EnemyStart()
+    {
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
+        enemyAnim.Play("Run");
+        _isStart = true;
     }
 
     void Update()
     {
-        if (_target != null)
+        if (_target != null && _isStart)
         {
             _navMeshAgent.SetDestination(_target.position);
         }

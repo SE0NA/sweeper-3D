@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject enemyObject;
+    [SerializeField] AudioClip clip_warning_createEnemy;
+
     PlayerController player;
     Stage stage;
     CanvasManager canvasManager;
     Teleport teleport;
+
+    public int _openedRoom = 0;
+    private int _howManyRoomsForEnemy = 100;
 
     private void Awake()
     {
@@ -24,6 +30,34 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         stage._roomList[stage._startRoomNum].RoomOpen();
+        _howManyRoomsForEnemy = stage._howManyRoomsForEnemy;
+    }
+
+    public void CheckOpenedRoomForCreateEnemy()
+    {
+        if (_openedRoom == _howManyRoomsForEnemy)
+        {
+            Debug.Log("opend: " + _openedRoom + " // how: " + _howManyRoomsForEnemy);
+            CreateEnemy();
+        }
+    }
+
+    public void CreateEnemy()
+    {
+        int createTo = 0;
+
+        for(int i = 0; i < stage._roomList.Count; i++)
+        {
+            createTo = Random.Range(0, stage._roomList.Count - 1);
+            if (createTo != player._wherePlayer)
+                break;
+        }
+
+        canvasManager.CreateEnemyPanelOn();
+        GetComponent<AudioSource>().PlayOneShot(clip_warning_createEnemy);
+
+        enemyObject.SetActive(true);
+        enemyObject.transform.position = stage._roomList[createTo].roomPos.position;
     }
 
     public void TeleportUI(bool open)

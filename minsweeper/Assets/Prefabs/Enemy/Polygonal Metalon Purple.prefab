@@ -975,8 +975,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _defaultSpeed: 2
-  _MaxSpeed: 0
-  patrolPoints: []
+  _MaxSpeed: 4
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _isEnd: 0
+  _isStart: 0
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0
