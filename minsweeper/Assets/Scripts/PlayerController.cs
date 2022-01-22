@@ -77,13 +77,17 @@ public class PlayerController : MonoBehaviour
                     _isMap = true;
                     _isLock = true;
                 }
-                else            // close teleport map ui
+                else if (_isMap)            // close teleport map ui
                 {
                     CursorLock();
                     ingameMenuBtn.PlayBtnClip(2);
                     gameManager.TeleportUI(false);
                     _isMap = false;
                     _isLock = false;
+                }
+                else if (_nearEnemy)
+                {
+                    canvasManager.NearEnemyPanelOn();
                 }
             }
         }
