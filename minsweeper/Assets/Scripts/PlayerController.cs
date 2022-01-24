@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip jumpclip;
     Rigidbody rigid;
 
+    [SerializeField] ParticleSystem vfx_blood;
+    [SerializeField] ParticleSystem vfx_clear;
+
     CanvasManager canvasManager;
     GameManager gameManager;
     InGameMenuBtn ingameMenuBtn;
@@ -185,6 +188,10 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = 0;
         myCamera.GetComponent<Animation>().Play();
         playerAnim.Play("Die");
+        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        gameObject.GetComponent<Rigidbody>().useGravity = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        vfx_blood.Play();
 
         CursorUnLock();
     }
@@ -194,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
         gameObject.layer = 0;
         myCamera.GetComponent<Animation>().Play();
-
+        vfx_clear.Play();
         CursorUnLock();
     }
 
