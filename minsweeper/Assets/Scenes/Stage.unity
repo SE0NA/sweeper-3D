@@ -2128,6 +2128,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1317203853711113400, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: near clip plane
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317203853711113400, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 951
       objectReference: {fileID: 0}
@@ -2147,6 +2151,10 @@ PrefabInstance:
       propertyPath: sensitivity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5473267165806754415, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6499745372748625094, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_Volume
       value: 0.5
@@ -2155,7 +2163,10 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1486285161546607975, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+    - {fileID: 6261084154811873986, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+    - {fileID: 8079763473280436963, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
 --- !u!1 &420559023
 GameObject:

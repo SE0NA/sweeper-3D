@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // player interactions
     private Door touchDoor;
 
-    public Camera myCamera;
+    [SerializeField] Camera myCamera;
 
     Animator playerAnim;
     AudioSource playerAudioSource;
@@ -181,11 +181,20 @@ public class PlayerController : MonoBehaviour
     public void PlayerDie()
     {
         _isStopAll = true;
+
+        gameObject.layer = 0;
+        myCamera.GetComponent<Animation>().Play();
+        playerAnim.Play("Die");
+
         CursorUnLock();
     }
     public void PlayerGameClear()
     {
         _isStopAll = true;
+
+        gameObject.layer = 0;
+        myCamera.GetComponent<Animation>().Play();
+
         CursorUnLock();
     }
 
