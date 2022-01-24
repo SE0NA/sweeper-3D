@@ -3220,6 +3220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyObject: {fileID: 1097007244}
   clip_warning_createEnemy: {fileID: 8300000, guid: 57a2904a6590149faac237a52b0f07d5, type: 3}
+  clip_welcome: {fileID: 8300000, guid: 26c212c7d989d42acbe802823a033bb4, type: 3}
   _openedRoom: 0
 --- !u!4 &665038380
 Transform:

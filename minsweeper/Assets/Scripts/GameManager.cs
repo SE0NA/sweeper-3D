@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject enemyObject;
     [SerializeField] AudioClip clip_warning_createEnemy;
+    [SerializeField] AudioClip clip_welcome;
 
     PlayerController player;
     Stage stage;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         stage._roomList[stage._startRoomNum].RoomOpen();
         _howManyRoomsForEnemy = stage._howManyRoomsForEnemy;
+        GetComponent<AudioSource>().PlayOneShot(clip_welcome);
     }
 
     public void CheckOpenedRoomForCreateEnemy()
