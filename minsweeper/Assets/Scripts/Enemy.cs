@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 _navMeshAgent.SetDestination(patrolPoints[destinationPoint].position);
+                enemyAnim.Play("Run");
             }
         }
     }
@@ -80,5 +81,6 @@ public class Enemy : MonoBehaviour
     public void KillPlayer()
     {
         enemyAnim.Play("Attack");
+        CancelTarget();
     }
 }

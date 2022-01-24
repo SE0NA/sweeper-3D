@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyKill : MonoBehaviour
 {
     [SerializeField] Enemy _thisEnemy;
+    [SerializeField] AudioClip clip_bite;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GetComponent<AudioSource>().PlayOneShot(clip_bite);
             _thisEnemy.KillPlayer();
             FindObjectOfType<GameManager>().GameOver();
         }
