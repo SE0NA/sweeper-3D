@@ -24,6 +24,8 @@ public class Room : MonoBehaviour
 
     public Transform roomPos;
 
+    [SerializeField] ParticleSystem vfx_explosion;
+
     GameManager gameManager;
     CanvasManager canvasManager;
     Teleport teleport;
@@ -49,6 +51,7 @@ public class Room : MonoBehaviour
         if (_isBomb)
         {
             ceilLight.enabled = true;
+            vfx_explosion.Play();
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.red;
             gameManager.GameOver();
         }
