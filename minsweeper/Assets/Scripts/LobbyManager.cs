@@ -17,7 +17,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [SerializeField] Text txt_playerCount;
 
     [SerializeField] Text txt_chat;
-    [SerializeField] InputField txt_sendChat;
+    [SerializeField] byte txtLine;
+    List<string> chatLog;
+
+    [SerializeField] InputField if_sendChat;
 
     [SerializeField] Button btn_start;
 
@@ -110,14 +113,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [PunRPC]
     private void SetChat(string msg)
     {
-        
+        if (chatLog.Count > txtLine)
+            chatLog.RemoveAt(0);
+        chatLog.Add(msg);
+
+        txt_chat.text = "";
+        for (int i = 0; i < chatLog.Count; i++)
+            txt_chat.text += chatLog[i];
     }
     public void SendChat()
     {
-
+        photonView.RPC("SetChat", RpcTarget.All, PhotonNetwork.NickName + ": " + if_sendChat.text);
+        if_sendChat.text = "";
     }
 
-    public void MasterGameStart()
+    public void BtnGameStart()
     {
         PhotonNetwork.LoadLevel("Stage");
     }
