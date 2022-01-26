@@ -7,28 +7,40 @@ using Photon.Realtime;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
+    [Header("Join Room")]
     [SerializeField] Text txt_networkConnectInfo;
     [SerializeField] Button btn_join;
     [SerializeField] InputField if_nickname;
     [SerializeField] InputField if_roomCode;
     [SerializeField] byte maxPlayer;
 
+    [Header("Room Info")]
     [SerializeField] Text txt_playerList;
     [SerializeField] Text txt_playerCount;
 
     [SerializeField] Text txt_chat;
     [SerializeField] byte txtLine;
     List<string> chatLog;
-
     [SerializeField] InputField if_sendChat;
 
     [SerializeField] Button btn_start;
 
     [SerializeField] List<Color> color_forNetworkConnectInfo;
 
+    public PhotonView PV;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return)&& !if_sendChat.text.Equals(""))
+            SendChat();
+    }
+
     // 서버
     private void Awake()
     {
+        txt_networkConnectInfo.text = "서버 접속 중...";
+        if_sendChat.enabled = false;
+        txt_networkConnectInfo.color = color_forNetworkConnectInfo[0];
         PhotonNetwork.ConnectUsingSettings();
         // -> OnConnectedToMaster();
         btn_join.interactable = false;  // 서버 접속까지 비활성화
@@ -36,7 +48,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         btn_join.interactable = true;   // 참가 버튼 활성화
-        Debug.Log("서버 접속 완료");
+        txt_networkConnectInfo.text = "서버 접속 완료!";
+        txt_networkConnectInfo.color = color_forNetworkConnectInfo[1];
     }
     public override void OnDisconnected(DisconnectCause cause)  // 서버 접속 실패
     {
@@ -78,8 +91,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         RoomSetting();
-        txt_networkConnectInfo.text = "참가 완료!";
+        txt_networkConnectInfo.text = "Room: "+ PhotonNetwork.CurrentRoom.Name;
         txt_networkConnectInfo.color = color_forNetworkConnectInfo[1];
+        if_sendChat.enabled = true;
     }
     public override void OnMasterClientSwitched(Player newMasterClient) => RoomSetting();
     public override void OnPlayerEnteredRoom(Player newPlayer) => RoomSetting();
@@ -113,8 +127,15 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         txt_playerCount.text = PhotonNetwork.PlayerList.Length + " / " + maxPlayer.ToString();
     }
 
+    // 채팅
+    public void SendChat()
+    {
+        // 오류 확인 NullReferenceException: Object reference not set to an instance of an obejct...
+        PV.RPC("SetChat", RpcTarget.All, PhotonNetwork.NickName + ": " + if_sendChat.text);
+        if_sendChat.text = "";
+    }
     [PunRPC]
-    private void SetChat(string msg)
+    void SetChat(string msg)
     {
         if (chatLog.Count > txtLine)
             chatLog.RemoveAt(0);
@@ -123,11 +144,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         txt_chat.text = "";
         for (int i = 0; i < chatLog.Count; i++)
             txt_chat.text += chatLog[i];
-    }
-    public void SendChat()
-    {
-        photonView.RPC("SetChat", RpcTarget.All, PhotonNetwork.NickName + ": " + if_sendChat.text);
-        if_sendChat.text = "";
     }
 
     public void BtnGameStart()

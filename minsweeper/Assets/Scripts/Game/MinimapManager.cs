@@ -21,9 +21,12 @@ public class MinimapManager : MonoBehaviour
 
     void Update()
     {
-        thisPos = new Vector3(_player.transform.position.x
-                            , gameObject.transform.position.y
-                            , _player.transform.position.z);
-        gameObject.transform.position = thisPos;
+        if (_player != null)
+        {
+            thisPos = new Vector3(_player.transform.position.x
+                                , gameObject.transform.position.y
+                                , _player.transform.position.z);
+            gameObject.transform.position = thisPos;
+        }
     }
 }

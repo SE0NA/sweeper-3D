@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,8 +37,12 @@ public class PlayerController : MonoBehaviour
     GameManager gameManager;
     InGameMenuBtn ingameMenuBtn;
 
+    PhotonView PV;
+
     void Start()
     {
+        PV = GetComponent<PhotonView>();
+
         playerAnim = GetComponent<Animator>();
         playerAudioSource = GetComponent<AudioSource>();
         rigid = GetComponent<Rigidbody>();
@@ -45,6 +51,12 @@ public class PlayerController : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         ingameMenuBtn = FindObjectOfType<InGameMenuBtn>();
 
+        if (!PV.IsMine)
+        {
+            Destroy(GetComponentInChildren<Camera>().gameObject);
+            Destroy(rigid);
+        }
+
         // Lock Cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,6 +64,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!PV.IsMine)
+            return;
+
         ESCMenu();
         if (!_isStopAll)
         {
