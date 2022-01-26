@@ -45,29 +45,27 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
 
     // 방
-    public void ConnectRoom(bool isRandom)
+    public void ConnectRoom()
     {
         btn_join.interactable = false;  // 접속 중임
         if (PhotonNetwork.IsConnected)  // 서버 접속된 상태
         {
             txt_networkConnectInfo.text = "참가 중...";
-            if (isRandom && if_nickname.text.Equals("")) PhotonNetwork.JoinRandomRoom();
+            if (if_nickname.text.Equals("") || if_roomCode.text.Equals(""))    // 정보X
+            {
+                txt_networkConnectInfo.text = "모든 정보를 입력해 주세요!";
+                txt_networkConnectInfo.color = color_forNetworkConnectInfo[2];
+                btn_join.interactable = true;
+            }
             else
             {
-                if (if_nickname.text.Equals("") && if_roomCode.text.Equals(""))
+                PhotonNetwork.NickName = if_nickname.text;
+
+                PhotonNetwork.JoinOrCreateRoom(if_roomCode.text, new RoomOptions { MaxPlayers = maxPlayer }, null);
+                if (!PhotonNetwork.IsMasterClient)
                 {
-                    PhotonNetwork.JoinOrCreateRoom(if_roomCode.text, new RoomOptions { MaxPlayers = maxPlayer }, null);
-                    if (!PhotonNetwork.IsMasterClient)
-                    {
-                        btn_start.enabled = false;
-                        btn_start.GetComponent<Image>().color = Color.gray;
-                    }
-                }
-                else
-                {
-                    txt_networkConnectInfo.text = "모든 정보를 입력해 주세요!";
-                    txt_networkConnectInfo.color = color_forNetworkConnectInfo[2];
-                    btn_join.interactable = true;
+                    btn_start.enabled = false;
+                    btn_start.GetComponent<Image>().color = Color.gray;
                 }
             }
         }
@@ -77,7 +75,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             PhotonNetwork.ConnectUsingSettings();
         }
     }
-    public override void OnJoinedRoom() => RoomSetting();
+    public override void OnJoinedRoom()
+    {
+        RoomSetting();
+        txt_networkConnectInfo.text = "참가 완료!";
+        txt_networkConnectInfo.color = color_forNetworkConnectInfo[1];
+    }
     public override void OnMasterClientSwitched(Player newMasterClient) => RoomSetting();
     public override void OnPlayerEnteredRoom(Player newPlayer) => RoomSetting();
     public override void OnPlayerLeftRoom(Player otherPlayer) => RoomSetting();
