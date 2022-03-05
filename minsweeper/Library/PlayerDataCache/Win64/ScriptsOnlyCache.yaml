@@ -25,6 +25,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -32,20 +34,14 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.Postprocessing.Runtime.dll:
-    - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
-    - UnityEngine.Rendering.PostProcessing.AutoExposure
-    - UnityEngine.Rendering.PostProcessing.Bloom
     - UnityEngine.Rendering.PostProcessing.ChromaticAberration
-    - UnityEngine.Rendering.PostProcessing.ColorGrading
     - UnityEngine.Rendering.PostProcessing.DepthOfField
     - UnityEngine.Rendering.PostProcessing.Grain
-    - UnityEngine.Rendering.PostProcessing.LensDistortion
     - UnityEngine.Rendering.PostProcessing.MotionBlur
     - UnityEngine.Rendering.PostProcessing.PostProcessLayer
     - UnityEngine.Rendering.PostProcessing.PostProcessProfile
     - UnityEngine.Rendering.PostProcessing.PostProcessResources
     - UnityEngine.Rendering.PostProcessing.PostProcessVolume
-    - UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections
     - UnityEngine.Rendering.PostProcessing.Vignette
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -172,35 +168,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3412}
     - Class: 114
-      Script: {instanceID: 3700}
+      Script: {instanceID: 3698}
     - Class: 114
-      Script: {instanceID: 4042}
+      Script: {instanceID: 4040}
     - Class: 114
-      Script: {instanceID: 4046}
+      Script: {instanceID: 4044}
+    - Class: 114
+      Script: {instanceID: 4226}
     - Class: 114
       Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 4230}
+      Script: {instanceID: 4278}
     - Class: 114
-      Script: {instanceID: 4280}
+      Script: {instanceID: 4386}
     - Class: 114
-      Script: {instanceID: 4388}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 4634}
     - Class: 114
-      Script: {instanceID: 4636}
+      Script: {instanceID: 4702}
     - Class: 114
       Script: {instanceID: 4704}
     - Class: 114
-      Script: {instanceID: 4706}
+      Script: {instanceID: 4854}
     - Class: 114
-      Script: {instanceID: 4856}
+      Script: {instanceID: 4990}
     - Class: 114
-      Script: {instanceID: 4992}
+      Script: {instanceID: 5154}
     - Class: 114
-      Script: {instanceID: 5156}
-    - Class: 114
-      Script: {instanceID: 5182}
+      Script: {instanceID: 5180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -323,37 +319,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3226}
     - Class: 114
-      Script: {instanceID: 3684}
+      Script: {instanceID: 3682}
     - Class: 114
-      Script: {instanceID: 3850}
+      Script: {instanceID: 3848}
     - Class: 114
-      Script: {instanceID: 3904}
+      Script: {instanceID: 3902}
     - Class: 114
-      Script: {instanceID: 4230}
+      Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 4314}
+      Script: {instanceID: 4312}
     - Class: 114
-      Script: {instanceID: 4402}
+      Script: {instanceID: 4400}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 4564}
     - Class: 114
-      Script: {instanceID: 4636}
+      Script: {instanceID: 4634}
     - Class: 114
-      Script: {instanceID: 4704}
+      Script: {instanceID: 4702}
     - Class: 114
-      Script: {instanceID: 4714}
+      Script: {instanceID: 4712}
     - Class: 114
-      Script: {instanceID: 4762}
+      Script: {instanceID: 4760}
     - Class: 114
-      Script: {instanceID: 4904}
+      Script: {instanceID: 4902}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 4976}
     - Class: 114
-      Script: {instanceID: 4992}
+      Script: {instanceID: 4990}
     - Class: 114
-      Script: {instanceID: 5016}
+      Script: {instanceID: 5014}
     - Class: 114
-      Script: {instanceID: 5156}
+      Script: {instanceID: 5154}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
