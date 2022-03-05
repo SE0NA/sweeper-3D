@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     CanvasManager canvasManager;
     GameManager gameManager;
     InGameMenuBtn ingameMenuBtn;
+    MinimapManager minimapManager;
 
     PhotonView PV;
 
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         canvasManager = FindObjectOfType<CanvasManager>();
         gameManager = FindObjectOfType<GameManager>();
         ingameMenuBtn = FindObjectOfType<InGameMenuBtn>();
+        minimapManager = FindObjectOfType<MinimapManager>();
 
         if (!PV.IsMine)
         {
@@ -60,6 +62,8 @@ public class PlayerController : MonoBehaviour
         // Lock Cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        _wherePlayer = 12;
     }
 
     void Update()
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
         ESCMenu();
         if (!_isStopAll)
         {
+            minimapManager.SetMiniMap(gameObject.transform);
             if (!_isLock)   // unlock
             {
                 // 이동, 문 상호작용
@@ -159,6 +164,7 @@ public class PlayerController : MonoBehaviour
             playerAudioSource.PlayOneShot(jumpclip);
             playerAnim.Play("Jump");
             rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            Debug.Log("wherePlayer: " + _wherePlayer);
         }
     }
 
@@ -173,14 +179,28 @@ public class PlayerController : MonoBehaviour
         // left click
         if (Input.GetMouseButtonDown(0) && touchDoor)
         {
-            touchDoor.DoorOpen(_wherePlayer);
-            canvasManager.DoorInteractPanelOff();
+            RPC_DoorOpen();
+ //           touchDoor.DoorOpen(_wherePlayer);
+ //           canvasManager.DoorInteractPanelOff();
         }
         // right click
         else if (Input.GetMouseButtonDown(1) && touchDoor)
         {
-            touchDoor.DoorFlag(_wherePlayer);
+            RPC_DoorFlag();
+//            touchDoor.DoorFlag(_wherePlayer);
         }
+    }
+
+    [PunRPC]
+    public void RPC_DoorOpen()
+    {
+        touchDoor.DoorOpen(_wherePlayer);
+        canvasManager.DoorInteractPanelOff();
+    }
+    [PunRPC]
+    public void RPC_DoorFlag()
+    {
+        touchDoor.DoorFlag(_wherePlayer);
     }
 
     public void CursorUnLock()
@@ -233,6 +253,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Room"))
         {
             _wherePlayer = other.GetComponent<Room>().GetRoomNum();
+            if (canvasManager == null) canvasManager = FindObjectOfType<CanvasManager>();
             canvasManager.SetScannerTo(other.GetComponent<Room>()._aroundBomb);
         }
         else if (other.gameObject.CompareTag("Door"))

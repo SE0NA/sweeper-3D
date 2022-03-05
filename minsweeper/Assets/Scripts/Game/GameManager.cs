@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] AudioClip clip_warning_createEnemy;
     [SerializeField] AudioClip clip_welcome;
 
-    public GameObject playerPrefab;
+    [SerializeField] GameObject playerPrefab;
+    [SerializeField] Transform playerSettingPos;
 
     PlayerController player;
     Stage stage;
@@ -35,7 +36,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         stage._roomList[stage._startRoomNum].RoomOpen();
         _howManyRoomsForEnemy = stage._howManyRoomsForEnemy;
 
-        PhotonNetwork.Instantiate(Path.Combine("Player"), stage._roomList[stage._startRoomNum].roomPos.position, Quaternion.identity);
+        GameObject thisplayer = null;
+        thisplayer = PhotonNetwork.Instantiate("Player", playerSettingPos.position, Quaternion.identity);
+        thisplayer.transform.position = stage._roomList[12].roomPos.position;
         GetComponent<AudioSource>().PlayOneShot(clip_welcome);
     }
 

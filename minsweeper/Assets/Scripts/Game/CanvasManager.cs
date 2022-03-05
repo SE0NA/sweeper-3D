@@ -32,6 +32,7 @@ public class CanvasManager : MonoBehaviour
         txt_restBomb.text = restBomb.ToString();
 
         panel_nearEnenmy_Animation = panel_nearEnemy.GetComponent<Animation>();
+
     }
 
     void Update()

@@ -31,7 +31,7 @@ public class Room : MonoBehaviour
     CanvasManager canvasManager;
     Teleport teleport;
 
-    private void Start()
+    private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         canvasManager = FindObjectOfType<CanvasManager>();
@@ -51,6 +51,7 @@ public class Room : MonoBehaviour
 
         if (_isBomb)
         {
+            ceilLight.color = Color.red;
             ceilLight.enabled = true;
             GetComponent<AudioSource>().PlayOneShot(clip_explosion);
             vfx_explosion.Play();
@@ -61,6 +62,8 @@ public class Room : MonoBehaviour
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
+            ceilLight.color = Color.white;
+            ceilLight.enabled = true;
             gameManager._openedRoom++;
             gameManager.CheckOpenedRoomForCreateEnemy();
         }
