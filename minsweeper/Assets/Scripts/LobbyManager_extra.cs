@@ -51,7 +51,7 @@ public class LobbyManager_extra : MonoBehaviourPunCallbacks
     }
 
     // 后 规X
-    public override void OnJoinRoomFailed(short returnCode, string message)
+    public override void OnJoinRandomFailed(short returnCode, string message)
     {
         txt_message.text = "货肺款 规 积己...";
         txt_message.color = Color.blue;
@@ -62,6 +62,6 @@ public class LobbyManager_extra : MonoBehaviourPunCallbacks
     {
         txt_message.text = "规 曼啊 己傍!\n霸烙 矫累";
         txt_message.color = Color.yellow;
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("Stage");
     }
 }
