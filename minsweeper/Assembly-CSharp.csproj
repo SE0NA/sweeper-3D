@@ -68,11 +68,13 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
     <Compile Include="Assets\Scripts\Game\Stage.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
+    <Compile Include="Assets\Scripts\NetworkForTest.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Scripts\Game\Teleport.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyTargetArea.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
+    <Compile Include="Assets\Scripts\ChatManager.cs" />
     <Compile Include="Assets\Scripts\Game\EnemySight.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyKill.cs" />
@@ -84,8 +86,7 @@
     <Compile Include="Assets\Scripts\Game\Room.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Scripts\Game\CanvasManager.cs" />
-    <Compile Include="Assets\Scripts\ChatManager.cs" />
-    <Compile Include="Assets\Scripts\NetworkForTest.cs" />
+    <Compile Include="Assets\Scripts\LobbyManager_extra.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
