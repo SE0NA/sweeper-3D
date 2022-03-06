@@ -196,12 +196,13 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.DoorOpenByNum(rnum, dnum);
         canvasManager.DoorInteractPanelOff();
-        Debug.Log("실행");
+        Debug.Log("오픈");
     }
     [PunRPC]
-    public void RPC_DoorFlag(int num, Door whichdoor)
+    public void RPC_DoorFlag(int rnum, int dnum)
     {
-        whichdoor.DoorFlag(num);
+        gameManager.DoorFlagByNum(rnum, dnum);
+        Debug.Log("플래그");
     }
     
     public void CursorUnLock()
