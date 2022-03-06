@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
 {
     private bool isClose = true;
+    public int _doornum;
     
     [SerializeField] Room _room1;
     [SerializeField] Room _room2;
@@ -25,7 +24,6 @@ public class Door : MonoBehaviour
         else
             _room1.RoomOpen();
     }
-
 
     public void DoorFlag(int wherePlayer)
     {

@@ -179,30 +179,31 @@ public class PlayerController : MonoBehaviour
         // left click
         if (Input.GetMouseButtonDown(0) && touchDoor)
         {
-            RPC_DoorOpen();
+            PV.RPC("RPC_DoorOpen", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
  //           touchDoor.DoorOpen(_wherePlayer);
  //           canvasManager.DoorInteractPanelOff();
         }
         // right click
         else if (Input.GetMouseButtonDown(1) && touchDoor)
         {
-            RPC_DoorFlag();
+            PV.RPC("RPC_DoorFlag", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
 //            touchDoor.DoorFlag(_wherePlayer);
         }
     }
-
+    
     [PunRPC]
-    public void RPC_DoorOpen()
+    public void RPC_DoorOpen(int rnum, int dnum)
     {
-        touchDoor.DoorOpen(_wherePlayer);
+        gameManager.DoorOpenByNum(rnum, dnum);
         canvasManager.DoorInteractPanelOff();
+        Debug.Log("½ÇÇà");
     }
     [PunRPC]
-    public void RPC_DoorFlag()
+    public void RPC_DoorFlag(int num, Door whichdoor)
     {
-        touchDoor.DoorFlag(_wherePlayer);
+        whichdoor.DoorFlag(num);
     }
-
+    
     public void CursorUnLock()
     {
         _isLock = true;

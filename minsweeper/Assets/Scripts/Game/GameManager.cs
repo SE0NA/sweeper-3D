@@ -50,6 +50,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
+    // 3/6 test
+    public void DoorOpenByNum(int rnum, int dnum)
+    {
+        stage._doorList[dnum].DoorOpen(rnum);
+    }
+    //
+
     public void CreateEnemy()
     {
         int createTo = 0;

@@ -7,6 +7,7 @@ public class Stage : MonoBehaviour
     [SerializeField] int _countALine;
     public int _startRoomNum;
     public List<Room> _roomList;
+    public List<Door> _doorList;
     public int _totalBomb;
 
     public int _howManyRoomsForEnemy;
