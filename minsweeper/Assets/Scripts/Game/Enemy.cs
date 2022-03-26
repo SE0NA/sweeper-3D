@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class Enemy : MonoBehaviour
 {
@@ -82,5 +83,12 @@ public class Enemy : MonoBehaviour
     {
         enemyAnim.Play("Attack");
         CancelTarget();
+    }
+
+    [PunRPC]
+    public void EnemySetup(int defaultSp, int maxSp)
+    {
+        _defaultSpeed = defaultSp;
+        _MaxSpeed = maxSp;
     }
 }

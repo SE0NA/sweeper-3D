@@ -4755,6 +4755,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[24]
       value: 
       objectReference: {fileID: 1254633820}
+    - target: {fileID: 4196130617694956028, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
 --- !u!1 &1097007244 stripped
@@ -5139,10 +5143,10 @@ RectTransform:
   m_Father: {fileID: 1503247805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -140, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212076513
 MonoBehaviour:
@@ -5177,7 +5181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC67C\uCABD: \uBB38\uC5F4\uAE30 / \uC624\uB978\uCABD: \uAE43\uBC1C\uD45C\uC2DC"
+  m_Text: "\uC67C\uCABD: \uBB38\uC5F4\uAE30 /\uC624\uB978\uCABD: \uAE43\uBC1C"
 --- !u!222 &1212076514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6307,7 +6311,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -140}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1511358204
 GameObject:
@@ -11608,7 +11612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582110163605723709, guid: 9a6563fd940691747b1997f1a3c78cdd, type: 3}
       propertyPath: _totalBomb
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6582110163605723709, guid: 9a6563fd940691747b1997f1a3c78cdd, type: 3}
       propertyPath: _howManyRoomsForEnemy
@@ -15088,3 +15092,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a6563fd940691747b1997f1a3c78cdd, type: 3}
+--- !u!1 &6582110161911709975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6582110163605723711, guid: 9a6563fd940691747b1997f1a3c78cdd, type: 3}
+  m_PrefabInstance: {fileID: 6582110161911709974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6582110161911709976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582110161911709975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
