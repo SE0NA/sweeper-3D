@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] GameObject enemyObject;
     [SerializeField] AudioClip clip_warning_createEnemy;
     [SerializeField] AudioClip clip_welcome;
+    private GameObject _thisEnemy;
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] Transform playerSettingPos;
+    [SerializeField] GameObject patrolPoints;
 
     PlayerController player;
     Stage stage;
@@ -39,11 +41,16 @@ public class GameManager : MonoBehaviourPunCallbacks
         GameObject thisplayer = null;
         thisplayer = PhotonNetwork.Instantiate("Player", playerSettingPos.position, Quaternion.identity);
         thisplayer.transform.position = stage._roomList[12].roomPos.position;
+        player = thisplayer.GetComponent<PlayerController>();
         GetComponent<AudioSource>().PlayOneShot(clip_welcome);
     }
 
     public void CheckOpenedRoomForCreateEnemy()
     {
+        Debug.Log("isMasterClient: " + PhotonNetwork.IsMasterClient);
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
         if (_openedRoom == _howManyRoomsForEnemy)
         {
             CreateEnemy();
@@ -73,8 +80,9 @@ public class GameManager : MonoBehaviourPunCallbacks
         canvasManager.CreateEnemyPanelOn();
         GetComponent<AudioSource>().PlayOneShot(clip_warning_createEnemy);
 
-        enemyObject.SetActive(true);
-        enemyObject.transform.position = stage._roomList[createTo].roomPos.position;
+        _thisEnemy = PhotonNetwork.Instantiate("Enemy", playerSettingPos.position, Quaternion.identity);
+        _thisEnemy.transform.position = stage._roomList[createTo].roomPos.position;
+        _thisEnemy.GetComponent<Enemy>().SetPatrolPointsFromGM(patrolPoints);
     }
 
     public void TeleportUI(bool open)

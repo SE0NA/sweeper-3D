@@ -31,6 +31,9 @@ public class Enemy : MonoBehaviour
     }
     private void EnemyStart()
     {
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
         enemyAnim.Play("Run");
         _isStart = true;
@@ -38,6 +41,9 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
         if (_target != null && _isStart)
         {
             _navMeshAgent.SetDestination(_target.position);
@@ -85,10 +91,16 @@ public class Enemy : MonoBehaviour
         CancelTarget();
     }
 
-    [PunRPC]
-    public void EnemySetup(int defaultSp, int maxSp)
+    public void PowerOffEnemy()
     {
-        _defaultSpeed = defaultSp;
-        _MaxSpeed = maxSp;
+        CancelInvoke();
+    }
+
+    public void SetPatrolPointsFromGM(GameObject points)
+    {
+        for(int i = 0; i < patrolPoints.Length; i++)
+        {
+            patrolPoints[i] = points.transform.GetChild(i).transform;
+        }
     }
 }

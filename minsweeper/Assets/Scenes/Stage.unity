@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 1
     agentHeight: 2
-    agentSlope: 10
-    agentClimb: 0.01
+    agentSlope: 11
+    agentClimb: 1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: cee183dd34f4a6d43a47fffdb144a39e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f52eb577d8cc4e746a711236364f8233, type: 2}
 --- !u!1 &10720736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3047,6 +3047,7 @@ MonoBehaviour:
   clip_welcome: {fileID: 8300000, guid: 26c212c7d989d42acbe802823a033bb4, type: 3}
   playerPrefab: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
   playerSettingPos: {fileID: 1288011851}
+  patrolPoints: {fileID: 930006498}
   _openedRoom: 0
 --- !u!4 &665038380
 Transform:
@@ -4607,6 +4608,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1462720695320296, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 4673369876368086, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -4617,7 +4622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673369876368086, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4673369876368086, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11616,7 +11621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582110163605723709, guid: 9a6563fd940691747b1997f1a3c78cdd, type: 3}
       propertyPath: _howManyRoomsForEnemy
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6582110163605723711, guid: 9a6563fd940691747b1997f1a3c78cdd, type: 3}
       propertyPath: m_Name
