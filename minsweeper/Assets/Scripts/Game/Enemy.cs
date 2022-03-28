@@ -21,22 +21,18 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("enemy- start");
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _defaultSpeed;
+
         enemyAnim = GetComponent<Animator>();
 
-        enemyAnim.Play("Idle");
-        Invoke("EnemyStart", 5f);
+        if (PhotonNetwork.IsMasterClient)
+            Invoke("EnemyStart", 5f);
+        _isStart = true;
     }
     private void EnemyStart()
     {
-        if (!PhotonNetwork.IsMasterClient)
-            return;
-
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
-        enemyAnim.Play("Run");
-        _isStart = true;
     }
 
     void Update()
@@ -58,7 +54,7 @@ public class Enemy : MonoBehaviour
             {
                 while (true)
                 {
-                    int next = Random.Range(0, patrolPoints.Length);
+                    int next = Random.Range(0, patrolPoints.Length - 1);
                     if (next != destinationPoint)
                     {
                         destinationPoint = next;
@@ -66,6 +62,7 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 _navMeshAgent.SetDestination(patrolPoints[destinationPoint].position);
+                Debug.Log("NextPoint: " + (destinationPoint + 1));
                 enemyAnim.Play("Run");
             }
         }
@@ -73,6 +70,9 @@ public class Enemy : MonoBehaviour
 
     public void SetTarget(Transform thisTarget)     // <- EnemySight
     {
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
         CancelInvoke();
         _target = thisTarget;
         _navMeshAgent.speed = _MaxSpeed;
@@ -80,6 +80,9 @@ public class Enemy : MonoBehaviour
 
     public void CancelTarget()  // <- EnenmyTargetArea
     {
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
         _target = null;
         _navMeshAgent.speed = _defaultSpeed;
         InvokeRepeating("MoveToNextPoint", 0f, 2f);

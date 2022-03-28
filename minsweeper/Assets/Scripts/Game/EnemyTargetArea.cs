@@ -11,6 +11,9 @@ public class EnemyTargetArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!Photon.Pun.PhotonNetwork.IsMasterClient)
+            return;
+
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<PlayerController>()._nearEnemy = true;
@@ -19,7 +22,11 @@ public class EnemyTargetArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!Photon.Pun.PhotonNetwork.IsMasterClient || _thisEnemy._target == null)
+            return;
+
+        if (other.gameObject.CompareTag("Player")
+            &&_thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
         {
             // targetArea - target ³õÄ§
             _thisEnemy._target = null;

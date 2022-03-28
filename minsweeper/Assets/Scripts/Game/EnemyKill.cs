@@ -13,7 +13,10 @@ public class EnemyKill : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(clip_bite);
             _thisEnemy.KillPlayer();
-            FindObjectOfType<GameManager>().GameOver();
+
+            if (other.GetComponent<Photon.Pun.PhotonView>().IsMine)
+                FindObjectOfType<GameManager>().GameOver();
+            other.gameObject.GetComponent<PlayerController>().PlayerDie();
         }
     }
 }

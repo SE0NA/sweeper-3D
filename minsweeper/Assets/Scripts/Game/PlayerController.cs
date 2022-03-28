@@ -180,14 +180,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && touchDoor)
         {
             PV.RPC("RPC_DoorOpen", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
- //           touchDoor.DoorOpen(_wherePlayer);
- //           canvasManager.DoorInteractPanelOff();
         }
         // right click
         else if (Input.GetMouseButtonDown(1) && touchDoor)
         {
             PV.RPC("RPC_DoorFlag", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
-//            touchDoor.DoorFlag(_wherePlayer);
         }
     }
     
@@ -196,13 +193,11 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.DoorOpenByNum(rnum, dnum);
         canvasManager.DoorInteractPanelOff();
-        Debug.Log("¿ÀÇÂ");
     }
     [PunRPC]
     public void RPC_DoorFlag(int rnum, int dnum)
     {
         gameManager.DoorFlagByNum(rnum, dnum);
-        Debug.Log("ÇÃ·¡±×");
     }
     
     public void CursorUnLock()
@@ -223,14 +218,17 @@ public class PlayerController : MonoBehaviour
         _isStopAll = true;
 
         gameObject.layer = 0;
-        myCamera.GetComponent<Animation>().Play();
         playerAnim.Play("Die");
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
+
+        if (PV.IsMine)
+        {
+            CursorUnLock();
+            myCamera.GetComponent<Animation>().Play();
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        }
         gameObject.GetComponent<BoxCollider>().enabled = false;
         vfx_blood.Play();
-
-        CursorUnLock();
     }
     public void PlayerGameClear()
     {

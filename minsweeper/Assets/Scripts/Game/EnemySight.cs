@@ -14,7 +14,10 @@ public class EnemySight : MonoBehaviour
 
     void Update()
     {
-        if(_thisEnemy._target == null)
+        if (!Photon.Pun.PhotonNetwork.IsMasterClient)
+            return;
+
+        if (_thisEnemy._target == null)
         {
             Sight();
         }
@@ -28,15 +31,19 @@ public class EnemySight : MonoBehaviour
         if (objectsInSight.Length > 0)
         {
             Transform target = objectsInSight[0].transform;
+
             // 타겟 각도 계산
             Vector3 target_direction = (target.position - transform.position).normalized;
             float target_angle = Vector3.Angle(target_direction, transform.forward);
             if (target_angle < _sightAngle * 0.5f)
             {
+                Debug.Log("target 1");
                 // Raycast 검사
                 if (Physics.Raycast(transform.position, target_direction, out RaycastHit target_hit, _sightDistance))
                 {
+                    Debug.Log("target 2");
                     _thisEnemy.SetTarget(target.transform);
+                    Debug.Log("target 3");
                 }
             }
         }

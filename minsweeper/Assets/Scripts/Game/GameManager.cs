@@ -22,7 +22,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     Teleport teleport;
 
     public int _openedRoom = 0;
-    private int _howManyRoomsForEnemy = 100;
+
+    [Header("SetDifficulty")]
+    public bool monster_activation = true;
+    public int monster_MaxSpeed = 4;
+    public int monster_defaultSpeed = 2;
+    public int monster_howmanyrooms = 100;
+    public int stage_totalBomb = 10;
+    public bool player_usingFlags = true;
 
     private void Awake()
     {
@@ -30,13 +37,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         canvasManager = FindObjectOfType<CanvasManager>();
         teleport = FindObjectOfType<Teleport>();
 
+        stage._totalBomb = stage_totalBomb;
         canvasManager.SetRestBomb(stage._totalBomb);
     }
 
     private void Start()
     {
         stage._roomList[stage._startRoomNum].RoomOpen();
-        _howManyRoomsForEnemy = stage._howManyRoomsForEnemy;
 
         GameObject thisplayer = null;
         thisplayer = PhotonNetwork.Instantiate("Player", playerSettingPos.position, Quaternion.identity);
@@ -47,13 +54,13 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void CheckOpenedRoomForCreateEnemy()
     {
-        Debug.Log("isMasterClient: " + PhotonNetwork.IsMasterClient);
-        if (!PhotonNetwork.IsMasterClient)
-            return;
-
-        if (_openedRoom == _howManyRoomsForEnemy)
+        if (monster_activation && _openedRoom == monster_howmanyrooms)
         {
-            CreateEnemy();
+            canvasManager.CreateEnemyPanelOn();
+            GetComponent<AudioSource>().PlayOneShot(clip_warning_createEnemy);
+
+            if (PhotonNetwork.IsMasterClient)
+                CreateEnemy();
         }
     }
 
@@ -77,12 +84,10 @@ public class GameManager : MonoBehaviourPunCallbacks
                 break;
         }
 
-        canvasManager.CreateEnemyPanelOn();
-        GetComponent<AudioSource>().PlayOneShot(clip_warning_createEnemy);
-
         _thisEnemy = PhotonNetwork.Instantiate("Enemy", playerSettingPos.position, Quaternion.identity);
-        _thisEnemy.transform.position = stage._roomList[createTo].roomPos.position;
+        _thisEnemy.transform.position = patrolPoints.transform.GetChild(createTo).position;
         _thisEnemy.GetComponent<Enemy>().SetPatrolPointsFromGM(patrolPoints);
+        Debug.Log(patrolPoints.transform.GetChild(createTo).position);
     }
 
     public void TeleportUI(bool open)

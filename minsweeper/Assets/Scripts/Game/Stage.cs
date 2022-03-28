@@ -7,12 +7,10 @@ using Photon.Realtime;
 public class Stage : MonoBehaviourPunCallbacks
 {
     [SerializeField] int _countALine;
-    public int _startRoomNum;
+    public int _startRoomNum = 12;
     public List<Room> _roomList;
     public List<Door> _doorList;
     public int _totalBomb;
-
-    public int _howManyRoomsForEnemy;
 
     PhotonView PV;
 
@@ -30,8 +28,8 @@ public class Stage : MonoBehaviourPunCallbacks
 
             SetBomb();
 
-            PV.RPC("RPC_Sync_isBomb", RpcTarget.Others, array_isbomb, _totalBomb);
-            PV.RPC("RPC_Sync_aroundBomb", RpcTarget.Others, array_aroundBomb);
+            PV.RPC("RPC_Sync_isBomb", RpcTarget.AllBufferedViaServer, array_isbomb, _totalBomb);
+            PV.RPC("RPC_Sync_aroundBomb", RpcTarget.AllBufferedViaServer, array_aroundBomb);
             Debug.Log("Stage 동기화 완료");
         }
     }
