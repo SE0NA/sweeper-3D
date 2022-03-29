@@ -134,13 +134,19 @@ public class JoinLobby : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("RoomLobby");
     }
 
-    void CreatePop(string msg)
+    public void LoadMain()
+    {
+        Disconnect();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+    }
+
+    public void CreatePop(string msg)
     {
         ui_pop.SetActive(true);
         txt_pop.text = msg;
     }
 
-    void OffPop()
+    public void OffPop()
     {
         ui_pop.SetActive(false);
     }
