@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/JoinLobby.unity
+    guid: 22842cba2850c864eabe2dd74b959e6d
+  - enabled: 1
+    path: Assets/Scenes/RoomLobby.unity
+    guid: 799eaf75bb32de24b9f699e65a47a29d
+  - enabled: 1
     path: Assets/Scenes/Stage.unity
     guid: e867f38129d2c794abdfb4e49650ac75
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: b4dfea65ef228b14eb28075f4b38f6ff
-  - enabled: 1
-    path: Assets/Scenes/JoinLobby.unity
-    guid: 22842cba2850c864eabe2dd74b959e6d
-  - enabled: 1
-    path: Assets/Scenes/RoomLobby.unity
-    guid: 33f1233bebdf7664494a38c9fdcbf921
   m_configObjects: {}

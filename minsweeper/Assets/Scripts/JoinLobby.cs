@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class JoinLobby : MonoBehaviourPunCallbacks
 {
@@ -26,7 +27,8 @@ public class JoinLobby : MonoBehaviourPunCallbacks
     void Start()
     {
         txt_networkInformation.text = "<color=#FFE400>" + "온라인 접속 중..." + "</color> ";
-        PhotonNetwork.ConnectUsingSettings();   // 서버 접속
+        if(!PhotonNetwork.IsConnected)
+            PhotonNetwork.ConnectUsingSettings();   // 서버 접속
     }
 
     public override void OnConnectedToMaster()
@@ -76,12 +78,16 @@ public class JoinLobby : MonoBehaviourPunCallbacks
         txt_networkInformation.text = "<color=#FFE400>랜덤 방 입장 대기 중...</color>";
 
         PhotonNetwork.LocalPlayer.NickName = nick;
-        PhotonNetwork.JoinRandomRoom();
+        Hashtable cp = new Hashtable { { "RoomState", "Random" } };
+        PhotonNetwork.JoinRandomRoom(cp, 4);
     }
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         txt_networkInformation.text = "<color=#FFE400>새로운 방 생성 중...</color>";
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 4 });
+
+        RoomOptions roomOptions = new RoomOptions { MaxPlayers = 4 };
+        roomOptions.CustomRoomProperties = new Hashtable() { { "RoomState", "Ramdom" } };
+        PhotonNetwork.CreateRoom(null, roomOptions);
     }
 
     // 코드 입력 방 참가
@@ -112,7 +118,13 @@ public class JoinLobby : MonoBehaviourPunCallbacks
         txt_networkInformation.text = "<color=#FFE400>방 입장 대기 중...</color>";
 
         PhotonNetwork.LocalPlayer.NickName = nick;
-        PhotonNetwork.JoinOrCreateRoom(if_roomCode.text, new RoomOptions { MaxPlayers = 4 }, null);
+        RoomOptions roomOptions = new RoomOptions { MaxPlayers = 4 };
+        roomOptions.CustomRoomProperties = new Hashtable() { { "RoomState", "Static" } };
+        PhotonNetwork.JoinOrCreateRoom(if_roomCode.text, roomOptions, null);
+    }
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        Debug.Log(returnCode + " / " + message);
     }
 
     public override void OnJoinedRoom()
