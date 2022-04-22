@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class Stage : MonoBehaviourPunCallbacks
 {
@@ -26,14 +27,79 @@ public class Stage : MonoBehaviourPunCallbacks
             array_isbomb = new int[25];
             array_aroundBomb = new int[25];
 
-            SetBomb();
+        //    SetBombByCP();
+         //   SetBomb();
 
-            PV.RPC("RPC_Sync_isBomb", RpcTarget.AllBufferedViaServer, array_isbomb, _totalBomb);
-            PV.RPC("RPC_Sync_aroundBomb", RpcTarget.AllBufferedViaServer, array_aroundBomb);
-            Debug.Log("Stage 동기화 완료");
+        //    PV.RPC("RPC_Sync_isBomb", RpcTarget.AllBufferedViaServer, array_isbomb, _totalBomb);
+         //   PV.RPC("RPC_Sync_aroundBomb", RpcTarget.AllBufferedViaServer, array_aroundBomb);
         }
+        SetBombByCP();
     }
 
+    private void SetBombByCP()
+    {
+        Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;
+        // isbomb
+        for (int i = 0; i < 25; i++)
+            _roomList[i]._isBomb = (bool)CP["isBomb" + i.ToString()];
+        // aroundBomb
+        for (int i = 0; i < _roomList.Count; i++)
+        {
+            if (_roomList[i]._roomType == RoomType.Center)
+            {
+                if (_roomList[i - 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i - _countALine]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.SideU)
+            {
+                if (_roomList[i - 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.SideL)
+            {
+                if (_roomList[i + 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i - _countALine]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.SideD)
+            {
+                if (_roomList[i - 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i - _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.SideR)
+            {
+                if (_roomList[i - 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i - _countALine]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.CornerUL)
+            {
+                if (_roomList[i + 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.CornerUR)
+            {
+                if (_roomList[i - 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i + _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.CornerDL)
+            {
+                if (_roomList[i + 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i - _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+            else if (_roomList[i]._roomType == RoomType.CornerDR)
+            {
+                if (_roomList[i - 1]._isBomb) _roomList[i]._aroundBomb++;
+                if (_roomList[i - _countALine]._isBomb) _roomList[i]._aroundBomb++;
+            }
+        }
+        Debug.Log("SetBomb 완료!");
+    }
+    /*
     private void SetBomb()
     {
         int count = 0;
@@ -111,7 +177,7 @@ public class Stage : MonoBehaviourPunCallbacks
             array_aroundBomb[i] = _roomList[i]._aroundBomb;
         }
     }
-
+    */
     [PunRPC]
     void RPC_Sync_isBomb(int[] isbomb, int count)
     {

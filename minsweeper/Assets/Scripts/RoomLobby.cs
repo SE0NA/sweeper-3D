@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class RoomLobby : MonoBehaviourPunCallbacks
 {
@@ -22,9 +23,16 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     [Header("color")]
     [SerializeField] List<Color> color_playerList;
 
+    void Awake()
+    {
+        PhotonNetwork.AutomaticallySyncScene = true;
+    }
+
     void Start()
     {
-        if (!PhotonNetwork.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
+            SetCP_Start();
+        else
             btn_gameStart.interactable = false;
 
         if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Ramdom"))
@@ -104,6 +112,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
         // 게임 시작
         PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
+        SetCP_GameStart();
         photonView.RPC("PlayAnim_GameStartCount", RpcTarget.AllBuffered);
         Invoke("GameStartByMaster", 5f);
 
@@ -121,7 +130,56 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("Stage");
     }
 
+    void SetCP_Start()
+    {
+        Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;
 
+        // game
+        CP.Add("enable_flag", true);
+        CP.Add("active_monster", true);
+        CP.Add("active_monster_sound", true);
+
+        // Stage
+        CP.Add("totalBomb", 10);
+        CP.Add("startRoomNum", 12);
+        for (int i = 0; i < 25; i++)
+        {
+            CP.Add("isBomb" + i.ToString(), false);
+        }
+    }
+
+    void SetCP_GameStart()
+    {
+        Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        int count = 0, total, start;
+        total = (int)CP["totalBomb"];
+        start = (int)CP["startRoomNum"];
+
+        // SetBomb
+        while(count < total)
+        {
+            int i = Random.Range(0, 24);
+            if(!(bool)CP["isBomb"+i.ToString()] &&
+               (i < start -1 || i > start +1) && (i != start + 5 && i != start - 5))
+            {
+                CP["isBomb" + i.ToString()] = true;
+                SetCP_PlayerList("isBomb" + i.ToString(), true);
+                count++;
+            }
+        }
+
+        //   for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
+        //       PhotonNetwork.PlayerList[i].SetCustomProperties(CP);
+
+        PhotonNetwork.CurrentRoom.SetCustomProperties(CP);
+        Debug.Log("RoomLobby - Set Bomb 완료!");
+    }
+
+    void SetCP_PlayerList(string value, object key)
+    {
+        
+    }
 
     public void LeftThisRoom()
     {
