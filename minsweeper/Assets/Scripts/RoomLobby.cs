@@ -69,6 +69,24 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             gameObject_players[i].GetComponent<Image>().color = color_playerList[1];
         }
         Debug.Log("MasterClient: " + PhotonNetwork.MasterClient.NickName);
+
+        // Game Start Button Set
+        if (PhotonNetwork.IsMasterClient) {
+            if (PhotonNetwork.PlayerList.Length > 1)    // 게임 시작 가능
+                btn_gameStart.interactable = true;
+            else
+                btn_gameStart.interactable = false;
+        }
+
+        // 게임 시작 중 인원 변경 시
+        if (gameObject_Count_gameStart.activeSelf == true)
+        {
+            gameObject_Count_gameStart.GetComponent<Animation>().Stop();
+            gameObject_Count_gameStart.GetComponent<Animation>().Rewind();
+            gameObject_Count_gameStart.SetActive(false);
+            if (PhotonNetwork.IsMasterClient)
+                CancelInvoke();
+        }
     }
 
     public void SetDifficulty()     // only master
@@ -78,30 +96,32 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     public void Btn_GameStart()     // only master
     {
-        PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
-
-        if (PhotonNetwork.PlayerListOthers.Length > 0)
-        {
-            photonView.RPC("RPC_GameStart", RpcTarget.All); // 모든 플레이어 게임 시작
+        if (!PhotonNetwork.IsMasterClient) return;
+        if (PhotonNetwork.PlayerList.Length <= 1) {      // 만약의 오류 처리
             btn_gameStart.interactable = false;
+            return;
         }
-        else
-        {
-            txt_noOtherPlayers.GetComponent<Animation>().Play();
-        }
+
+        // 게임 시작
+        PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
+        photonView.RPC("PlayAnim_GameStartCount", RpcTarget.AllBuffered);
+        Invoke("GameStartByMaster", 5f);
+
     }
     [PunRPC]
-    public void RPC_GameStart()
+    void PlayAnim_GameStartCount()
     {
         btn_exit.interactable = false;
         gameObject_Count_gameStart.SetActive(true);
-        Invoke("LoadStageScene", 6.0f);
-    } 
-    void LoadStageScene()
+        gameObject_Count_gameStart.GetComponent<Animation>().Play();
+    }
+
+    void GameStartByMaster()
     {
-        Debug.Log("Game Start!");
         PhotonNetwork.LoadLevel("Stage");
     }
+
+
 
     public void LeftThisRoom()
     {

@@ -50,6 +50,7 @@ MonoBehaviour:
   - RPC_Sync_isBomb
   - EnemySetup
   - RPC_GameStart
+  - PlayAnim_GameStartCount
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
