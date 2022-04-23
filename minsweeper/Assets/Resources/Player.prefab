@@ -2650,9 +2650,6 @@ MonoBehaviour:
   _isMap: 0
   _nearEnemy: 0
   _isMoving: 0
-  moveSpeed: 7
-  jumpPower: 4
-  sensitivity: 3
   myCamera: {fileID: 1317203853711113400}
   walkclip: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
   jumpclip: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}

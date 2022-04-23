@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
 {
     NavMeshAgent _navMeshAgent = null;
     public Transform _target = null;
-    [SerializeField] int _defaultSpeed;
-    [SerializeField] int _MaxSpeed;
+    int _defaultSpeed;
+    int _MaxSpeed;
 
     [SerializeField] Transform[] patrolPoints = null;
     int destinationPoint = 0;
@@ -21,6 +21,12 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        _defaultSpeed = (int)PhotonNetwork.CurrentRoom.CustomProperties["monster_defaultspeed"];
+        _MaxSpeed = (int)PhotonNetwork.CurrentRoom.CustomProperties["monster_maxspeed"];
+
+        if (!(bool)PhotonNetwork.CurrentRoom.CustomProperties["monster_sound"])
+            GetComponent<AudioSource>().enabled = false;
+
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _navMeshAgent.speed = _defaultSpeed;
 
@@ -106,4 +112,8 @@ public class Enemy : MonoBehaviour
             patrolPoints[i] = points.transform.GetChild(i).transform;
         }
     }
+
+    public float GetEnemySightCP_sight_angle() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_angle"];
+    public float GetEnemySightCP_sight_distance() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_distance"];
+    public float GetEnemyTargetAreaCP_radius() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_targetarea_radius"];
 }

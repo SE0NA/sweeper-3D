@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.IO;
 
+
 public class GameManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject enemyObject;
@@ -23,13 +24,9 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public int _openedRoom = 0;
 
-    [Header("SetDifficulty")]
-    public bool monster_activation = true;
-    public int monster_MaxSpeed = 4;
-    public int monster_defaultSpeed = 2;
-    public int monster_howmanyrooms = 100;
-    public int stage_totalBomb = 10;
-    public bool player_usingFlags = true;
+    bool monster_activation;
+    int monster_howmanyrooms;
+    bool enable_flag;
 
     private void Awake()
     {
@@ -37,8 +34,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         canvasManager = FindObjectOfType<CanvasManager>();
         teleport = FindObjectOfType<Teleport>();
 
-        stage._totalBomb = stage_totalBomb;
-        canvasManager.SetRestBomb(stage._totalBomb);
+        canvasManager.SetRestBomb((int)PhotonNetwork.CurrentRoom.CustomProperties["totalBomb"]);
+
+        monster_activation = (bool)PhotonNetwork.CurrentRoom.CustomProperties["monster_active"];
+        monster_howmanyrooms = (int)PhotonNetwork.CurrentRoom.CustomProperties["monster_howmanyrooms"];
+        enable_flag = (bool)PhotonNetwork.CurrentRoom.CustomProperties["enable_flag"];
+        teleport.checkAllRoom = (bool)PhotonNetwork.CurrentRoom.CustomProperties["teleport_checkAll"];
+        canvasManager.SetDoorInteracion_ByFlag(enable_flag);
     }
 
     private void Start()

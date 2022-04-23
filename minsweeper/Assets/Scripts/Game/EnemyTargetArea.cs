@@ -9,6 +9,11 @@ public class EnemyTargetArea : MonoBehaviour
 
     [SerializeField] Enemy _thisEnemy;
 
+    void Start()
+    {
+        GetComponent<SphereCollider>().radius = _thisEnemy.GetEnemyTargetAreaCP_radius();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!Photon.Pun.PhotonNetwork.IsMasterClient)

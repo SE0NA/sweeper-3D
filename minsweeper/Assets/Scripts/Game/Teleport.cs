@@ -8,6 +8,8 @@ public class Teleport : MonoBehaviour
     Stage stage = null;
     PlayerController player = null;
 
+    public bool checkAllRoom = true;
+
     private void Start()
     {
         stage = FindObjectOfType<Stage>();
@@ -27,21 +29,24 @@ public class Teleport : MonoBehaviour
     {
         stage._roomList[teleportTo].RoomOpen();
         player.transform.position = stage._roomList[teleportTo].roomPos.position;
-        player.CursorLock();
+        player.TeleportUIClose();
         gameObject.SetActive(false);
     }
 
     public void TeleportUISetting() // Set button color
     {
-        for (int i = 0; i < transform.childCount; i++)
+        if (checkAllRoom)   // 설정되어있어야 teleportUI에서 전체 내용 확인 가능
         {
-            if (stage._roomList[i]._isOpened)
-                transform.GetChild(i).GetComponent<Image>().color = Color.white;
-            else if (stage._roomList[i]._isFlag)
-                transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
-            else
-                transform.GetChild(i).GetComponent<Image>().color = Color.gray;
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (stage._roomList[i]._isOpened)
+                    transform.GetChild(i).GetComponent<Image>().color = Color.white;
+                else if (stage._roomList[i]._isFlag)
+                    transform.GetChild(i).GetComponent<Image>().color = Color.yellow;
+                else
+                    transform.GetChild(i).GetComponent<Image>().color = Color.gray;
+            }
+            transform.GetChild(player._wherePlayer).GetComponent<Image>().color = Color.green;
         }
-        transform.GetChild(player._wherePlayer).GetComponent<Image>().color = Color.green;
     }
 }

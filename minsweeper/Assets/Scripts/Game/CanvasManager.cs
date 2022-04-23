@@ -9,7 +9,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] Text txt_restBomb;
     [SerializeField] Text txt_scanner;
 
-    [SerializeField] GameObject panel_doorInteraction;
+    [SerializeField] GameObject panel_doorInteraction_enable_flag;
+    [SerializeField] GameObject panel_doorInteraction_disable_flag;
     [SerializeField] GameObject panel_nearEnemy;
     Animation panel_nearEnenmy_Animation;
     [SerializeField] GameObject panel_createEnemy;
@@ -23,6 +24,8 @@ public class CanvasManager : MonoBehaviour
     public bool _isStopAll = false;
     public int min = 0;
     public float sec = 0;
+
+    GameObject panel_doorInteraction;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,12 @@ public class CanvasManager : MonoBehaviour
         {
             SetTimer();
         }
+    }
+
+    public void SetDoorInteracion_ByFlag(bool enable)
+    {
+        if (enable) panel_doorInteraction = panel_doorInteraction_enable_flag;
+        else        panel_doorInteraction = panel_doorInteraction_disable_flag;
     }
 
     public void SetScannerTo(int scannerValue)
@@ -102,12 +111,10 @@ public class CanvasManager : MonoBehaviour
     {
         if (open)
         {
-            _isStopAll = true;
             panel_escMenu.SetActive(true);
         }
         else
         {
-            _isStopAll = false;
             panel_escMenu.SetActive(false);
         }
     }

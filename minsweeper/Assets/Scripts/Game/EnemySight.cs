@@ -8,9 +8,15 @@ public class EnemySight : MonoBehaviour
 
     [SerializeField] Enemy _thisEnemy;
 
-    [SerializeField] float _sightAngle = 0f;
-    [SerializeField] float _sightDistance = 0f;
+    float _sightAngle;
+    float _sightDistance;
     [SerializeField] LayerMask _targetLayer = 0;
+
+    void Start()
+    {
+        _sightAngle = _thisEnemy.GetEnemySightCP_sight_angle();
+        _sightDistance = _thisEnemy.GetEnemySightCP_sight_distance();
+    }
 
     void Update()
     {

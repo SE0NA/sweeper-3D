@@ -80,6 +80,7 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyKill.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\MainManager.cs" />
     <Compile Include="Assets\Scripts\Game\GameManager.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Scripts\Game\MinimapManager.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Assets\Scripts\Game\Room.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Scripts\Game\CanvasManager.cs" />
-    <Compile Include="Assets\Scripts\MainManager.cs" />
+    <Compile Include="Assets\Scripts\CustomPropertyManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

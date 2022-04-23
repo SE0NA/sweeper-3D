@@ -30,9 +30,10 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        if (PhotonNetwork.IsMasterClient)
-            SetCP_Start();
-        else
+    //    if (PhotonNetwork.IsMasterClient)
+    //        SetCP_Start();
+    //    else
+        if(!PhotonNetwork.IsMasterClient)
             btn_gameStart.interactable = false;
 
         if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Ramdom"))
@@ -129,15 +130,16 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel("Stage");
     }
-
+    /*
     void SetCP_Start()
     {
         Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;
 
         // game
         CP.Add("enable_flag", true);
-        CP.Add("active_monster", true);
-        CP.Add("active_monster_sound", true);
+        CP.Add("monster_active", true);
+        CP.Add("monster_sound", true);
+        CP.Add("monster_speed", 5f);
 
         // Stage
         CP.Add("totalBomb", 10);
@@ -147,7 +149,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             CP.Add("isBomb" + i.ToString(), false);
         }
     }
-
+    */
     void SetCP_GameStart()
     {
         Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;
@@ -164,21 +166,12 @@ public class RoomLobby : MonoBehaviourPunCallbacks
                (i < start -1 || i > start +1) && (i != start + 5 && i != start - 5))
             {
                 CP["isBomb" + i.ToString()] = true;
-                SetCP_PlayerList("isBomb" + i.ToString(), true);
                 count++;
             }
         }
 
-        //   for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
-        //       PhotonNetwork.PlayerList[i].SetCustomProperties(CP);
-
         PhotonNetwork.CurrentRoom.SetCustomProperties(CP);
         Debug.Log("RoomLobby - Set Bomb ¿Ï·á!");
-    }
-
-    void SetCP_PlayerList(string value, object key)
-    {
-        
     }
 
     public void LeftThisRoom()

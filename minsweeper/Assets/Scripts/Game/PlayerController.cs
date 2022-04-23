@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
     // player movement
     public bool _isMoving = false;
     private bool _isJumping = false;
-    [SerializeField] float moveSpeed;
-    [SerializeField] float jumpPower;
-    [SerializeField] float sensitivity = 2.0f;
+    float moveSpeed;
+    float jumpPower = 4f;
+    float sensitivity = 3.0f;
 
     // player interactions
     private Door touchDoor;
@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         _wherePlayer = 12;
+        moveSpeed = (float)PhotonNetwork.CurrentRoom.CustomProperties["player_speed"];
     }
 
     void Update()
@@ -102,11 +103,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (_isMap)            // close teleport map ui
                 {
-                    CursorLock();
-                    ingameMenuBtn.PlayBtnClip(2);
-                    gameManager.TeleportUI(false);
-                    _isMap = false;
-                    _isLock = false;
+                    TeleportUIClose();
                 }
                 else if (_nearEnemy)
                 {
@@ -114,6 +111,15 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void TeleportUIClose()
+    {
+        CursorLock();
+        ingameMenuBtn.PlayBtnClip(2);
+        gameManager.TeleportUI(false);
+        _isMap = false;
+        _isLock = false;
     }
 
     private void ESCMenu()
@@ -184,7 +190,8 @@ public class PlayerController : MonoBehaviour
         // right click
         else if (Input.GetMouseButtonDown(1) && touchDoor)
         {
-            PV.RPC("RPC_DoorFlag", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
+            if ((bool)PhotonNetwork.CurrentRoom.CustomProperties["enable_flag"])
+                PV.RPC("RPC_DoorFlag", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
         }
     }
     
