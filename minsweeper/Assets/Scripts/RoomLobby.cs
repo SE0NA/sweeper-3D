@@ -18,23 +18,27 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     [SerializeField] Button btn_gameStart;
     [SerializeField] GameObject gameObject_Count_gameStart;
-    [SerializeField] GameObject txt_noOtherPlayers;
+
+    [Header("Game Set")]
+    [SerializeField] Button btn_openSet;
+    [SerializeField] Button btn_checkSet;
+    [SerializeField] GameObject panel_Set;
 
     [Header("color")]
     [SerializeField] List<Color> color_playerList;
 
+    CustomPropertyManager CPManager;
+
     void Awake()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
+        CPManager = FindObjectOfType<CustomPropertyManager>();
     }
 
     void Start()
     {
-    //    if (PhotonNetwork.IsMasterClient)
-    //        SetCP_Start();
-    //    else
-        if(!PhotonNetwork.IsMasterClient)
-            btn_gameStart.interactable = false;
+        if (PhotonNetwork.IsMasterClient)   SetUI_Master();
+        else                                SetUI_Others();
 
         if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Ramdom"))
             txt_roomCode.text = "Random";
@@ -47,14 +51,46 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         SetPlayerList();
+        if (PhotonNetwork.IsMasterClient) SetUI_Master();
+        else SetUI_Others();
     }
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         SetPlayerList();
-        if (PhotonNetwork.IsMasterClient)
-        {
-            btn_gameStart.interactable = true;
-        }
+        if (PhotonNetwork.IsMasterClient) SetUI_Master();
+        else SetUI_Others();
+    }
+
+    void SetUI_Master()
+    {
+        btn_gameStart.interactable = true;
+        btn_openSet.gameObject.SetActive(true);
+    }
+    void SetUI_Others()
+    {
+        btn_gameStart.interactable = false;
+        btn_openSet.gameObject.SetActive(false);
+
+    }
+    public void Btn_OpenSet_Master()
+    {
+        panel_Set.SetActive(true);
+        btn_openSet.interactable = false;
+        btn_gameStart.interactable = false;
+        CPManager.SetUI_SetPanel_Master();
+    }
+
+    public void Btn_CheckSet_Master()
+    {
+        CPManager.Btn_CheckSet_SetCP();
+        panel_Set.SetActive(false);
+        btn_openSet.interactable = true;
+        photonView.RPC("SetUI_GameSettingText", RpcTarget.AllBuffered);
+    }
+    [PunRPC]
+    void SetUI_GameSettingText()
+    {
+        CPManager.SetUI_SetListText_All();
     }
 
     public void SetPlayerList()
@@ -98,11 +134,6 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         }
     }
 
-    public void SetDifficulty()     // only master
-    {
-
-    }
-
     public void Btn_GameStart()     // only master
     {
         if (!PhotonNetwork.IsMasterClient) return;
@@ -130,26 +161,6 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.LoadLevel("Stage");
     }
-    /*
-    void SetCP_Start()
-    {
-        Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;
-
-        // game
-        CP.Add("enable_flag", true);
-        CP.Add("monster_active", true);
-        CP.Add("monster_sound", true);
-        CP.Add("monster_speed", 5f);
-
-        // Stage
-        CP.Add("totalBomb", 10);
-        CP.Add("startRoomNum", 12);
-        for (int i = 0; i < 25; i++)
-        {
-            CP.Add("isBomb" + i.ToString(), false);
-        }
-    }
-    */
     void SetCP_GameStart()
     {
         Hashtable CP = PhotonNetwork.CurrentRoom.CustomProperties;

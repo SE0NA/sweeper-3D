@@ -51,6 +51,7 @@ MonoBehaviour:
   - EnemySetup
   - RPC_GameStart
   - PlayAnim_GameStartCount
+  - SetUI_GameSettingText
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
