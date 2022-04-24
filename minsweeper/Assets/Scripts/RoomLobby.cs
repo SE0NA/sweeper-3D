@@ -85,6 +85,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         CPManager.Btn_CheckSet_SetCP();
         panel_Set.SetActive(false);
         btn_openSet.interactable = true;
+        btn_gameStart.interactable = true;
         photonView.RPC("SetUI_GameSettingText", RpcTarget.AllBuffered);
     }
     [PunRPC]

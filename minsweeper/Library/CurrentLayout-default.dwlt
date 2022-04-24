@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 2560
     height: 1002
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 12}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 84
+  controlID: 121
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 83
+  controlID: 62
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -856,18 +856,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000d87000008aa30700fa720000b07800002478000022900000049000006eef0200a6910000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: RoomLobby
-      m_OriginalName: RoomLobby
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 2802
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 6}
     m_CreateAssetUtility:
@@ -1082,9 +1082,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: f20a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 4044ffff6044ffff3c46ffff767fffff8a7fffff927fffff967fffffa881ffffc881ffffa883ffffe6bcfffffebcffff0abdffff12bdfffffabeffff1abffffff6c0ffff30faffff44faffff4cfaffff50faffff3efbffff
+      m_ExpandedIDs: 3efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
