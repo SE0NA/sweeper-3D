@@ -80,7 +80,7 @@ public class CustomPropertyManager : MonoBehaviour
         cp_monster_maxspeed_slider.minValue = cp_monster_defaultspeed_slider.value;
         cp_monster_maxspeed_slider.value = (int)CP["monster_maxspeed"];
         cp_monster_maxspeed_text.text = cp_monster_maxspeed_slider.value.ToString();
-        cp_monster_targetarea_radius_slider.value = (int)CP["monster_targetarea_radius"];
+        cp_monster_targetarea_radius_slider.value = (int)((float)CP["monster_targetarea_radius"]);
         cp_monster_targetarea_radius_text.text = cp_monster_targetarea_radius_slider.value.ToString();
         cp_monster_howmanyrooms_Slider.value = (int)CP["monster_howmanyrooms"];
         cp_monster_howmanyrooms_text.text = cp_monster_howmanyrooms_Slider.value.ToString();
@@ -96,27 +96,28 @@ public class CustomPropertyManager : MonoBehaviour
     
     public void SetUI_SetListText_All()
     {
-        text_setList.text = "<color=yellow>게임</color>";
-        text_setList.text += "  깃발 사용: ";
+        text_setList.text = "<size=15><color=yellow>게임</color></size>\n";
+        text_setList.text += " 총 지뢰 수: " + ((int)CP["totalBomb"]).ToString() + "개\n";
+        text_setList.text += " 깃발 사용: ";
         if ((bool)CP["enable_flag"])    text_setList.text += "O\n";
         else                            text_setList.text += "X\n";
-        text_setList.text += "  텔레포트 모든 상태 확인: ";
+        text_setList.text += " 모든 방 확인: ";
         if ((bool)CP["teleport_checkAll"])  text_setList.text += "O\n\n";
         else                                text_setList.text += "X\n\n";
 
-        text_setList.text = "<color=magenta>몬스터</color>";
-        text_setList.text += "활성화: ";
+        text_setList.text += "<size=15><color=magenta>몬스터</color></size>\n";
+        text_setList.text += " 활성화: ";
         if ((bool)CP["monster_active"])     text_setList.text += "O\n";
         else                                text_setList.text += "X\n";
         if ((bool)CP["monster_active"])
         {
-            text_setList.text += "주변 음향 효과: ";
+            text_setList.text += " 음향 효과: ";
             if ((bool)CP["monster_sound"])  text_setList.text += "O\n";
             else                            text_setList.text += "X\n";
-            text_setList.text += "기본 속도: " + ((int)CP["monster_defaultspeed"]).ToString() + "\n";
-            text_setList.text += "최고 속도: " + ((int)CP["monster_maxspeed"]).ToString() + "\n";
-            text_setList.text += "타겟 탐색 범위: " + ((int)CP["monster_targetarea_radius"]).ToString() + "\n";
-            text_setList.text += "출발 방 개수: " + ((int)CP["monster_howmanyrooms"]).ToString();
+            text_setList.text += " 기본 속도: " + ((int)CP["monster_defaultspeed"]).ToString() + "\n";
+            text_setList.text += " 최고 속도: " + ((int)CP["monster_maxspeed"]).ToString() + "\n";
+            text_setList.text += " 타겟 탐색 범위: " + ((int)((float)CP["monster_targetarea_radius"])).ToString() + "\n";
+            text_setList.text += " 출발 방 개수: " + ((int)CP["monster_howmanyrooms"]).ToString();
         }
     }
 
@@ -136,9 +137,15 @@ public class CustomPropertyManager : MonoBehaviour
     }
 
     // 각 UI 활성화 설정
-    public void Toggle_monster_active(bool isOn)
+    public void Slider_totalBomb(Slider sd)
     {
-        if (isOn)
+        cp_totalBomb_text.text = sd.value.ToString();
+        cp_monster_howmanyrooms_Slider.maxValue = 23 - sd.value;
+    }
+
+    public void Toggle_monster_active(Toggle tg)
+    {
+        if (tg.isOn)
         {
             cp_monster_sound_toggle.interactable = true;
             cp_monster_defaultspeed_slider.interactable = true;
@@ -155,21 +162,21 @@ public class CustomPropertyManager : MonoBehaviour
             cp_monster_howmanyrooms_Slider.interactable = false;
         }
     }
-    public void Slider_monster_defalut(int value)
+    public void Slider_monster_defalut(Slider sd)
     {
-        cp_monster_defaultspeed_text.text = value.ToString();
-        cp_monster_maxspeed_slider.minValue = value;
+        cp_monster_defaultspeed_text.text = sd.value.ToString();
+        cp_monster_maxspeed_slider.minValue = sd.value;
     }
-    public void Slider_monster_maxspeed(int value)
+    public void Slider_monster_maxspeed(Slider sd)
     {
-        cp_monster_maxspeed_text.text = value.ToString();
+        cp_monster_maxspeed_text.text = sd.value.ToString();
     }
-    public void Slider_monster_targetarea_radius(int value)
+    public void Slider_monster_targetarea_radius(Slider sd)
     {
-        cp_monster_targetarea_radius_text.text = value.ToString();
+        cp_monster_targetarea_radius_text.text = sd.value.ToString();
     }
-    public void Slider_monster_howmanyrooms(int value)
+    public void Slider_monster_howmanyrooms(Slider sd)
     {
-        cp_monster_howmanyrooms_text.text = value.ToString();
+        cp_monster_howmanyrooms_text.text = sd.value.ToString();
     }
 }
