@@ -65,6 +65,7 @@ public class CustomPropertyManager : MonoBehaviour
         {
             CP.Add("isBomb" + i.ToString(), false);
         }
+        PhotonNetwork.CurrentRoom.SetCustomProperties(CP);
     }
 
     public void SetUI_SetPanel_Master()

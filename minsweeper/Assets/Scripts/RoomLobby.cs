@@ -188,6 +188,9 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public void LeftThisRoom()
     {
         PhotonNetwork.LeaveRoom();
+    }
+    public override void OnLeftRoom()
+    {
         UnityEngine.SceneManagement.SceneManager.LoadScene("JoinLobby");
     }
 
