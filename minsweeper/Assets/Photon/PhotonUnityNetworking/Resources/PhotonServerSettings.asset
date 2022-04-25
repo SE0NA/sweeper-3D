@@ -52,6 +52,7 @@ MonoBehaviour:
   - RPC_GameStart
   - PlayAnim_GameStartCount
   - SetUI_GameSettingText
+  - ReceiveChat
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

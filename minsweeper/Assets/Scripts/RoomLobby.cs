@@ -46,6 +46,13 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             txt_roomCode.text = PhotonNetwork.CurrentRoom.Name;
 
         SetPlayerList();
+        txt_chatLog.text = "";
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+            SendNewChat();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -134,6 +141,26 @@ public class RoomLobby : MonoBehaviourPunCallbacks
                 CancelInvoke();
         }
     }
+
+    void SendNewChat()
+    {
+        if (if_sendChat.text.Equals("")) return;
+
+        string msg;
+        msg = "[<color=cyan>" + PhotonNetwork.LocalPlayer.NickName + "</color>]" + if_sendChat.text;
+        ReceiveChat(msg);
+        msg = "[" + PhotonNetwork.LocalPlayer.NickName + "]" + if_sendChat.text;
+        photonView.RPC("ReceiveChat", RpcTarget.OthersBuffered, msg);
+        if_sendChat.text = "";
+        if_sendChat.ActivateInputField();
+    }
+    [PunRPC]
+    public void ReceiveChat(string msg)
+    {
+        if (txt_chatLog.text.Equals(""))    txt_chatLog.text += msg;
+        else                                txt_chatLog.text += ("\n" + msg);
+    }
+
 
     public void Btn_GameStart()     // only master
     {
