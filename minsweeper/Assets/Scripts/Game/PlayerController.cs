@@ -173,7 +173,6 @@ public class PlayerController : MonoBehaviour
             playerAudioSource.PlayOneShot(jumpclip);
             if (PV.IsMine) playerAnim.SetBool("isJumping", true);
             rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-            Debug.Log("wherePlayer: " + _wherePlayer);
         }
     }
 
