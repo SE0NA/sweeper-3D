@@ -157,18 +157,21 @@ public class PlayerController : MonoBehaviour
             _isMoving = true;
             if (!playerAudioSource.isPlaying)
                 playerAudioSource.PlayOneShot(walkclip);
-            playerAnim.Play("Run");
+            if (PV.IsMine)  playerAnim.SetBool("isMoving", true);
             transform.Translate((new Vector3(h, 0, v) * moveSpeed) * Time.deltaTime);
         }
         else
+        {
             _isMoving = false;
+            if (PV.IsMine) playerAnim.SetBool("isMoving", false);
+        }
     }
     private void PlayerJump()
     {
         if (Input.GetKeyDown(KeyCode.Space)&&!_isJumping) {
             _isJumping = true;
             playerAudioSource.PlayOneShot(jumpclip);
-            playerAnim.Play("Jump");
+            if (PV.IsMine) playerAnim.SetBool("isJumping", true);
             rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
             Debug.Log("wherePlayer: " + _wherePlayer);
         }
@@ -225,10 +228,10 @@ public class PlayerController : MonoBehaviour
         _isStopAll = true;
 
         gameObject.layer = 0;
-        playerAnim.Play("Die");
-
+        
         if (PV.IsMine)
         {
+            playerAnim.SetTrigger("Die");
             CursorUnLock();
             myCamera.GetComponent<Animation>().Play();
             gameObject.GetComponent<Rigidbody>().useGravity = false;
@@ -252,6 +255,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             _isJumping = false;
+            if (PV.IsMine) playerAnim.SetBool("isJumping", false);
         }
     }
 
