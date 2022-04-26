@@ -50,6 +50,8 @@ public class Enemy : MonoBehaviour
         {
             _navMeshAgent.SetDestination(_target.position);
         }
+        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance )
+            enemyAnim.SetBool("isMoving", false);
     }
 
     public void MoveToNextPoint()  // Patrol Points
@@ -68,8 +70,7 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 _navMeshAgent.SetDestination(patrolPoints[destinationPoint].position);
-                Debug.Log("NextPoint: " + (destinationPoint + 1));
-                enemyAnim.Play("Run");
+                enemyAnim.SetBool("isMoving", true);
             }
         }
     }
@@ -81,6 +82,8 @@ public class Enemy : MonoBehaviour
 
         CancelInvoke();
         _target = thisTarget;
+        enemyAnim.SetBool("isMoving", true);
+        _navMeshAgent.stoppingDistance = 0;
         _navMeshAgent.speed = _MaxSpeed;
     }
 
@@ -90,19 +93,22 @@ public class Enemy : MonoBehaviour
             return;
 
         _target = null;
+        _navMeshAgent.SetDestination(gameObject.transform.position);
         _navMeshAgent.speed = _defaultSpeed;
+        _navMeshAgent.stoppingDistance = 0.5f;
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
     }
 
     public void KillPlayer()
     {
-        enemyAnim.Play("Attack");
+        enemyAnim.SetTrigger("attack");
         CancelTarget();
     }
 
     public void PowerOffEnemy()
     {
         CancelInvoke();
+        _navMeshAgent.SetDestination(gameObject.transform.position);
     }
 
     public void SetPatrolPointsFromGM(GameObject points)

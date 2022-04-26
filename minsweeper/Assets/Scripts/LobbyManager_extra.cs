@@ -87,15 +87,15 @@ public class LobbyManager_extra : MonoBehaviourPunCallbacks
         // monster
         CP.Add("monster_active", true);
         CP.Add("monster_sound", true);
-        CP.Add("monster_defaultspeed", 3);
-        CP.Add("monster_maxspeed", 5);
+        CP.Add("monster_defaultspeed", 2);
+        CP.Add("monster_maxspeed", 4);
         CP.Add("monster_sight_distance", 7f);
         CP.Add("monster_sight_angle", 150f);
         CP.Add("monster_targetarea_radius", 10f);
-        CP.Add("monster_howmanyrooms", 5);
+        CP.Add("monster_howmanyrooms", 2);
 
         // Stage
-        CP.Add("totalBomb", 10);
+        CP.Add("totalBomb", 2);
         CP.Add("startRoomNum", 12);
         for (int i = 0; i < 25; i++)
         {

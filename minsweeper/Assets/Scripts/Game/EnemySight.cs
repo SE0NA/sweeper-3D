@@ -43,13 +43,10 @@ public class EnemySight : MonoBehaviour
             float target_angle = Vector3.Angle(target_direction, transform.forward);
             if (target_angle < _sightAngle * 0.5f)
             {
-                Debug.Log("target 1");
                 // Raycast °Ë»ç
                 if (Physics.Raycast(transform.position, target_direction, out RaycastHit target_hit, _sightDistance))
                 {
-                    Debug.Log("target 2");
                     _thisEnemy.SetTarget(target.transform);
-                    Debug.Log("target 3");
                 }
             }
         }

@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviourPunCallbacks
         _thisEnemy = PhotonNetwork.Instantiate("Enemy", playerSettingPos.position, Quaternion.identity);
         _thisEnemy.transform.position = patrolPoints.transform.GetChild(createTo).position;
         _thisEnemy.GetComponent<Enemy>().SetPatrolPointsFromGM(patrolPoints);
-        Debug.Log(patrolPoints.transform.GetChild(createTo).position);
     }
 
     public void TeleportUI(bool open)
