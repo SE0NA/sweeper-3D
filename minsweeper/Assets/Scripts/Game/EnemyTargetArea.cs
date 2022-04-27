@@ -34,6 +34,7 @@ public class EnemyTargetArea : MonoBehaviour
             &&_thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
         {
             // targetArea - target ³õÄ§
+            other.GetComponent<PlayerController>()._nearEnemy = false;
             _thisEnemy._target = null;
             _thisEnemy.CancelTarget();
         }

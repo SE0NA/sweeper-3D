@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     int destinationPoint = 0;
 
     Animator enemyAnim;
+    AudioSource enemyAudio;
 
     public bool _isEnd = false;
     public bool _isStart = false;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.speed = _defaultSpeed;
 
         enemyAnim = GetComponent<Animator>();
+        enemyAudio = GetComponent<AudioSource>();
 
         if (PhotonNetwork.IsMasterClient)
             Invoke("EnemyStart", 5f);
