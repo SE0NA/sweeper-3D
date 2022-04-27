@@ -27,16 +27,18 @@ public class EnemyTargetArea : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!Photon.Pun.PhotonNetwork.IsMasterClient || _thisEnemy._target == null)
+        if (!Photon.Pun.PhotonNetwork.IsMasterClient)
             return;
 
-        if (other.gameObject.CompareTag("Player")
-            &&_thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
-        {
-            // targetArea - target 놓침
+        if (other.gameObject.CompareTag("Player")){
             other.GetComponent<PlayerController>()._nearEnemy = false;
-            _thisEnemy._target = null;
-            _thisEnemy.CancelTarget();
+            if (_thisEnemy._target != null &&
+                _thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
+            {
+                // targetArea - target 놓침
+                _thisEnemy._target = null;
+                _thisEnemy.CancelTarget();
+            }
         }
     }
 }
