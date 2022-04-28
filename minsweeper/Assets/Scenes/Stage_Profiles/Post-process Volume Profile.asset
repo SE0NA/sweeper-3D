@@ -69,13 +69,13 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0, g: 1, b: 0.42460012, a: 1}
+    value: {r: 0, g: 1, b: 0.4235294, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.3
+    value: 0.35
   smoothness:
     overrideState: 0
     value: 0.1
