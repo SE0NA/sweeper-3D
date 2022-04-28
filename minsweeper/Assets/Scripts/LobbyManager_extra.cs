@@ -91,7 +91,7 @@ public class LobbyManager_extra : MonoBehaviourPunCallbacks
         CP.Add("monster_maxspeed", 4);
         CP.Add("monster_sight_distance", 7f);
         CP.Add("monster_sight_angle", 150f);
-        CP.Add("monster_targetarea_radius", 10f);
+        CP.Add("monster_targetarea_radius", 15f);
         CP.Add("monster_howmanyrooms", 2);
 
         // Stage
