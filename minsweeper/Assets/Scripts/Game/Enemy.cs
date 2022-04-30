@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("enemy µÓ¿Â");
         _defaultSpeed = (int)PhotonNetwork.CurrentRoom.CustomProperties["monster_defaultspeed"];
         _MaxSpeed = (int)PhotonNetwork.CurrentRoom.CustomProperties["monster_maxspeed"];
 
@@ -98,12 +99,14 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.SetDestination(gameObject.transform.position);
         _navMeshAgent.speed = _defaultSpeed;
         _navMeshAgent.stoppingDistance = 0.5f;
+        enemyAnim.SetBool("isMoving", false);
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
     }
 
     public void KillPlayer()
     {
         enemyAnim.SetTrigger("attack");
+        enemyAnim.SetBool("isMoving", false);
         CancelTarget();
     }
 

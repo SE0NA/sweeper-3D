@@ -227,10 +227,9 @@ public class PlayerController : MonoBehaviour
         _isStopAll = true;
 
         gameObject.layer = 0;
-        
+        playerAnim.SetTrigger("Die");
         if (PV.IsMine)
-        {
-            playerAnim.SetTrigger("Die");
+        {   
             CursorUnLock();
             myCamera.GetComponent<Animation>().Play();
             gameObject.GetComponent<Rigidbody>().useGravity = false;
