@@ -18,6 +18,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     [SerializeField] Button btn_gameStart;
     [SerializeField] GameObject gameObject_Count_gameStart;
+    [SerializeField] GameObject txt_single;
 
     [Header("Game Set")]
     [SerializeField] Button btn_openSet;
@@ -55,16 +56,32 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             SendNewChat();
     }
 
+    private void GameStart_Txt_Single()
+    {
+        if (PhotonNetwork.PlayerList.Length > 1)
+            txt_single.SetActive(false);
+        else
+            txt_single.SetActive(true);
+    }
+
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         SetPlayerList();
-        if (PhotonNetwork.IsMasterClient) SetUI_Master();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            SetUI_Master();
+            GameStart_Txt_Single();
+        }
         else SetUI_Others();
     }
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         SetPlayerList();
-        if (PhotonNetwork.IsMasterClient) SetUI_Master();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            SetUI_Master();
+            GameStart_Txt_Single();
+        }
         else SetUI_Others();
     }
 
@@ -72,12 +89,16 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         btn_gameStart.interactable = true;
         btn_openSet.gameObject.SetActive(true);
+        if (PhotonNetwork.CountOfPlayers != 1)
+            txt_single.SetActive(false);
+        else
+            txt_single.SetActive(true);
     }
     void SetUI_Others()
     {
         btn_gameStart.interactable = false;
         btn_openSet.gameObject.SetActive(false);
-
+        txt_single.SetActive(false);
     }
     public void Btn_OpenSet_Master()
     {
@@ -122,14 +143,6 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             gameObject_players[i].GetComponent<Image>().color = color_playerList[1];
         }
         Debug.Log("MasterClient: " + PhotonNetwork.MasterClient.NickName);
-
-        // Game Start Button Set
-        if (PhotonNetwork.IsMasterClient) {
-            if (PhotonNetwork.PlayerList.Length > 1)    // 게임 시작 가능
-                btn_gameStart.interactable = true;
-            else
-                btn_gameStart.interactable = false;
-        }
 
         // 게임 시작 중 인원 변경 시
         if (gameObject_Count_gameStart.activeSelf == true)
