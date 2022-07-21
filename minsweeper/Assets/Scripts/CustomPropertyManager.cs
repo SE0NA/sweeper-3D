@@ -97,7 +97,7 @@ public class CustomPropertyManager : MonoBehaviour
     
     public void SetUI_SetListText_All()
     {
-        text_setList.text = "<size=15><color=yellow>게임</color></size>\n";
+        text_setList.text = "<size=13><color=yellow>게임</color></size>\n";
         text_setList.text += " 총 지뢰 수: " + ((int)CP["totalBomb"]).ToString() + "개\n";
         text_setList.text += " 깃발 사용: ";
         if ((bool)CP["enable_flag"])    text_setList.text += "O\n";
@@ -106,7 +106,7 @@ public class CustomPropertyManager : MonoBehaviour
         if ((bool)CP["teleport_checkAll"])  text_setList.text += "O\n\n";
         else                                text_setList.text += "X\n\n";
 
-        text_setList.text += "<size=15><color=magenta>몬스터</color></size>\n";
+        text_setList.text += "<size=13><color=magenta>몬스터</color></size>\n";
         text_setList.text += " 활성화: ";
         if ((bool)CP["monster_active"])     text_setList.text += "O\n";
         else                                text_setList.text += "X\n";

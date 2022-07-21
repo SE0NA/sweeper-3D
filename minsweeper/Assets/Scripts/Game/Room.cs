@@ -61,7 +61,7 @@ public class Room : MonoBehaviour
         else
         {
             _isOpened = true;
-            _mapPanel.GetComponent<MeshRenderer>().material.color = Color.white;
+            _mapPanel.GetComponent<MeshRenderer>().material.color = Color.gray;
             ceilLight.color = Color.white;
             ceilLight.enabled = true;
             gameManager._openedRoom++;

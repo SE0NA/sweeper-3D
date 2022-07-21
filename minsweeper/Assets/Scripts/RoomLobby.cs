@@ -178,10 +178,6 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public void Btn_GameStart()     // only master
     {
         if (!PhotonNetwork.IsMasterClient) return;
-        if (PhotonNetwork.PlayerList.Length <= 1) {      // 만약의 오류 처리
-            btn_gameStart.interactable = false;
-            return;
-        }
 
         // 게임 시작
         PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
