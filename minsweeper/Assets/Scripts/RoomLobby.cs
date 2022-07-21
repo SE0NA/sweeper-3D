@@ -179,6 +179,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         if (!PhotonNetwork.IsMasterClient) return;
 
+        btn_gameStart.interactable = false;
         // 게임 시작
         PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
         SetCP_GameStart();

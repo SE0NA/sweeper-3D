@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public bool _isMoving = false;
     private bool _isJumping = false;
     float moveSpeed;
-    float jumpPower = 4f;
+    float jumpPower = 5f;
     float sensitivity = 3.0f;
 
     // player interactions
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
             {
                 // 이동, 문 상호작용
                 PlayerMove();
-                PlayerJump();
+            //    PlayerJump();
                 MouseClick();
                 PlayerRotate();
                 if (Input.GetKeyDown(KeyCode.Z))
@@ -158,11 +158,14 @@ public class PlayerController : MonoBehaviour
             if (!playerAudioSource.isPlaying)
                 playerAudioSource.PlayOneShot(walkclip);
             if (PV.IsMine)  playerAnim.SetBool("isMoving", true);
-            transform.Translate((new Vector3(h, 0, v) * moveSpeed) * Time.deltaTime);
+            //transform.Translate((new Vector3(h, 0, v) * moveSpeed) * Time.deltaTime);
+            Vector3 velocity = transform.forward * v + transform.right * h;
+            rigid.velocity = velocity.normalized * moveSpeed;
         }
         else
         {
             _isMoving = false;
+            rigid.velocity = Vector3.zero;
             if (PV.IsMine) playerAnim.SetBool("isMoving", false);
         }
     }
