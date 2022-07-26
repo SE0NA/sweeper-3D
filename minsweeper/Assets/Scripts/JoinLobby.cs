@@ -16,12 +16,17 @@ public class JoinLobby : MonoBehaviourPunCallbacks
     [SerializeField] GameObject ui_pop;
     [SerializeField] Text txt_pop;
 
+    [SerializeField] GameObject canvas;
+    Animator uiAnimator;
+
     void Awake()
     {
         txt_networkInformation.text = "<color=#4C4C4C>" + "오프라인" + "</color>";
 
         btn_joinRandom.interactable = false;
         btn_joinRoom.interactable = false;
+
+        uiAnimator = canvas.GetComponent<Animator>();
     }
 
     void Start()
@@ -130,14 +135,18 @@ public class JoinLobby : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         txt_networkInformation.text = "<color=white>입장 완료!</color>";
-        PhotonNetwork.LoadLevel("RoomLobby");
+        uiAnimator.Play("Join_Fade Out");
+        Invoke("JoinRoom_Invoke", 1f);
     }
+    void JoinRoom_Invoke() => PhotonNetwork.LoadLevel("RoomLobby");
 
     public void LoadMain()
     {
+        uiAnimator.Play("Join_Fade Out");
         Disconnect();
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        Invoke("LoadMain_Invoke", 1f);
     }
+    void LoadMain_Invoke() => UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
 
     public void CreatePop(string msg)
     {
