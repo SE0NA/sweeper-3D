@@ -49,5 +49,12 @@ public class MainManager : MonoBehaviour
         uiAnimator.Play("Main_Fade Out");
         Invoke("Quit_Invoke", 1f);
     }
-    void Quit_Invoke() => Application.Quit();
+    void Quit_Invoke()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }
