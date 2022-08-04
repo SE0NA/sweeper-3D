@@ -46,6 +46,10 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+            enemyAnim.SetBool("isMoving", false);
+        else enemyAnim.SetBool("isMoving", true);
+
         if (!PhotonNetwork.IsMasterClient)
             return;
 
@@ -53,8 +57,6 @@ public class Enemy : MonoBehaviour
         {
             _navMeshAgent.SetDestination(_target.position);
         }
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance )
-            enemyAnim.SetBool("isMoving", false);
     }
 
     public void MoveToNextPoint()  // Patrol Points
@@ -73,7 +75,6 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 _navMeshAgent.SetDestination(patrolPoints[destinationPoint].position);
-                enemyAnim.SetBool("isMoving", true);
             }
         }
     }
@@ -85,7 +86,6 @@ public class Enemy : MonoBehaviour
 
         CancelInvoke();
         _target = thisTarget;
-        enemyAnim.SetBool("isMoving", true);
         _navMeshAgent.stoppingDistance = 0;
         _navMeshAgent.speed = _MaxSpeed;
     }
@@ -99,7 +99,6 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.SetDestination(gameObject.transform.position);
         _navMeshAgent.speed = _defaultSpeed;
         _navMeshAgent.stoppingDistance = 0.5f;
-        enemyAnim.SetBool("isMoving", false);
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
     }
 

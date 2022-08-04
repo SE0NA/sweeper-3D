@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
     [SerializeField] GameObject uiCanvas;
+    [SerializeField] GameObject uiHelpPanel;
+    [SerializeField] Button btn_help;
+
     Animator uiAnimator;
 
     private void Start()
@@ -20,9 +24,15 @@ public class MainManager : MonoBehaviour
     }
     void Game_Invoke() => SceneManager.LoadScene("JoinLobby");
 
-    public void Extra_join()
+    public void Btn_Help()
     {
-        SceneManager.LoadScene("Lobby_extra");
+        btn_help.interactable = false;
+        uiHelpPanel.SetActive(true);
+    }
+    public void Btn_Help_Ok()
+    {
+        uiHelpPanel.SetActive(false);
+        btn_help.interactable = true;
     }
 
     public void Btn_Quit()

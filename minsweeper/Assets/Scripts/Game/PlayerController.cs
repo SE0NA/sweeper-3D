@@ -251,6 +251,7 @@ public class PlayerController : MonoBehaviour
         CursorUnLock();
     }
 
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
@@ -259,6 +260,7 @@ public class PlayerController : MonoBehaviour
             if (PV.IsMine) playerAnim.SetBool("isJumping", false);
         }
     }
+    */
 
     private void OnTriggerEnter(Collider other)
     {
