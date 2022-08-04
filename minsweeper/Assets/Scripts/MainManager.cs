@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
+    [Header ("UI")]
     [SerializeField] GameObject uiCanvas;
     [SerializeField] GameObject uiHelpPanel;
     [SerializeField] Button btn_help;
+
+    [Header("SFX")]
+    [SerializeField] AudioSource audiosource;
+    [SerializeField] AudioClip audio_btn_click;
 
     Animator uiAnimator;
 
@@ -19,6 +24,7 @@ public class MainManager : MonoBehaviour
 
     public void Btn_MultiGame()
     {
+        audiosource.PlayOneShot(audio_btn_click);
         uiAnimator.Play("Main_Fade Out");
         Invoke("Game_Invoke", 1f);
     }
@@ -26,17 +32,20 @@ public class MainManager : MonoBehaviour
 
     public void Btn_Help()
     {
+        audiosource.PlayOneShot(audio_btn_click);
         btn_help.interactable = false;
         uiHelpPanel.SetActive(true);
     }
     public void Btn_Help_Ok()
     {
+        audiosource.PlayOneShot(audio_btn_click);
         uiHelpPanel.SetActive(false);
         btn_help.interactable = true;
     }
 
     public void Btn_Quit()
     {
+        audiosource.PlayOneShot(audio_btn_click);
         uiAnimator.Play("Main_Fade Out");
         Invoke("Quit_Invoke", 1f);
     }

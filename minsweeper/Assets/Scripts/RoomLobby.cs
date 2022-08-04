@@ -28,6 +28,11 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     [Header("color")]
     [SerializeField] List<Color> color_playerList;
 
+    [Header("SFX")]
+    [SerializeField] AudioSource myAudioSource;
+    [SerializeField] AudioClip clip_btn;
+    [SerializeField] AudioClip clip_playerJoin;
+
     CustomPropertyManager CPManager;
 
     void Awake()
@@ -66,6 +71,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
+        myAudioSource.PlayOneShot(clip_playerJoin);
         SetPlayerList();
         if (PhotonNetwork.IsMasterClient)
         {
@@ -102,6 +108,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     }
     public void Btn_OpenSet_Master()
     {
+        myAudioSource.PlayOneShot(clip_btn);
         panel_Set.SetActive(true);
         btn_openSet.interactable = false;
         btn_gameStart.interactable = false;
@@ -110,6 +117,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     public void Btn_CheckSet_Master()
     {
+        myAudioSource.PlayOneShot(clip_btn);
         CPManager.Btn_CheckSet_SetCP();
         panel_Set.SetActive(false);
         btn_openSet.interactable = true;
@@ -179,6 +187,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         if (!PhotonNetwork.IsMasterClient) return;
 
+        myAudioSource.PlayOneShot(clip_btn);
         btn_gameStart.interactable = false;
         // 게임 시작
         PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
