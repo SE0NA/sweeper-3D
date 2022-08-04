@@ -77,17 +77,17 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void CreateEnemy()
     {
-        int createTo = 0;
+        int createOn = 0;
 
-        for(int i = 0; i < stage._roomList.Count; i++)
+        // 열리지 않은 방에 몬스터 생성
+        while (true)
         {
-            createTo = Random.Range(0, stage._roomList.Count - 1);
-            if (createTo != player._wherePlayer)
+            createOn = Random.Range(0, stage._roomList.Count - 1);
+            if (!stage._roomList[createOn]._isOpened)
                 break;
         }
-
         _thisEnemy = PhotonNetwork.Instantiate("Enemy", playerSettingPos.position, Quaternion.identity);
-        _thisEnemy.transform.position = patrolPoints.transform.GetChild(createTo).position;
+        _thisEnemy.transform.position = patrolPoints.transform.GetChild(createOn).position;
         _thisEnemy.GetComponent<Enemy>().SetPatrolPointsFromGM(patrolPoints);
     }
 
