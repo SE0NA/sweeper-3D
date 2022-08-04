@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64cbc5b05f45414f8afd5035517124f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isClose: 1
   _doornum: 0
   _room1: {fileID: 0}
   _room2: {fileID: 0}

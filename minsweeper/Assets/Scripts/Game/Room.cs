@@ -62,8 +62,8 @@ public class Room : MonoBehaviour
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.gray;
-            ceilLight.color = Color.white;
-            ceilLight.enabled = true;
+         //   ceilLight.color = Color.white;
+         //   ceilLight.enabled = true;
             gameManager._openedRoom++;
             gameManager.CheckOpenedRoomForCreateEnemy();
             gameManager.CheckGameClear();

@@ -46,7 +46,7 @@ public class CustomPropertyManager : MonoBehaviour
         CP.Add("teleport_checkAll", true);
 
         // player
-        CP.Add("player_speed", 10f);
+        CP.Add("player_speed", 7f);
 
         // monster
         CP.Add("monster_active", true);

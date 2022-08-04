@@ -191,6 +191,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && touchDoor)
         {
             PV.RPC("RPC_DoorOpen", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
+            touchDoor = null;
         }
         // right click
         else if (Input.GetMouseButtonDown(1) && touchDoor)
@@ -273,7 +274,8 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Door"))
         {
             touchDoor = other.gameObject.GetComponent<Door>();
-            canvasManager.DoorInteractPanelOn();
+            if (touchDoor.isClose)
+                canvasManager.DoorInteractPanelOn();
         }
     }
     private void OnTriggerExit(Collider other)
