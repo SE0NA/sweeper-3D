@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public int _openedRoom = 0;
 
-    bool monster_activation;
+    public bool monster_activation;
     int monster_howmanyrooms;
     bool enable_flag;
 
