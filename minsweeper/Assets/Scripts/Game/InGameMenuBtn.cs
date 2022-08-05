@@ -25,8 +25,8 @@ public class InGameMenuBtn : MonoBehaviourPunCallbacks
     }
     public override void OnLeftRoom()
     {
-        PhotonNetwork.Disconnect();
         SceneManager.LoadScene("Main");
+        PhotonNetwork.Disconnect();
     }
 
     public void ReTryGame()

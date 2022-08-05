@@ -46,7 +46,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)   SetUI_Master();
         else                                SetUI_Others();
 
-        if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Ramdom"))
+        if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Random"))
             txt_roomCode.text = "Random";
         else
             txt_roomCode.text = PhotonNetwork.CurrentRoom.Name;

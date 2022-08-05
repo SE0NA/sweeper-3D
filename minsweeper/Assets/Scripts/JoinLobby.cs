@@ -29,10 +29,14 @@ public class JoinLobby : MonoBehaviourPunCallbacks
     {
         txt_networkInformation.text = "<color=#4C4C4C>" + "오프라인" + "</color>";
 
-        btn_joinRandom.interactable = false;
-        btn_joinRoom.interactable = false;
-
         uiAnimator = canvas.GetComponent<Animator>();
+
+        if (PhotonNetwork.IsConnected)
+            Disconnect();
+        else {
+            btn_joinRandom.interactable = false;
+            btn_joinRoom.interactable = false;
+        }
     }
 
     void Start()
@@ -91,15 +95,15 @@ public class JoinLobby : MonoBehaviourPunCallbacks
 
         PhotonNetwork.LocalPlayer.NickName = nick;
         Hashtable cp = new Hashtable { { "RoomState", "Random" } };
-        PhotonNetwork.JoinRandomRoom(cp, 4);
-    }
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        txt_networkInformation.text = "<color=#FFE400>새로운 방 생성 중...</color>";
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 4;
+        roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { "RoomState", "Random" } };
+        roomOptions.CustomRoomPropertiesForLobby = new string[] { "RoomState" };
 
-        RoomOptions roomOptions = new RoomOptions { MaxPlayers = 4 };
-        roomOptions.CustomRoomProperties = new Hashtable() { { "RoomState", "Ramdom" } };
-        PhotonNetwork.CreateRoom(null, roomOptions);
+        PhotonNetwork.JoinRandomOrCreateRoom(
+            expectedCustomRoomProperties: new ExitGames.Client.Photon.Hashtable() { { "RoomState", "Random" } }
+            , expectedMaxPlayers: 4         // 참가 시
+            , roomOptions: roomOptions);    // 생성 시
     }
 
     // 코드 입력 방 참가
@@ -143,10 +147,8 @@ public class JoinLobby : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         txt_networkInformation.text = "<color=white>입장 완료!</color>";
-        uiAnimator.Play("Join_Fade Out");
-        Invoke("JoinRoom_Invoke", 1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("RoomLobby");
     }
-    void JoinRoom_Invoke() => PhotonNetwork.LoadLevel("RoomLobby");
 
     public void LoadMain()
     {
