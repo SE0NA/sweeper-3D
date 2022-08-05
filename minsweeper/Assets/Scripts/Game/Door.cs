@@ -27,6 +27,7 @@ public class Door : MonoBehaviour
 
     public void DoorFlag(int wherePlayer)
     {
+        if (!isClose) return;
         Room tmpRoom;
         if (wherePlayer == _room1.GetRoomNum())
             tmpRoom = _room2;

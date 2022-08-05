@@ -71,6 +71,7 @@ public class Room : MonoBehaviour
     }
     public void RoomFlag()
     {
+        if (_isOpened) return;
         _isFlag = true;
         canvasManager.SetRestBomb(false);
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.yellow;
