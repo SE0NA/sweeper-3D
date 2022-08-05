@@ -124,7 +124,9 @@ public class CanvasManager : MonoBehaviour
 
     public void GameEndUI(bool isClear)
     {
+        if (_isStopAll) return;
         _isStopAll = true;
+
         if (isClear)
         {
             txt_gameEnd.text = "<size=20><color=cyan>GAME CLEAR!</color></size>\n\n" +
