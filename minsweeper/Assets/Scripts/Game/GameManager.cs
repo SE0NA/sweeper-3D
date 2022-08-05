@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public void GameOver()
     {
-        canvasManager.GameEndUI(false);
         player.PlayerDie();
+    //    canvasManager.GameEndUI(false);
     }
 }

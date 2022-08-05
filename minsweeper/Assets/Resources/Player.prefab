@@ -2649,6 +2649,7 @@ MonoBehaviour:
   _isLock: 0
   _isMap: 0
   _nearEnemy: 0
+  _isAlive: 1
   _isMoving: 0
   myCamera: {fileID: 1317203853711113400}
   walkclip: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}

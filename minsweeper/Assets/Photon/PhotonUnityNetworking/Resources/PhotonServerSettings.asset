@@ -53,6 +53,10 @@ MonoBehaviour:
   - PlayAnim_GameStartCount
   - SetUI_GameSettingText
   - ReceiveChat
+  - RPC_GameOber
+  - RPC_GameOver
+  - RPC_AllPlayerDead
+  - AllPlayerisDead
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

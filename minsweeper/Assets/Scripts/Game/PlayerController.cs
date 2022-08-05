@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public bool _isMap = false;
     public bool _nearEnemy = false;
 
+    public bool _isAlive = true;
+
     // player movement
     public bool _isMoving = false;
     private bool _isJumping = false;
@@ -229,11 +231,12 @@ public class PlayerController : MonoBehaviour
     public void PlayerDie()
     {
         _isStopAll = true;
+        _isAlive = false;
 
         gameObject.layer = 0;
         playerAnim.SetTrigger("Die");
         if (PV.IsMine)
-        {   
+        {
             CursorUnLock();
             myCamera.GetComponent<Animation>().Play();
             gameObject.GetComponent<Rigidbody>().useGravity = false;
@@ -241,7 +244,23 @@ public class PlayerController : MonoBehaviour
         }
         gameObject.GetComponent<BoxCollider>().enabled = false;
         vfx_blood.Play();
+
+        PlayerController[] playerlist = FindObjectsOfType<PlayerController>();
+        bool anybodyAlive = false;
+        for (int i = 0; i < playerlist.Length; i++)
+            if (playerlist[i]._isAlive)
+                anybodyAlive = true;
+
+        if (!anybodyAlive)
+            PV.RPC("AllPlayerisDead", RpcTarget.All);
     }
+    [PunRPC]
+    void AllPlayerisDead()
+    {
+        canvasManager.GameEndUI(false);
+    }
+
+
     public void PlayerGameClear()
     {
         _isStopAll = true;
@@ -251,17 +270,6 @@ public class PlayerController : MonoBehaviour
         vfx_clear.Play();
         CursorUnLock();
     }
-
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            _isJumping = false;
-            if (PV.IsMine) playerAnim.SetBool("isJumping", false);
-        }
-    }
-    */
 
     private void OnTriggerEnter(Collider other)
     {
