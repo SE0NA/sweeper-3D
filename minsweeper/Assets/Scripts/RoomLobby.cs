@@ -122,7 +122,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         panel_Set.SetActive(false);
         btn_openSet.interactable = true;
         btn_gameStart.interactable = true;
-        photonView.RPC("SetUI_GameSettingText", RpcTarget.AllBuffered);
+        photonView.RPC("SetUI_GameSettingText", RpcTarget.AllBufferedViaServer);
     }
     [PunRPC]
     void SetUI_GameSettingText()
