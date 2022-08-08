@@ -168,7 +168,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         if (if_sendChat.text.Equals("")) return;
 
         string msg;
-        msg = "[<color=cyan>" + PhotonNetwork.LocalPlayer.NickName + "</color>]" + if_sendChat.text;
+        msg = "<color=black>[</color><color=cyan>" + PhotonNetwork.LocalPlayer.NickName + "</color><color=black>]</color>" + if_sendChat.text;
         ReceiveChat(msg);
         msg = "[" + PhotonNetwork.LocalPlayer.NickName + "]" + if_sendChat.text;
         photonView.RPC("ReceiveChat", RpcTarget.OthersBuffered, msg);
