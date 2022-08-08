@@ -1003,6 +1003,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  PV: {fileID: 4196130617694956028}
   _isEnd: 0
   _isStart: 0
 --- !u!114 &4196130617694956028
@@ -1043,7 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
-  m_SynchronizeScale: 1
+  m_SynchronizeScale: 0
   m_UseLocal: 1
 --- !u!114 &-4822122827206944906
 MonoBehaviour:
@@ -1067,7 +1068,7 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: attack
   m_SynchronizeLayers:
-  - SynchronizeType: 1
+  - SynchronizeType: 0
     LayerIndex: 0
 --- !u!1 &1486048802852170
 GameObject:

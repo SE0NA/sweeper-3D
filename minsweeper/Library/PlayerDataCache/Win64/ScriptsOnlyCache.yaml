@@ -816,7 +816,7 @@ ScriptsOnlyBuild:
     className: GameManager
   - hash:
       serializedVersion: 2
-      Hash: 2b41864ea214a6bf7fde227e6e337133
+      Hash: cdab0e2a8c9ebe34494455a9ea5cbce2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy

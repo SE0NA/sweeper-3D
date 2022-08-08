@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform[] patrolPoints = null;
     int destinationPoint = 0;
 
+    public PhotonView PV;
     Animator enemyAnim;
-    AudioSource enemyAudio;
 
     public bool _isEnd = false;
     public bool _isStart = false;
@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.speed = _defaultSpeed;
 
         enemyAnim = GetComponent<Animator>();
-        enemyAudio = GetComponent<AudioSource>();
 
         if (PhotonNetwork.IsMasterClient)
             Invoke("EnemyStart", 5f);
@@ -46,17 +45,15 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (!PV.IsMine)
+            return;
+
         if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             enemyAnim.SetBool("isMoving", false);
         else enemyAnim.SetBool("isMoving", true);
 
-        if (!PhotonNetwork.IsMasterClient)
-            return;
-
         if (_target != null && _isStart)
-        {
             _navMeshAgent.SetDestination(_target.position);
-        }
     }
 
     public void MoveToNextPoint()  // Patrol Points
