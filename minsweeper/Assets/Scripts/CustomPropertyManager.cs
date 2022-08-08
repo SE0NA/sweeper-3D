@@ -55,8 +55,8 @@ public class CustomPropertyManager : MonoBehaviour
         CP.Add("monster_maxspeed", 5);
         CP.Add("monster_sight_distance", 7f);
         CP.Add("monster_sight_angle", 150f);
-        CP.Add("monster_targetarea_radius", 15f);
-        CP.Add("monster_howmanyrooms", 5);
+        CP.Add("monster_targetarea_radius", 7f);
+        CP.Add("monster_howmanyrooms", 10);
 
         // Stage
         CP.Add("totalBomb", 10);
