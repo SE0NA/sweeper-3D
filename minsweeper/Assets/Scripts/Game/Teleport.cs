@@ -27,9 +27,12 @@ public class Teleport : MonoBehaviour
 
     public void TeleportBtnClick(int teleportTo)
     {
+        /*
         stage._roomList[teleportTo].RoomOpen();
         player.transform.position = stage._roomList[teleportTo].roomPos.position;
         player.TeleportUIClose();
+        */
+        player.RoomOpenByTeleport(teleportTo);
         gameObject.SetActive(false);
     }
 

@@ -17,7 +17,7 @@ public class EnemyKill : MonoBehaviour
             if (other.GetComponent<Photon.Pun.PhotonView>().IsMine)
                 FindObjectOfType<GameManager>().GameOver();
 
-            other.GetComponent<PlayerController>().PlayerDie();
+            other.GetComponent<PlayerController>().PlayerDie(isByMonster: true);
         }
     }
 }

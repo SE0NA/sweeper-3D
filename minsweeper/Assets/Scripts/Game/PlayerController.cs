@@ -74,9 +74,10 @@ public class PlayerController : MonoBehaviour
         if (!PV.IsMine)
             return;
 
-        ESCMenu();
         if (!_isStopAll)
         {
+            ESCMenu();
+
             minimapManager.SetMiniMap(gameObject.transform);
             if (!_isLock)   // unlock
             {
@@ -214,6 +215,18 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.DoorFlagByNum(rnum, dnum);
     }
+
+    public void RoomOpenByTeleport(int rnum)
+    {
+        TeleportUIClose();
+        transform.position = gameManager.stage._roomList[rnum].roomPos.position;
+        PV.RPC("RPC_RoomOpenByTeleport", RpcTarget.AllBuffered, rnum);
+    }
+    [PunRPC]
+    public void RPC_RoomOpenByTeleport(int rnum)
+    {
+        gameManager.stage._roomList[rnum].RoomOpen();
+    }
     
     public void CursorUnLock()
     {
@@ -228,13 +241,14 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void PlayerDie()
+    public void PlayerDie(bool isByMonster)
     {
         _isStopAll = true;
         _isAlive = false;
 
         gameObject.layer = 0;
         playerAnim.SetTrigger("Die");
+
         if (PV.IsMine)
         {
             CursorUnLock();
@@ -245,21 +259,27 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().enabled = false;
         vfx_blood.Play();
 
-        PlayerController[] playerlist = FindObjectsOfType<PlayerController>();
-        bool anybodyAlive = false;
-        for (int i = 0; i < playerlist.Length; i++)
-            if (playerlist[i]._isAlive)
-                anybodyAlive = true;
+        if (isByMonster)    // 몬스터에 의한 개인 플레이어 사망
+        {
+            PlayerController[] playerlist = FindObjectsOfType<PlayerController>();
+            bool anybodyAlive = false;
+            for (int i = 0; i < playerlist.Length; i++)
+                if (playerlist[i]._isAlive)
+                    anybodyAlive = true;
 
-        if (!anybodyAlive)
-            PV.RPC("AllPlayerisDead", RpcTarget.All);
+            if (!anybodyAlive)
+                PV.RPC("AllPlayerisDead", RpcTarget.All);
+        }
+        else                // 지뢰에 의한 전체 플레이어 사망
+        {
+            canvasManager.GameEndUI(isClear: false);
+        }
     }
     [PunRPC]
     void AllPlayerisDead()
     {
-        canvasManager.GameEndUI(false);
+        canvasManager.GameEndUI(isClear: false);
     }
-
 
     public void PlayerGameClear()
     {

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [SerializeField] GameObject patrolPoints;
 
     PlayerController player;
-    Stage stage;
+    public Stage stage;
     CanvasManager canvasManager;
     Teleport teleport;
 
@@ -115,12 +115,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     private void GameClear()
     {
-        canvasManager.GameEndUI(true);
+        canvasManager.GameEndUI(isClear: true);
         player.PlayerGameClear();
     }
     public void GameOver()
     {
-        player.PlayerDie();
-    //    canvasManager.GameEndUI(false);
+        player.PlayerDie(isByMonster: false);    // Áö·Ú¿¡ ÀÇÇÑ »ç¸Á
     }
 }
