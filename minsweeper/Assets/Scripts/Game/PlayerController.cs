@@ -74,9 +74,10 @@ public class PlayerController : MonoBehaviour
         if (!PV.IsMine)
             return;
 
+        ESCMenu();
+
         if (!_isStopAll)
         {
-            ESCMenu();
 
             minimapManager.SetMiniMap(gameObject.transform);
             if (!_isLock)   // unlock
@@ -129,6 +130,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (PhotonNetwork.IsMasterClient)
+                return;
+
             if (!_isStopAll)
             {
                 ingameMenuBtn.PlayBtnClip(1);
