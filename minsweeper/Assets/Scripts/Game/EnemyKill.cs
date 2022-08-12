@@ -13,9 +13,6 @@ public class EnemyKill : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(clip_bite);
             _thisEnemy.KillPlayer();
-            
-            if (other.GetComponent<Photon.Pun.PhotonView>().IsMine)
-                FindObjectOfType<GameManager>().GameOver();
 
             other.GetComponent<PlayerController>().PlayerDie(isByMonster: true);
         }
