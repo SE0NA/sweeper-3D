@@ -33,7 +33,8 @@ public class EnemyTargetArea : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             other.GetComponent<PlayerController>()._nearEnemy = false;
             if (_thisEnemy._target != null &&
-                _thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
+                _thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID
+                == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
             {
                 // targetArea - target ³õÄ§
                 _thisEnemy._target = null;
