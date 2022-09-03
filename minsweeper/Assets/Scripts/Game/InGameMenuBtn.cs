@@ -7,13 +7,8 @@ using Photon.Pun;
 public class InGameMenuBtn : MonoBehaviourPunCallbacks
 {
     [SerializeField] List<AudioClip> clipList;
-    /*
-     *   0. button click
-     *   1. panel open
-     *   2. panel close
-     */
 
-    public void PlayBtnClip(int num)
+    public void PlayBtnClip(int num)    // <- PlayerController
     {
         GetComponent<AudioSource>().PlayOneShot(clipList[num]);
     }
@@ -29,11 +24,6 @@ public class InGameMenuBtn : MonoBehaviourPunCallbacks
         PhotonNetwork.Disconnect();
     }
 
-    public void ReTryGame()
-    {
-        GetComponent<AudioSource>().PlayOneShot(clipList[0]);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
     public void ContinueGame()
     {
         GetComponent<AudioSource>().PlayOneShot(clipList[0]);

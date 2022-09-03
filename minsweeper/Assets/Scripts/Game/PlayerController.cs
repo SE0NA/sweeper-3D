@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,9 +15,7 @@ public class PlayerController : MonoBehaviour
 
     // player movement
     public bool _isMoving = false;
-    private bool _isJumping = false;
     float moveSpeed;
-    float jumpPower = 5f;
     float sensitivity = 3.0f;
 
     // player interactions
@@ -84,7 +81,6 @@ public class PlayerController : MonoBehaviour
             {
                 // 이동, 문 상호작용
                 PlayerMove();
-            //    PlayerJump();
                 MouseClick();
                 PlayerRotate();
                 if (Input.GetKeyDown(KeyCode.Z))
@@ -165,7 +161,7 @@ public class PlayerController : MonoBehaviour
             if (!playerAudioSource.isPlaying)
                 playerAudioSource.PlayOneShot(walkclip);
             if (PV.IsMine)  playerAnim.SetBool("isMoving", true);
-            //transform.Translate((new Vector3(h, 0, v) * moveSpeed) * Time.deltaTime);
+
             Vector3 velocity = transform.forward * v + transform.right * h;
             rigid.velocity = velocity.normalized * moveSpeed;
         }
@@ -174,15 +170,6 @@ public class PlayerController : MonoBehaviour
             _isMoving = false;
             rigid.velocity = Vector3.zero;
             if (PV.IsMine) playerAnim.SetBool("isMoving", false);
-        }
-    }
-    private void PlayerJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)&&!_isJumping) {
-            _isJumping = true;
-            playerAudioSource.PlayOneShot(jumpclip);
-            if (PV.IsMine) playerAnim.SetBool("isJumping", true);
-            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
     }
 
@@ -195,13 +182,13 @@ public class PlayerController : MonoBehaviour
     private void MouseClick()
     {
         // left click
-        if (Input.GetMouseButtonDown(0) && touchDoor)
+        if (Input.GetMouseButtonDown(0) && touchDoor && !_isMap)
         {
             PV.RPC("RPC_DoorOpen", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
             touchDoor = null;
         }
         // right click
-        else if (Input.GetMouseButtonDown(1) && touchDoor)
+        else if (Input.GetMouseButtonDown(1) && touchDoor && _isMap)
         {
             if ((bool)PhotonNetwork.CurrentRoom.CustomProperties["enable_flag"])
                 PV.RPC("RPC_DoorFlag", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);

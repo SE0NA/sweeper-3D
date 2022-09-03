@@ -76,7 +76,6 @@
     <Compile Include="Assets\Scripts\Game\Teleport.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyTargetArea.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
-    <Compile Include="Assets\Scripts\ChatManager.cs" />
     <Compile Include="Assets\Scripts\Game\EnemySight.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
     <Compile Include="Assets\Scripts\Game\EnemyKill.cs" />

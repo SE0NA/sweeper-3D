@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
     }
     private void EnemyStart()
     {
-        InvokeRepeating("MoveToNextPoint", 0f, 2f);
+        InvokeRepeating("MoveToNextPoint", 0f, 5f);
     }
 
     void Update()
@@ -120,7 +120,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public float GetEnemySightCP_sight_angle() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_angle"];
-    public float GetEnemySightCP_sight_distance() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_distance"];
-    public float GetEnemyTargetAreaCP_radius() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_targetarea_radius"];
+    public float GetEnemySightCP_sight_angle() 
+        => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_angle"];
+    public float GetEnemySightCP_sight_distance() 
+        => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_distance"];
+    public float GetEnemyTargetAreaCP_radius() 
+        => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_targetarea_radius"];
 }

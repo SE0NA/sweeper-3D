@@ -145,7 +145,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             gameObject_players[i].transform.GetComponentInChildren<Text>().text = thisplayer.NickName;
             gameObject_players[i].GetComponent<Image>().color = color_playerList[0];
         }
-        for (; i < 4; i++)  // ºó ½½·Ô
+        for (; i < 4; i++)  // ºó ÀÚ¸®
         {
             gameObject_players[i].GetComponentInChildren<Text>().text = "";
             gameObject_players[i].GetComponent<Image>().color = color_playerList[1];
@@ -168,7 +168,8 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         if (if_sendChat.text.Equals("")) return;
 
         string msg;
-        msg = "<color=black>[</color><color=cyan>" + PhotonNetwork.LocalPlayer.NickName + "</color><color=black>]</color>" + if_sendChat.text;
+        msg = "<color=black>[</color><color=cyan>" + PhotonNetwork.LocalPlayer.NickName 
+            + "</color><color=black>]</color>" + if_sendChat.text;
         ReceiveChat(msg);
         msg = "<color=black>[" + PhotonNetwork.LocalPlayer.NickName + "]</color>" + if_sendChat.text;
         photonView.RPC("ReceiveChat", RpcTarget.OthersBuffered, msg);

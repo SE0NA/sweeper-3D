@@ -40,3 +40,4 @@ public class Door : MonoBehaviour
             tmpRoom.RoomUnFlag();
     }
 }
+

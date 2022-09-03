@@ -27,18 +27,13 @@ public class Teleport : MonoBehaviour
 
     public void TeleportBtnClick(int teleportTo)
     {
-        /*
-        stage._roomList[teleportTo].RoomOpen();
-        player.transform.position = stage._roomList[teleportTo].roomPos.position;
-        player.TeleportUIClose();
-        */
         player.RoomOpenByTeleport(teleportTo);
         gameObject.SetActive(false);
     }
 
     public void TeleportUISetting() // Set button color
     {
-        if (checkAllRoom)   // 설정되어있어야 teleportUI에서 전체 내용 확인 가능
+        if (checkAllRoom)   // 설정되어있어야 teleportUI에서 방 상태 확인 가능
         {
             for (int i = 0; i < transform.childCount; i++)
             {

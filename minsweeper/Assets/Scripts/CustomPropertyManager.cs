@@ -26,11 +26,9 @@ public class CustomPropertyManager : MonoBehaviour
     [SerializeField] Text text_setList;
 
     Hashtable CP;
-    RoomLobby LobbyManager;
 
     void Awake()
     {
-        LobbyManager = FindObjectOfType<RoomLobby>();
         CP = PhotonNetwork.CurrentRoom.CustomProperties;
 
         Init_CP();
@@ -117,7 +115,8 @@ public class CustomPropertyManager : MonoBehaviour
             else                            text_setList.text += "X\n";
             text_setList.text += " 기본 속도: " + ((int)CP["monster_defaultspeed"]).ToString() + "\n";
             text_setList.text += " 최고 속도: " + ((int)CP["monster_maxspeed"]).ToString() + "\n";
-            text_setList.text += " 타겟 탐색 범위: " + ((int)((float)CP["monster_targetarea_radius"])).ToString() + "\n";
+            text_setList.text += " 타겟 탐색 범위: " 
+                + ((int)((float)CP["monster_targetarea_radius"])).ToString() + "\n";
             text_setList.text += " 출발 방 개수: " + ((int)CP["monster_howmanyrooms"]).ToString();
         }
     }
@@ -137,7 +136,7 @@ public class CustomPropertyManager : MonoBehaviour
         PhotonNetwork.CurrentRoom.SetCustomProperties(CP);
     }
 
-    // 각 UI 활성화 설정
+    // 난이도 설정 내용에 따른 UI 변화
     public void Slider_totalBomb(Slider sd)
     {
         cp_totalBomb_text.text = sd.value.ToString();

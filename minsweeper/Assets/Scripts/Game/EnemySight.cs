@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemySight : MonoBehaviour
 {
-    // Layer: Door 통과X(시야)
-
     [SerializeField] Enemy _thisEnemy;
 
     float _sightAngle;

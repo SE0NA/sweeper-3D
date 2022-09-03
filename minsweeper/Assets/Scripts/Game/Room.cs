@@ -29,13 +29,11 @@ public class Room : MonoBehaviour
 
     GameManager gameManager;
     CanvasManager canvasManager;
-//    Teleport teleport;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         canvasManager = FindObjectOfType<CanvasManager>();
- //       teleport = FindObjectOfType<Teleport>();
         _mapPanel.GetComponent<MeshRenderer>().material.color = Color.black;
     }
 
@@ -62,8 +60,7 @@ public class Room : MonoBehaviour
         {
             _isOpened = true;
             _mapPanel.GetComponent<MeshRenderer>().material.color = Color.gray;
-         //   ceilLight.color = Color.white;
-         //   ceilLight.enabled = true;
+
             gameManager._openedRoom++;
             gameManager.CheckOpenedRoomForCreateEnemy();
             gameManager.CheckGameClear();

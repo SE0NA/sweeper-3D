@@ -28,7 +28,6 @@ public class CanvasManager : MonoBehaviour
 
     GameObject panel_doorInteraction;
 
-    // Start is called before the first frame update
     void Start()
     {
         restBomb = FindObjectOfType<Stage>()._totalBomb;
@@ -50,7 +49,7 @@ public class CanvasManager : MonoBehaviour
 
     public void SetDoorInteracion_ByFlag(bool enable)
     {
-        // 난이도 선택: 깃발 사용 여부
+        // 난이도 선택: 깃발 사용 여부 → 상호작용 UI 디자인
         if (enable) panel_doorInteraction = panel_doorInteraction_enable_flag;
         else        panel_doorInteraction = panel_doorInteraction_disable_flag;
     }
@@ -141,7 +140,8 @@ public class CanvasManager : MonoBehaviour
         {
             txt_gameEnd.text = "<size=20><color=red>GAME OVER!</color></size>\n\n" +
                 "<size=15><color=white>" + min.ToString() + " : " + ((int)sec).ToString() + "</color></size>\n\n" +
-                "<size=10>지뢰 <color=yellow>" + totalBomb.ToString() + "</color>개 중 <color=red>" + restBomb.ToString() + "</color>개 남음\n";
+                "<size=10>지뢰 <color=yellow>" + totalBomb.ToString() +
+                "</color>개 중 <color=red>" + restBomb.ToString() + "</color>개 남음\n";
             if (FindObjectOfType<GameManager>().monster_activation)
                 txt_gameEnd.text += "<color=magenta>몬스터 O</color></size>";
             else

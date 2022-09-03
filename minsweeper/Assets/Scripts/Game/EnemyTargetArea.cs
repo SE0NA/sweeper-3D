@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTargetArea : MonoBehaviour
 {
     // TargetArea: 타겟 추적 범위
-    // Player 맵 이동 불가
+    // Player 텔레포트 기능 사용 불가
 
     [SerializeField] Enemy _thisEnemy;
 
