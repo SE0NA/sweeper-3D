@@ -1,7 +1,11 @@
 # sweeper-3D
-
-<img src="" width="300" height="230">
-
+<br>
+<div><h6>
+<img src="https://user-images.githubusercontent.com/85846475/205563707-24a637cd-b38b-4614-a481-ef36dbf0e621.gif" width="400" height="230">
+<img src="https://user-images.githubusercontent.com/85846475/205563974-446e8806-15a2-4b44-aa22-4cb4d2be7cb5.gif" width="400" height="230"><br>
+<a href="https://github.com/SE0NA/sweeper-3D/blob/main/sweeper%20play_video.mp4">전체 시연 영상</a>
+</h6></div>
+<br>
 <h5>
 sweeper3D는 기존의 고전 게임인 지뢰 찾기를 1인칭 3D의 게임으로 재설계한 게임이다. <br>
 플레이어는 스테이지를 돌아다니며 지뢰가 있는 방을 제외한 모든 방을 탐색하는 것을 목표로 게임을 진행한다. <br><br>
