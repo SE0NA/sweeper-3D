@@ -174,6 +174,7 @@ sweeper3D는 기존의 고전 게임인 지뢰 찾기를 1인칭 3D의 게임으
 ***
 #### 사용 에셋
 <h6><table>
+<tr><td>네트워크</td><td>Photon PUN2</td></tr>
 <tr><td>플레이어 오브젝트</td><td>Robot Solider - Marcelo Barrio</td></tr>
 <tr><td>스테이지 구성</td><td>Sci-fi Styled Modular Pack - karboosx</td></tr>
 <tr><td>몬스터 오브젝트</td><td>Meshtint Free Polygonal Metalon – Meshtint Studio</td></tr>
