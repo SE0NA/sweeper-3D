@@ -2,17 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
+    [Header ("UI")]
+    [SerializeField] GameObject uiCanvas;
+    [SerializeField] GameObject uiHelpPanel;
+    [SerializeField] Button btn_help;
+
+    [Header("SFX")]
+    [SerializeField] AudioSource audiosource;
+    [SerializeField] AudioClip audio_btn_click;
+
+    Animator uiAnimator;
+
+    private void Start()
+    {
+        uiAnimator = uiCanvas.GetComponent<Animator>();
+    }
+
     public void Btn_MultiGame()
     {
-        SceneManager.LoadScene("JoinLobby");
+        audiosource.PlayOneShot(audio_btn_click);
+        uiAnimator.Play("Main_Fade Out");
+        Invoke("Game_Invoke", 1f);
     }
+    void Game_Invoke() => SceneManager.LoadScene("JoinLobby");
 
-    public void Extra_join()
+    public void Btn_Help()
     {
-        SceneManager.LoadScene("Lobby_extra");
+        audiosource.PlayOneShot(audio_btn_click);
+        btn_help.interactable = false;
+        uiHelpPanel.SetActive(true);
+    }
+    public void Btn_Help_Ok()
+    {
+        audiosource.PlayOneShot(audio_btn_click);
+        uiHelpPanel.SetActive(false);
+        btn_help.interactable = true;
     }
 
+    public void Btn_Quit()
+    {
+        audiosource.PlayOneShot(audio_btn_click);
+        uiAnimator.Play("Main_Fade Out");
+        Invoke("Quit_Invoke", 1f);
+    }
+    void Quit_Invoke()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

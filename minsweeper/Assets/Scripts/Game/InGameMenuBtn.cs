@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
-public class InGameMenuBtn : MonoBehaviour
+public class InGameMenuBtn : MonoBehaviourPunCallbacks
 {
     [SerializeField] List<AudioClip> clipList;
-    /*
-     *   0. button click
-     *   1. panel open
-     *   2. panel close
-     */
 
-    public void PlayBtnClip(int num)
+    public void PlayBtnClip(int num)    // <- PlayerController
     {
         GetComponent<AudioSource>().PlayOneShot(clipList[num]);
     }
@@ -20,13 +16,14 @@ public class InGameMenuBtn : MonoBehaviour
     public void GotoMainScene()
     {
         GetComponent<AudioSource>().PlayOneShot(clipList[0]);
-        SceneManager.LoadScene("Main");
+        PhotonNetwork.LeaveRoom();
     }
-    public void ReTryGame()
+    public override void OnLeftRoom()
     {
-        GetComponent<AudioSource>().PlayOneShot(clipList[0]);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Main");
+        PhotonNetwork.Disconnect();
     }
+
     public void ContinueGame()
     {
         GetComponent<AudioSource>().PlayOneShot(clipList[0]);

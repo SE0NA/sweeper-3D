@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,11 +11,11 @@ public class PlayerController : MonoBehaviour
     public bool _isMap = false;
     public bool _nearEnemy = false;
 
+    public bool _isAlive = true;
+
     // player movement
     public bool _isMoving = false;
-    private bool _isJumping = false;
     float moveSpeed;
-    float jumpPower = 4f;
     float sensitivity = 3.0f;
 
     // player interactions
@@ -73,14 +72,15 @@ public class PlayerController : MonoBehaviour
             return;
 
         ESCMenu();
+
         if (!_isStopAll)
         {
+
             minimapManager.SetMiniMap(gameObject.transform);
             if (!_isLock)   // unlock
             {
                 // 이동, 문 상호작용
                 PlayerMove();
-                PlayerJump();
                 MouseClick();
                 PlayerRotate();
                 if (Input.GetKeyDown(KeyCode.Z))
@@ -126,6 +126,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount != 1)
+                return;
+
             if (!_isStopAll)
             {
                 ingameMenuBtn.PlayBtnClip(1);
@@ -158,21 +161,15 @@ public class PlayerController : MonoBehaviour
             if (!playerAudioSource.isPlaying)
                 playerAudioSource.PlayOneShot(walkclip);
             if (PV.IsMine)  playerAnim.SetBool("isMoving", true);
-            transform.Translate((new Vector3(h, 0, v) * moveSpeed) * Time.deltaTime);
+
+            Vector3 velocity = transform.forward * v + transform.right * h;
+            rigid.velocity = velocity.normalized * moveSpeed;
         }
         else
         {
             _isMoving = false;
+            rigid.velocity = Vector3.zero;
             if (PV.IsMine) playerAnim.SetBool("isMoving", false);
-        }
-    }
-    private void PlayerJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)&&!_isJumping) {
-            _isJumping = true;
-            playerAudioSource.PlayOneShot(jumpclip);
-            if (PV.IsMine) playerAnim.SetBool("isJumping", true);
-            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
     }
 
@@ -185,12 +182,13 @@ public class PlayerController : MonoBehaviour
     private void MouseClick()
     {
         // left click
-        if (Input.GetMouseButtonDown(0) && touchDoor)
+        if (Input.GetMouseButtonDown(0) && touchDoor && !_isMap)
         {
             PV.RPC("RPC_DoorOpen", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
+            touchDoor = null;
         }
         // right click
-        else if (Input.GetMouseButtonDown(1) && touchDoor)
+        else if (Input.GetMouseButtonDown(1) && touchDoor && _isMap)
         {
             if ((bool)PhotonNetwork.CurrentRoom.CustomProperties["enable_flag"])
                 PV.RPC("RPC_DoorFlag", RpcTarget.AllBufferedViaServer, _wherePlayer, touchDoor._doornum);
@@ -208,6 +206,18 @@ public class PlayerController : MonoBehaviour
     {
         gameManager.DoorFlagByNum(rnum, dnum);
     }
+
+    public void RoomOpenByTeleport(int rnum)
+    {
+        TeleportUIClose();
+        transform.position = gameManager.stage._roomList[rnum].roomPos.position;
+        PV.RPC("RPC_RoomOpenByTeleport", RpcTarget.AllBuffered, rnum);
+    }
+    [PunRPC]
+    public void RPC_RoomOpenByTeleport(int rnum)
+    {
+        gameManager.stage._roomList[rnum].RoomOpen();
+    }
     
     public void CursorUnLock()
     {
@@ -222,14 +232,16 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void PlayerDie()
+    public void PlayerDie(bool isByMonster)
     {
         _isStopAll = true;
+        _isAlive = false;
 
         gameObject.layer = 0;
         playerAnim.SetTrigger("Die");
+
         if (PV.IsMine)
-        {   
+        {
             CursorUnLock();
             myCamera.GetComponent<Animation>().Play();
             gameObject.GetComponent<Rigidbody>().useGravity = false;
@@ -237,7 +249,29 @@ public class PlayerController : MonoBehaviour
         }
         gameObject.GetComponent<BoxCollider>().enabled = false;
         vfx_blood.Play();
+
+        if (isByMonster)    // 몬스터에 의한 개인 플레이어 사망
+        {
+            PlayerController[] playerlist = FindObjectsOfType<PlayerController>();
+            bool anybodyAlive = false;
+            for (int i = 0; i < playerlist.Length; i++)
+                if (playerlist[i]._isAlive)
+                    anybodyAlive = true;
+
+            if (!anybodyAlive)
+                PV.RPC("AllPlayerisDead", RpcTarget.All);
+        }
+        else                // 지뢰에 의한 전체 플레이어 사망
+        {
+            canvasManager.GameEndUI(isClear: false);
+        }
     }
+    [PunRPC]
+    void AllPlayerisDead()
+    {
+        canvasManager.GameEndUI(isClear: false);
+    }
+
     public void PlayerGameClear()
     {
         _isStopAll = true;
@@ -246,15 +280,6 @@ public class PlayerController : MonoBehaviour
         myCamera.GetComponent<Animation>().Play();
         vfx_clear.Play();
         CursorUnLock();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            _isJumping = false;
-            if (PV.IsMine) playerAnim.SetBool("isJumping", false);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -268,7 +293,8 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Door"))
         {
             touchDoor = other.gameObject.GetComponent<Door>();
-            canvasManager.DoorInteractPanelOn();
+            if (touchDoor.isClose)
+                canvasManager.DoorInteractPanelOn();
         }
     }
     private void OnTriggerExit(Collider other)

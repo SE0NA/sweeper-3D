@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private bool isClose = true;
+    public bool isClose = true;
     public int _doornum;
     
     [SerializeField] Room _room1;
     [SerializeField] Room _room2;
 
     [SerializeField] GameObject leftdoor;
-    [SerializeField] GameObject rightdoor; 
+    [SerializeField] GameObject rightdoor;
 
     public void DoorOpen(int wherePlayer)
     {
         if (!isClose) return;
         GetComponent<Animation>().Play();   // 문 열림 애니메이션
         GetComponent<AudioSource>().Play(); // 문 열림 사운드
-        GetComponent<BoxCollider>().enabled = false;    // 더이상 상호작용 불가
+        GetComponent<BoxCollider>().enabled = false;    // 상호작용 해제
         isClose = false;
 
         if (wherePlayer == _room1.GetRoomNum())
@@ -27,6 +27,7 @@ public class Door : MonoBehaviour
 
     public void DoorFlag(int wherePlayer)
     {
+        if (!isClose) return;
         Room tmpRoom;
         if (wherePlayer == _room1.GetRoomNum())
             tmpRoom = _room2;
@@ -39,3 +40,4 @@ public class Door : MonoBehaviour
             tmpRoom.RoomUnFlag();
     }
 }
+

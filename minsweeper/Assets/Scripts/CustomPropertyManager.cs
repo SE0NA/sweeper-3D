@@ -26,11 +26,9 @@ public class CustomPropertyManager : MonoBehaviour
     [SerializeField] Text text_setList;
 
     Hashtable CP;
-    RoomLobby LobbyManager;
 
     void Awake()
     {
-        LobbyManager = FindObjectOfType<RoomLobby>();
         CP = PhotonNetwork.CurrentRoom.CustomProperties;
 
         Init_CP();
@@ -56,7 +54,7 @@ public class CustomPropertyManager : MonoBehaviour
         CP.Add("monster_sight_distance", 7f);
         CP.Add("monster_sight_angle", 150f);
         CP.Add("monster_targetarea_radius", 15f);
-        CP.Add("monster_howmanyrooms", 5);
+        CP.Add("monster_howmanyrooms", 10);
 
         // Stage
         CP.Add("totalBomb", 10);
@@ -97,7 +95,7 @@ public class CustomPropertyManager : MonoBehaviour
     
     public void SetUI_SetListText_All()
     {
-        text_setList.text = "<size=15><color=yellow>게임</color></size>\n";
+        text_setList.text = "<size=13><color=yellow>게임</color></size>\n";
         text_setList.text += " 총 지뢰 수: " + ((int)CP["totalBomb"]).ToString() + "개\n";
         text_setList.text += " 깃발 사용: ";
         if ((bool)CP["enable_flag"])    text_setList.text += "O\n";
@@ -106,7 +104,7 @@ public class CustomPropertyManager : MonoBehaviour
         if ((bool)CP["teleport_checkAll"])  text_setList.text += "O\n\n";
         else                                text_setList.text += "X\n\n";
 
-        text_setList.text += "<size=15><color=magenta>몬스터</color></size>\n";
+        text_setList.text += "<size=13><color=magenta>몬스터</color></size>\n";
         text_setList.text += " 활성화: ";
         if ((bool)CP["monster_active"])     text_setList.text += "O\n";
         else                                text_setList.text += "X\n";
@@ -117,7 +115,8 @@ public class CustomPropertyManager : MonoBehaviour
             else                            text_setList.text += "X\n";
             text_setList.text += " 기본 속도: " + ((int)CP["monster_defaultspeed"]).ToString() + "\n";
             text_setList.text += " 최고 속도: " + ((int)CP["monster_maxspeed"]).ToString() + "\n";
-            text_setList.text += " 타겟 탐색 범위: " + ((int)((float)CP["monster_targetarea_radius"])).ToString() + "\n";
+            text_setList.text += " 타겟 탐색 범위: " 
+                + ((int)((float)CP["monster_targetarea_radius"])).ToString() + "\n";
             text_setList.text += " 출발 방 개수: " + ((int)CP["monster_howmanyrooms"]).ToString();
         }
     }
@@ -137,7 +136,7 @@ public class CustomPropertyManager : MonoBehaviour
         PhotonNetwork.CurrentRoom.SetCustomProperties(CP);
     }
 
-    // 각 UI 활성화 설정
+    // 난이도 설정 내용에 따른 UI 변화
     public void Slider_totalBomb(Slider sd)
     {
         cp_totalBomb_text.text = sd.value.ToString();

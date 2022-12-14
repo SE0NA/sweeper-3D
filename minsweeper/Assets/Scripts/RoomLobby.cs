@@ -18,6 +18,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     [SerializeField] Button btn_gameStart;
     [SerializeField] GameObject gameObject_Count_gameStart;
+    [SerializeField] GameObject txt_single;
 
     [Header("Game Set")]
     [SerializeField] Button btn_openSet;
@@ -26,6 +27,11 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     [Header("color")]
     [SerializeField] List<Color> color_playerList;
+
+    [Header("SFX")]
+    [SerializeField] AudioSource myAudioSource;
+    [SerializeField] AudioClip clip_btn;
+    [SerializeField] AudioClip clip_playerJoin;
 
     CustomPropertyManager CPManager;
 
@@ -40,7 +46,7 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)   SetUI_Master();
         else                                SetUI_Others();
 
-        if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Ramdom"))
+        if (PhotonNetwork.CurrentRoom.CustomProperties["RoomState"].ToString().Equals("Random"))
             txt_roomCode.text = "Random";
         else
             txt_roomCode.text = PhotonNetwork.CurrentRoom.Name;
@@ -55,16 +61,33 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             SendNewChat();
     }
 
+    private void GameStart_Txt_Single()
+    {
+        if (PhotonNetwork.PlayerList.Length > 1)
+            txt_single.SetActive(false);
+        else
+            txt_single.SetActive(true);
+    }
+
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
+        myAudioSource.PlayOneShot(clip_playerJoin);
         SetPlayerList();
-        if (PhotonNetwork.IsMasterClient) SetUI_Master();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            SetUI_Master();
+            GameStart_Txt_Single();
+        }
         else SetUI_Others();
     }
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         SetPlayerList();
-        if (PhotonNetwork.IsMasterClient) SetUI_Master();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            SetUI_Master();
+            GameStart_Txt_Single();
+        }
         else SetUI_Others();
     }
 
@@ -72,15 +95,20 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     {
         btn_gameStart.interactable = true;
         btn_openSet.gameObject.SetActive(true);
+        if (PhotonNetwork.CountOfPlayers != 1)
+            txt_single.SetActive(false);
+        else
+            txt_single.SetActive(true);
     }
     void SetUI_Others()
     {
         btn_gameStart.interactable = false;
         btn_openSet.gameObject.SetActive(false);
-
+        txt_single.SetActive(false);
     }
     public void Btn_OpenSet_Master()
     {
+        myAudioSource.PlayOneShot(clip_btn);
         panel_Set.SetActive(true);
         btn_openSet.interactable = false;
         btn_gameStart.interactable = false;
@@ -89,11 +117,12 @@ public class RoomLobby : MonoBehaviourPunCallbacks
 
     public void Btn_CheckSet_Master()
     {
+        myAudioSource.PlayOneShot(clip_btn);
         CPManager.Btn_CheckSet_SetCP();
         panel_Set.SetActive(false);
         btn_openSet.interactable = true;
         btn_gameStart.interactable = true;
-        photonView.RPC("SetUI_GameSettingText", RpcTarget.AllBuffered);
+        photonView.RPC("SetUI_GameSettingText", RpcTarget.AllBufferedViaServer);
     }
     [PunRPC]
     void SetUI_GameSettingText()
@@ -116,20 +145,12 @@ public class RoomLobby : MonoBehaviourPunCallbacks
             gameObject_players[i].transform.GetComponentInChildren<Text>().text = thisplayer.NickName;
             gameObject_players[i].GetComponent<Image>().color = color_playerList[0];
         }
-        for (; i < 4; i++)  // 빈 슬롯
+        for (; i < 4; i++)  // 빈 자리
         {
             gameObject_players[i].GetComponentInChildren<Text>().text = "";
             gameObject_players[i].GetComponent<Image>().color = color_playerList[1];
         }
         Debug.Log("MasterClient: " + PhotonNetwork.MasterClient.NickName);
-
-        // Game Start Button Set
-        if (PhotonNetwork.IsMasterClient) {
-            if (PhotonNetwork.PlayerList.Length > 1)    // 게임 시작 가능
-                btn_gameStart.interactable = true;
-            else
-                btn_gameStart.interactable = false;
-        }
 
         // 게임 시작 중 인원 변경 시
         if (gameObject_Count_gameStart.activeSelf == true)
@@ -147,9 +168,10 @@ public class RoomLobby : MonoBehaviourPunCallbacks
         if (if_sendChat.text.Equals("")) return;
 
         string msg;
-        msg = "[<color=cyan>" + PhotonNetwork.LocalPlayer.NickName + "</color>]" + if_sendChat.text;
+        msg = "<color=black>[</color><color=cyan>" + PhotonNetwork.LocalPlayer.NickName 
+            + "</color><color=black>]</color>" + if_sendChat.text;
         ReceiveChat(msg);
-        msg = "[" + PhotonNetwork.LocalPlayer.NickName + "]" + if_sendChat.text;
+        msg = "<color=black>[" + PhotonNetwork.LocalPlayer.NickName + "]</color>" + if_sendChat.text;
         photonView.RPC("ReceiveChat", RpcTarget.OthersBuffered, msg);
         if_sendChat.text = "";
         if_sendChat.ActivateInputField();
@@ -165,11 +187,9 @@ public class RoomLobby : MonoBehaviourPunCallbacks
     public void Btn_GameStart()     // only master
     {
         if (!PhotonNetwork.IsMasterClient) return;
-        if (PhotonNetwork.PlayerList.Length <= 1) {      // 만약의 오류 처리
-            btn_gameStart.interactable = false;
-            return;
-        }
 
+        myAudioSource.PlayOneShot(clip_btn);
+        btn_gameStart.interactable = false;
         // 게임 시작
         PhotonNetwork.CurrentRoom.IsOpen = false;       // Lock this Room
         SetCP_GameStart();

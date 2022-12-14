@@ -14,8 +14,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform[] patrolPoints = null;
     int destinationPoint = 0;
 
+    public PhotonView PV;
     Animator enemyAnim;
-    AudioSource enemyAudio;
 
     public bool _isEnd = false;
     public bool _isStart = false;
@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.speed = _defaultSpeed;
 
         enemyAnim = GetComponent<Animator>();
-        enemyAudio = GetComponent<AudioSource>();
 
         if (PhotonNetwork.IsMasterClient)
             Invoke("EnemyStart", 5f);
@@ -41,20 +40,20 @@ public class Enemy : MonoBehaviour
     }
     private void EnemyStart()
     {
-        InvokeRepeating("MoveToNextPoint", 0f, 2f);
+        InvokeRepeating("MoveToNextPoint", 0f, 5f);
     }
 
     void Update()
     {
-        if (!PhotonNetwork.IsMasterClient)
+        if (!PV.IsMine)
             return;
 
-        if (_target != null && _isStart)
-        {
-            _navMeshAgent.SetDestination(_target.position);
-        }
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance )
+        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             enemyAnim.SetBool("isMoving", false);
+        else enemyAnim.SetBool("isMoving", true);
+
+        if (_target != null && _isStart)
+            _navMeshAgent.SetDestination(_target.position);
     }
 
     public void MoveToNextPoint()  // Patrol Points
@@ -73,7 +72,6 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 _navMeshAgent.SetDestination(patrolPoints[destinationPoint].position);
-                enemyAnim.SetBool("isMoving", true);
             }
         }
     }
@@ -85,7 +83,6 @@ public class Enemy : MonoBehaviour
 
         CancelInvoke();
         _target = thisTarget;
-        enemyAnim.SetBool("isMoving", true);
         _navMeshAgent.stoppingDistance = 0;
         _navMeshAgent.speed = _MaxSpeed;
     }
@@ -99,7 +96,6 @@ public class Enemy : MonoBehaviour
         _navMeshAgent.SetDestination(gameObject.transform.position);
         _navMeshAgent.speed = _defaultSpeed;
         _navMeshAgent.stoppingDistance = 0.5f;
-        enemyAnim.SetBool("isMoving", false);
         InvokeRepeating("MoveToNextPoint", 0f, 2f);
     }
 
@@ -124,7 +120,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public float GetEnemySightCP_sight_angle() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_angle"];
-    public float GetEnemySightCP_sight_distance() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_distance"];
-    public float GetEnemyTargetAreaCP_radius() => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_targetarea_radius"];
+    public float GetEnemySightCP_sight_angle() 
+        => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_angle"];
+    public float GetEnemySightCP_sight_distance() 
+        => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_sight_distance"];
+    public float GetEnemyTargetAreaCP_radius() 
+        => (float)PhotonNetwork.CurrentRoom.CustomProperties["monster_targetarea_radius"];
 }

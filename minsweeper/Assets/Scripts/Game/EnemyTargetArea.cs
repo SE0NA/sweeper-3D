@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyTargetArea : MonoBehaviour
 {
     // TargetArea: 타겟 추적 범위
-    // Player 맵 이동 불가
+    // Player 텔레포트 기능 사용 불가
 
     [SerializeField] Enemy _thisEnemy;
 
@@ -33,7 +33,8 @@ public class EnemyTargetArea : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             other.GetComponent<PlayerController>()._nearEnemy = false;
             if (_thisEnemy._target != null &&
-                _thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
+                _thisEnemy._target.GetComponent<Photon.Pun.PhotonView>().ViewID
+                == other.GetComponent<Photon.Pun.PhotonView>().ViewID)
             {
                 // targetArea - target 놓침
                 _thisEnemy._target = null;
