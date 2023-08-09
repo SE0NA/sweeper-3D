@@ -3,7 +3,7 @@
 <div><h6>
 <img src="https://user-images.githubusercontent.com/85846475/205563707-24a637cd-b38b-4614-a481-ef36dbf0e621.gif" width="400" height="230">
 <img src="https://user-images.githubusercontent.com/85846475/205563974-446e8806-15a2-4b44-aa22-4cb4d2be7cb5.gif" width="400" height="230"><br>
-<a href="https://github.com/SE0NA/sweeper-3D/blob/main/sweeper%20play_video.mp4">전체 시연 영상</a>
+<a href="https://drive.google.com/file/d/1zqe1W-u3LAJzjiQAC-pMtJybw2pyQ7Uc/view?usp=drive_link">전체 시연 영상</a>
 </h6></div>
 <br>
 <h5>
